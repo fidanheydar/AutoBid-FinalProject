@@ -2,6 +2,7 @@
 using CarAuction.Core.Repositories.Categories;
 using CarAuction.Data.Repositories.Categories;
 using CarAuction.Service.DTOs.Categories;
+using CarAuction.Service.Services.Abstractions;
 using CarAuction.Service.Services.Interfaces;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,6 +30,7 @@ namespace CarAuction.Service
             service.AddScoped<ITagService, TagService>();
             service.AddScoped<IBlogService, BlogService>();
             service.AddScoped<IFuelService,FuelService>();
+            service.AddScoped<ISubscribeService, SubscribeService>();
          
         }
     }

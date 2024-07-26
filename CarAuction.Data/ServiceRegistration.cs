@@ -13,6 +13,12 @@ using CarAuction.Core.Repositories.Fuels;
 using CarAuction.Core.Repositories.Bans;
 using CarAuction.Data.Repositories.Fuels;
 using CarAuction.Data.Repositories.Subscribes;
+using CarAuction.Core.Repositories.CarImages;
+using CarAuction.Data.Repositories.CarImages;
+using CarAuction.Core.Repositories.Cars;
+using CarAuction.Data.Repositories.Cars;
+using CarAuction.Core.Repositories.Colors;
+using CarAuction.Data.Repositories.Colors;
 
 namespace CarAuction.Data
 {
@@ -46,6 +52,15 @@ namespace CarAuction.Data
 
             service.AddScoped<IBanWriteRepository, BanWriteRepository>();
             service.AddScoped<IBanReadRepository, BanReadRepository>();
+
+            service.AddScoped<ICarImageWriteRepository, CarImageWriteRepository>();
+            service.AddScoped<ICarImageReadRepository, CarImageReadRepository>();
+
+            service.AddScoped<ICarWriteRepository, CarWriteRepository>();
+            service.AddScoped<ICarReadRepository, CarReadRepository>();
+
+            service.AddScoped<IColorWriteRepository, ColorWriteRepository>();
+            service.AddScoped<IColorReadRepository, ColorReadRepository>();
         }
     }
 }

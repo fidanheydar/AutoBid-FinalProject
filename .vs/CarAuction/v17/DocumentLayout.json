@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.service\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.service\\services\\abstractions\\carservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\services\\abstractions\\carservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.service\\services\\abstractions\\fuelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\services\\abstractions\\fuelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.service\\services\\abstractions\\blogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\services\\abstractions\\blogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.service\\services\\interfaces\\ifuelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\services\\interfaces\\ifuelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.service\\validations\\fuels\\fuelupdatedtovalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\validations\\fuels\\fuelupdatedtovalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.service\\validations\\fuels\\fuelpostdtovalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\validations\\fuels\\fuelpostdtovalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.service\\profiles\\entitymapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\profiles\\entitymapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.service\\services\\interfaces\\icarservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\services\\interfaces\\icarservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,73 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ServiceRegistration.cs",
-              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\ServiceRegistration.cs",
-              "RelativeDocumentMoniker": "CarAuction.Service\\ServiceRegistration.cs",
-              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\ServiceRegistration.cs",
-              "RelativeToolTip": "CarAuction.Service\\ServiceRegistration.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAB4AAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T11:23:06.967Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FuelService.cs",
-              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Services\\Abstractions\\FuelService.cs",
-              "RelativeDocumentMoniker": "CarAuction.Service\\Services\\Abstractions\\FuelService.cs",
-              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Services\\Abstractions\\FuelService.cs",
-              "RelativeToolTip": "CarAuction.Service\\Services\\Abstractions\\FuelService.cs",
-              "ViewState": "AQIAAHkAAAAAAAAAAAAswEgAAABVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T11:22:32.76Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IFuelService.cs",
-              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Services\\Interfaces\\IFuelService.cs",
-              "RelativeDocumentMoniker": "CarAuction.Service\\Services\\Interfaces\\IFuelService.cs",
-              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Services\\Interfaces\\IFuelService.cs",
-              "RelativeToolTip": "CarAuction.Service\\Services\\Interfaces\\IFuelService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T11:22:10.715Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FuelUpdateDtoValidation.cs",
-              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Validations\\Fuels\\FuelUpdateDtoValidation.cs",
-              "RelativeDocumentMoniker": "CarAuction.Service\\Validations\\Fuels\\FuelUpdateDtoValidation.cs",
-              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Validations\\Fuels\\FuelUpdateDtoValidation.cs",
-              "RelativeToolTip": "CarAuction.Service\\Validations\\Fuels\\FuelUpdateDtoValidation.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAPAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T11:21:41.658Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FuelPostDtoValidation.cs",
-              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Validations\\Fuels\\FuelPostDtoValidation.cs",
-              "RelativeDocumentMoniker": "CarAuction.Service\\Validations\\Fuels\\FuelPostDtoValidation.cs",
-              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Validations\\Fuels\\FuelPostDtoValidation.cs",
-              "RelativeToolTip": "CarAuction.Service\\Validations\\Fuels\\FuelPostDtoValidation.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T11:21:18.393Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -111,15 +34,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EntityMapper.cs",
-              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Profiles\\EntityMapper.cs",
-              "RelativeDocumentMoniker": "CarAuction.Service\\Profiles\\EntityMapper.cs",
-              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Profiles\\EntityMapper.cs",
-              "RelativeToolTip": "CarAuction.Service\\Profiles\\EntityMapper.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAAABsAAAA5AAAA",
+              "DocumentIndex": 1,
+              "Title": "BlogService.cs",
+              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Services\\Abstractions\\BlogService.cs",
+              "RelativeDocumentMoniker": "CarAuction.Service\\Services\\Abstractions\\BlogService.cs",
+              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Services\\Abstractions\\BlogService.cs",
+              "RelativeToolTip": "CarAuction.Service\\Services\\Abstractions\\BlogService.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB4AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T11:19:21.552Z",
+              "WhenOpened": "2024-07-26T13:49:47.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CarService.cs",
+              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Services\\Abstractions\\CarService.cs",
+              "RelativeDocumentMoniker": "CarAuction.Service\\Services\\Abstractions\\CarService.cs",
+              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Services\\Abstractions\\CarService.cs",
+              "RelativeToolTip": "CarAuction.Service\\Services\\Abstractions\\CarService.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAhwBgAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T13:49:04.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ICarService.cs",
+              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Services\\Interfaces\\ICarService.cs",
+              "RelativeDocumentMoniker": "CarAuction.Service\\Services\\Interfaces\\ICarService.cs",
+              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Services\\Interfaces\\ICarService.cs",
+              "RelativeToolTip": "CarAuction.Service\\Services\\Interfaces\\ICarService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-26T13:47:33.065Z",
               "EditorCaption": ""
             }
           ]
