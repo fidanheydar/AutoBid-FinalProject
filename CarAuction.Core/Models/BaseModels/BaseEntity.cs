@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarAuction.Core.Models.BaseModels
 {
-    public abstract class BaseEntity
+    public abstract class BaseEntity 
     {
         public Guid Id { get; set; }
         public DateTime CreatedAt { get; set; }

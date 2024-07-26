@@ -38,6 +38,7 @@ namespace CarAuction.Data.Repositories
         {
             var data = await Table.FirstOrDefaultAsync(e => e.Id == Guid.Parse(id));
             return Remove(data);
+
         }
 
         public bool Remove(T entity)

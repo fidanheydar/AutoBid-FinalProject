@@ -1,4 +1,5 @@
-﻿using CarAuction.Core.Repositories.Categories;
+﻿using AutoMapper;
+using CarAuction.Core.Repositories.Categories;
 using CarAuction.Data.Repositories.Categories;
 using CarAuction.Service.DTOs.Categories;
 using CarAuction.Service.Services.Interfaces;
@@ -22,7 +23,11 @@ namespace CarAuction.Service
             service.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             service.AddScoped<ICategoryService,CategoryService>();
-            service.AddScoped<ITagService,TagService>();
+            service.AddScoped<IBanService,BanService>();
+            service.AddScoped<IBrandService, BrandService>();
+            service.AddScoped<IModelService, ModelService>();
+            service.AddScoped<ITagService, TagService>();
+         
         }
     }
 }

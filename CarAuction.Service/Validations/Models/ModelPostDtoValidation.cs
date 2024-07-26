@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using CarAuction.Service.DTOs.Models;
+using FluentValidation;
 
 using System;
 using System.Collections.Generic;

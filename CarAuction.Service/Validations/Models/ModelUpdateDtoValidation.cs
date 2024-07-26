@@ -1,7 +1,6 @@
-﻿using FluentValidation;
-using Miles.Service.Dtos.Models;
-using Miles.Service.Dtos.Messages;
-using Miles.Service.Helpers;
+﻿using CarAuction.Service.DTOs.Models;
+using FluentValidation;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;

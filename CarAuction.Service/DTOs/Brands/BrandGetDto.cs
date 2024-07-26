@@ -1,4 +1,5 @@
 ﻿using CarAuction.Core.Models;
+using CarAuction.Service.DTOs.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,8 @@ namespace CarAuction.Service.DTOs.Tags
 {
     public record BrandGetDto
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Model> Models { get; set; }
+        public ICollection<Model> Models {  get; set; }   
     }
 }

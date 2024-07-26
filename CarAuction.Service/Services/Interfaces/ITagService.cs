@@ -9,12 +9,7 @@ using System.Threading.Tasks;
 
 namespace CarAuction.Service.Services.Interfaces
 {
-    public interface ITagService
+    public interface ITagService : IService<TagPostDto,TagUpdateDto>
     {
-        public Task<ApiResponse> CreateAsync(TagPostDto dto);
-        public Task<ApiResponse> GetAsync(string id);
-        public Task<ApiResponse> GetAllAsync(int count, int page);
-        public Task<ApiResponse> UpdateAsync(string id, TagUpdateDto dto);
-        public Task<ApiResponse> RemoveAsync(string id);
     }
 }

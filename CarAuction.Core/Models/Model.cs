@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace CarAuction.Core.Models
@@ -11,6 +12,7 @@ namespace CarAuction.Core.Models
     {
         public string Name { get; set; }
         public Guid BrandId { get; set; }
+        [JsonIgnore]
         public virtual Brand Brand { get; set; }
     }
 }

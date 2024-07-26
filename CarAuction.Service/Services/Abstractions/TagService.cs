@@ -38,21 +38,21 @@ namespace Miles.Service.Services.Implementations
                     Description = $"{dto.Name} Already exists"
                 };
             }
-            Tag category = _mapper.Map<Tag>(dto);
-            await _writerepository.AddAsync(category);
+            Tag tag = _mapper.Map<Tag>(dto);
+            await _writerepository.AddAsync(tag);
             await _writerepository.SaveAsync();
             return new ApiResponse
             {
                 StatusCode = 201,
-                items = category
+                items = tag
             };
         }
 
         public async Task<ApiResponse> GetAllAsync(int count,int page)
         {
-            IEnumerable<Tag> categories = await _readRepository.GetAll(x => !x.IsDeleted, count, page).ToListAsync();
+            IEnumerable<Tag> tags = await _readRepository.GetAll(x => !x.IsDeleted, count, page).ToListAsync();
 
-            List<TagGetDto> dtos = _mapper.Map<List<TagGetDto>>(categories);
+            List<TagGetDto> dtos = _mapper.Map<List<TagGetDto>>(tags);
 
             return new ApiResponse
             {
@@ -63,8 +63,8 @@ namespace Miles.Service.Services.Implementations
 
         public async Task<ApiResponse> GetAsync(string id)
         {
-            Tag category = await _readRepository.GetByIdAsync(id,x => !x.IsDeleted);
-            if (category is null)
+            Tag tag = await _readRepository.GetByIdAsync(id,x => !x.IsDeleted);
+            if (tag is null)
             {
                 return new ApiResponse
                 {
@@ -72,7 +72,7 @@ namespace Miles.Service.Services.Implementations
                     Description = "Not found"
                 };
             }
-            TagGetDto dto = _mapper.Map<TagGetDto>(category);
+            TagGetDto dto = _mapper.Map<TagGetDto>(tag);
 
             return new ApiResponse
             {
@@ -83,8 +83,8 @@ namespace Miles.Service.Services.Implementations
 
         public async Task<ApiResponse> RemoveAsync(string id)
         {
-            Tag category = await _readRepository.GetByIdAsync(id, x => !x.IsDeleted);
-            if (category is null)
+            Tag tag = await _readRepository.GetByIdAsync(id, x => !x.IsDeleted);
+            if (tag is null)
             {
                 return new ApiResponse
                 {
@@ -92,12 +92,12 @@ namespace Miles.Service.Services.Implementations
                     Description = "Not found"
                 };
             }
-            category.IsDeleted = true;
+            tag.IsDeleted = true;
             await _writerepository.SaveAsync();
             return new ApiResponse
             {
                 StatusCode = 200,
-                items = category
+                items = tag
             };
         }
 
@@ -111,8 +111,8 @@ namespace Miles.Service.Services.Implementations
                     Description = $"{dto.Name} Already exists"
                 };
             }
-            Tag category = await _readRepository.GetByIdAsync(id,x =>!x.IsDeleted);
-            if (category is null)
+            Tag tag = await _readRepository.GetByIdAsync(id,x =>!x.IsDeleted);
+            if (tag is null)
             {
                 return new ApiResponse
                 {
@@ -120,12 +120,12 @@ namespace Miles.Service.Services.Implementations
                     Description = "Not found"
                 };
             }
-            category.Name = dto.Name;
+            tag.Name = dto.Name;
             await _writerepository.SaveAsync();
             return new ApiResponse
             {
                 StatusCode = 200,
-                items = category
+                items = tag
             };
         }
     }

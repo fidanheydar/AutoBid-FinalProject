@@ -3,7 +3,9 @@ using CarAuction.App.Middlewares;
 using CarAuction.Data;
 using CarAuction.Data.Context;
 using CarAuction.Service;
+using CarAuction.Service.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 namespace CarAuction.App
 {
@@ -15,11 +17,17 @@ namespace CarAuction.App
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+                options.JsonSerializerOptions.WriteIndented = true;
+            }); ;
 
 
             builder.Services.DataServiceRegistration();
             builder.Services.ServiceServiceRegistration();
+
+            builder.Services.AddHttpContextAccessor();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -28,6 +36,7 @@ namespace CarAuction.App
                 option.UseSqlServer(builder.Configuration.GetConnectionString("Develop")),
                  ServiceLifetime.Transient
             );
+
 
             builder.Services.AddSwaggerGen();
 

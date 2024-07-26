@@ -5,6 +5,7 @@ C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarA
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.AssemblyInfoInputs.cache
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.AssemblyInfo.cs
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.csproj.CoreCompileInputs.cache
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.sourcelink.json
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Core\obj\Debug\net8.0\refint\CarAuction.Core.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.pdb

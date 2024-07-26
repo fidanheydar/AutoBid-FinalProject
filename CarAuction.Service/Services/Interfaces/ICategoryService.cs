@@ -1,4 +1,6 @@
-﻿using CarAuction.Service.DTOs.Categories;
+﻿using CarAuction.Service.DTOs.Brands;
+using CarAuction.Service.DTOs.Categories;
+using CarAuction.Service.DTOs.Tags;
 using CarAuction.Service.Responses;
 using System;
 using System.Collections.Generic;
@@ -8,12 +10,7 @@ using System.Threading.Tasks;
 
 namespace CarAuction.Service.Services.Interfaces
 {
-    public interface ICategoryService
+    public interface ICategoryService: IService<CategoryPostDto, CategoryUpdateDto>
     {
-        public Task<ApiResponse> CreateAsync(CategoryPostDto dto);
-        public Task<ApiResponse> GetAsync(string id);
-        public Task<ApiResponse> GetAllAsync(int count, int page);
-        public Task<ApiResponse> UpdateAsync(string id, CategoryUpdateDto dto);
-        public Task<ApiResponse> RemoveAsync(string id);
     }
 }

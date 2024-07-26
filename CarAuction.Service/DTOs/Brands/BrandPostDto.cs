@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CarAuction.Service.DTOs.Tags
 {
-    public record BrandPostDto
+    public record BrandPostDto 
     {
         public string Name { get; set; }
     }

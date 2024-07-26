@@ -3,7 +3,10 @@ using CarAuction.Core.Repositories.Brands;
 using CarAuction.Data.Repositories.Categories;
 using Microsoft.Extensions.DependencyInjection;
 using CarAuction.Core.Repositories.Models;
+using CarAuction.Core.Repositories.Bans;
 using CarAuction.Core.Repositories.Tags;
+using CarAuction.Core.Repositories.Blogs;
+using CarAuction.Data.Repositories.Blogs;
 
 namespace CarAuction.Data
 {
@@ -19,6 +22,12 @@ namespace CarAuction.Data
 
             service.AddScoped<IBrandWriteRepository,BrandWriteRepository>();
             service.AddScoped<IBrandReadRepository,BrandReadRepository>();
+
+            service.AddScoped<IBanWriteRepository, BanWriteRepository>();
+            service.AddScoped<IBanReadRepository, BanReadRepository>();
+
+            service.AddScoped<IBlogWriteRepository, BlogWriteRepository>();
+            service.AddScoped<IBlogReadRepository, BlogReadRepository>();
 
             service.AddScoped<ITagWriteRepository, TagWriteRepository>();
             service.AddScoped<ITagReadRepository, TagReadRepository>();

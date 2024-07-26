@@ -1,4 +1,5 @@
-﻿using CarAuction.Core.Models.BaseModels;
+﻿using CarAuction.Core.Models;
+using CarAuction.Core.Models.BaseModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

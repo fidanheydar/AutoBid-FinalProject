@@ -9,5 +9,6 @@ namespace CarAuction.Service.DTOs.Models
     public record ModelUpdateDto
     {
         public string Name { get; set; }
+        public Guid BrandId { get; set; }
     }
 }

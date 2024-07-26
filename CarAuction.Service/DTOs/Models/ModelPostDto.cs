@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarAuction.Service.DTOs.Tags
+namespace CarAuction.Service.DTOs.Models
 {
-    public record TagPostDto
+    public record ModelPostDto
     {
         public string Name { get; set; }
+        public Guid BrandId {  get; set; } 
     }
 }
