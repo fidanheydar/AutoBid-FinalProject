@@ -1,0 +1,17 @@
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\obj\Debug\net8.0\CarAuction.Data.csproj.AssemblyReference.cache
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\obj\Debug\net8.0\CarAuction.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\obj\Debug\net8.0\CarAuction.Data.AssemblyInfoInputs.cache
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\obj\Debug\net8.0\CarAuction.Data.AssemblyInfo.cs
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\obj\Debug\net8.0\CarAuction.Data.csproj.CoreCompileInputs.cache
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\bin\Debug\net8.0\CarAuction.Data.deps.json
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\bin\Debug\net8.0\CarAuction.Data.runtimeconfig.json
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\bin\Debug\net8.0\CarAuction.Data.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\bin\Debug\net8.0\CarAuction.Data.pdb
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\bin\Debug\net8.0\CarAuction.Core.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\bin\Debug\net8.0\CarAuction.Core.pdb
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\obj\Debug\net8.0\CarAucti.12743806.Up2Date
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\obj\Debug\net8.0\CarAuction.Data.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\obj\Debug\net8.0\refint\CarAuction.Data.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\obj\Debug\net8.0\CarAuction.Data.pdb
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\obj\Debug\net8.0\CarAuction.Data.genruntimeconfig.cache
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Data\obj\Debug\net8.0\ref\CarAuction.Data.dll
