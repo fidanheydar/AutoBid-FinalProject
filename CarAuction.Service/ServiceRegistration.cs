@@ -27,6 +27,8 @@ namespace CarAuction.Service
             service.AddScoped<IBrandService, BrandService>();
             service.AddScoped<IModelService, ModelService>();
             service.AddScoped<ITagService, TagService>();
+            service.AddScoped<IBlogService, BlogService>();
+            service.AddScoped<IFuelService,FuelService>();
          
         }
     }

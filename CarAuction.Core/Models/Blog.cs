@@ -16,6 +16,6 @@ namespace CarAuction.Core.Models
         public string Fact {  get; set; }   
         public Guid CategoryId { get; set; }
         public virtual Category Category { get; set; }
-        public virtual ICollection<Blog> Blogs { get; set; }
+        public virtual ICollection<BlogTag> BlogTags { get; set; } = new List<BlogTag>();
     }
 }

@@ -60,9 +60,6 @@ namespace CarAuction.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("BlogId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("CategoryId")
                         .HasColumnType("uniqueidentifier");
 
@@ -92,8 +89,6 @@ namespace CarAuction.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BlogId");
 
                     b.HasIndex("CategoryId");
 
@@ -175,6 +170,30 @@ namespace CarAuction.Data.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("CarAuction.Core.Models.Fuel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Fuels");
+                });
+
             modelBuilder.Entity("CarAuction.Core.Models.Model", b =>
                 {
                     b.Property<Guid>("Id")
@@ -204,6 +223,30 @@ namespace CarAuction.Data.Migrations
                     b.ToTable("Models");
                 });
 
+            modelBuilder.Entity("CarAuction.Core.Models.Subscribe", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Subscribes");
+                });
+
             modelBuilder.Entity("CarAuction.Core.Models.Tag", b =>
                 {
                     b.Property<Guid>("Id")
@@ -230,10 +273,6 @@ namespace CarAuction.Data.Migrations
 
             modelBuilder.Entity("CarAuction.Core.Models.Blog", b =>
                 {
-                    b.HasOne("CarAuction.Core.Models.Blog", null)
-                        .WithMany("Blogs")
-                        .HasForeignKey("BlogId");
-
                     b.HasOne("CarAuction.Core.Models.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
@@ -246,7 +285,7 @@ namespace CarAuction.Data.Migrations
             modelBuilder.Entity("CarAuction.Core.Models.BlogTag", b =>
                 {
                     b.HasOne("CarAuction.Core.Models.Blog", "Blog")
-                        .WithMany()
+                        .WithMany("BlogTags")
                         .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -275,7 +314,7 @@ namespace CarAuction.Data.Migrations
 
             modelBuilder.Entity("CarAuction.Core.Models.Blog", b =>
                 {
-                    b.Navigation("Blogs");
+                    b.Navigation("BlogTags");
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Brand", b =>

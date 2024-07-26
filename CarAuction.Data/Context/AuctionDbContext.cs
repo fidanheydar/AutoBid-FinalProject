@@ -16,9 +16,11 @@ namespace CarAuction.Data.Context
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Model> Models { get; set; }
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<Fuel> Fuels { get; set; }
         public DbSet<Ban> Bans { get; set; }
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<BlogTag> BlogTags { get; set; }
+        public DbSet<Subscribe> Subscribes { get; set; }
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             var datas = ChangeTracker.Entries<BaseEntity>();
