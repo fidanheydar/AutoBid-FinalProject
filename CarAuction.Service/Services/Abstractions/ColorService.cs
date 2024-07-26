@@ -128,9 +128,9 @@ namespace Miles.Service.Services.Implementations
                     Description = "Not found"
                 };
             }
-            _mapper.Map<ColorUpdateDto,Color>(dto,color);
+            color = _mapper.Map<ColorUpdateDto,Color>(dto,color);
 
-
+            _writerepository.Update(color);
             await _writerepository.SaveAsync();
             return new ApiResponse
             {

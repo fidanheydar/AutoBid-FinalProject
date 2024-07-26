@@ -8,7 +8,7 @@ namespace CarAuction.Service.DTOs.Tags
 {
     public record TagGetDto
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
     }
 }

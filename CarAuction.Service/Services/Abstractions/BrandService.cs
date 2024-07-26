@@ -59,8 +59,6 @@ namespace Miles.Service.Services.Implementations
         {
             IEnumerable<Brand> brands = await _readRepository.GetAll(x => !x.IsDeleted, count, page).Include(x=>x.Models).ToListAsync();
 
-            
-
             List<BrandGetDto> dtos = _mapper.Map<List<BrandGetDto>>(brands);
 
             return new ApiResponse

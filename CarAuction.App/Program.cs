@@ -1,4 +1,5 @@
 
+using CarAuction.App.Extensions;
 using CarAuction.App.Middlewares;
 using CarAuction.Data;
 using CarAuction.Data.Context;
@@ -27,6 +28,7 @@ namespace CarAuction.App
             builder.Services.DataServiceRegistration();
             builder.Services.ServiceServiceRegistration();
 
+            builder.Services.AddSwaggerExtension();
             builder.Services.AddHttpContextAccessor();
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -45,8 +47,16 @@ namespace CarAuction.App
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseSwagger(c =>
+                {
+                    c.RouteTemplate = "api/swagger/{documentName}/swagger.json";
+                });
+                app.UseSwaggerUI(x =>
+                {
+                    x.SwaggerEndpoint("/api/swagger/admin_v1/swagger.json", "Admin API  V1");
+                    x.SwaggerEndpoint("/api/swagger/user_v1/swagger.json", "User API V1");
+                    x.RoutePrefix = "api/swagger";
+                });
             }
 
             app.UseHttpsRedirection();

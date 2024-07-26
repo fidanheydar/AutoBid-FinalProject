@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qWXVGbdWcKytjKT+t6ltHbaLedyqQsLpYU4cNFkLY5k=",
+  "Hash": "gPYnAccQ8FapSdOYRbL9C77JOIYu+oWpCqK8Xx7pCis=",
   "Source": "CarAuction.App",
   "BasePath": "_content/CarAuction.App",
   "Mode": "Default",
@@ -26,13 +26,11 @@
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "remz1dpocz",
-      "Integrity": "M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Blogs\\01cfa536-d621-4062-b1bf-2a3a3971a74eLogo_C_sharp.svg.png"
@@ -47,13 +45,11 @@
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "remz1dpocz",
-      "Integrity": "M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Blogs\\410d1ddb-b9ac-47f9-aa46-a749020a7c38Logo_C_sharp.svg.png"
@@ -68,13 +64,11 @@
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "remz1dpocz",
-      "Integrity": "M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Blogs\\453990a1-01d7-4bd9-86ed-867670309089Logo_C_sharp.svg.png"
@@ -89,13 +83,11 @@
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "remz1dpocz",
-      "Integrity": "M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Blogs\\58f53c08-f2b7-4c23-bdf6-f54982f5ef4dLogo_C_sharp.svg.png"
@@ -110,13 +102,11 @@
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "remz1dpocz",
-      "Integrity": "M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Blogs\\5ac0ab73-e0ff-49f6-b410-c3be1209b05dLogo_C_sharp.svg.png"
@@ -131,13 +121,11 @@
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "remz1dpocz",
-      "Integrity": "M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Blogs\\64d55d6e-04e0-4ae0-9c9e-65eca9e9c6afLogo_C_sharp.svg.png"
@@ -152,13 +140,11 @@
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "remz1dpocz",
-      "Integrity": "M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Blogs\\66da9527-ad14-4218-9912-3c8152162dc7Logo_C_sharp.svg.png"
@@ -173,13 +159,11 @@
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "remz1dpocz",
-      "Integrity": "M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Blogs\\6833d173-3b69-4b53-aa37-fe0a3d336146Logo_C_sharp.svg.png"
@@ -194,13 +178,11 @@
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "remz1dpocz",
-      "Integrity": "M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Blogs\\a7d118e0-21d2-429e-abcb-6cdb719d6ee5Logo_C_sharp.svg.png"
@@ -215,13 +197,11 @@
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "remz1dpocz",
-      "Integrity": "M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Blogs\\d4b7e5f5-d88d-4fce-a224-e25034de5e7aLogo_C_sharp.svg.png"
@@ -236,13 +216,11 @@
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "remz1dpocz",
-      "Integrity": "M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Blogs\\dec507ae-02ca-403b-8517-a5d8af063cc2Logo_C_sharp.svg.png"
@@ -257,13 +235,11 @@
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "remz1dpocz",
-      "Integrity": "M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Blogs\\e2670900-161e-489e-a5b2-61a9108bf6a9Logo_C_sharp.svg.png"
@@ -278,382 +254,14 @@
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
+      "AssetMergeBehavior": "PreferTarget",
       "AssetMergeSource": "",
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "remz1dpocz",
-      "Integrity": "M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Images\\Blogs\\ed2bfe65-4ef5-4262-b7f2-70ead7651615Logo_C_sharp.svg.png"
-    }
-  ],
-  "Endpoints": [
-    {
-      "Route": "Images/Blogs/01cfa536-d621-4062-b1bf-2a3a3971a74eLogo_C_sharp.svg.png",
-      "AssetFile": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Blogs\\01cfa536-d621-4062-b1bf-2a3a3971a74eLogo_C_sharp.svg.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "75234"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 26 Jul 2024 10:17:12 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
-      "Route": "Images/Blogs/410d1ddb-b9ac-47f9-aa46-a749020a7c38Logo_C_sharp.svg.png",
-      "AssetFile": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Blogs\\410d1ddb-b9ac-47f9-aa46-a749020a7c38Logo_C_sharp.svg.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "75234"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 26 Jul 2024 10:16:15 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
-      "Route": "Images/Blogs/453990a1-01d7-4bd9-86ed-867670309089Logo_C_sharp.svg.png",
-      "AssetFile": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Blogs\\453990a1-01d7-4bd9-86ed-867670309089Logo_C_sharp.svg.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "75234"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 26 Jul 2024 10:13:48 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
-      "Route": "Images/Blogs/58f53c08-f2b7-4c23-bdf6-f54982f5ef4dLogo_C_sharp.svg.png",
-      "AssetFile": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Blogs\\58f53c08-f2b7-4c23-bdf6-f54982f5ef4dLogo_C_sharp.svg.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "75234"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 26 Jul 2024 10:16:44 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
-      "Route": "Images/Blogs/5ac0ab73-e0ff-49f6-b410-c3be1209b05dLogo_C_sharp.svg.png",
-      "AssetFile": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Blogs\\5ac0ab73-e0ff-49f6-b410-c3be1209b05dLogo_C_sharp.svg.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "75234"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 26 Jul 2024 10:15:49 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
-      "Route": "Images/Blogs/64d55d6e-04e0-4ae0-9c9e-65eca9e9c6afLogo_C_sharp.svg.png",
-      "AssetFile": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Blogs\\64d55d6e-04e0-4ae0-9c9e-65eca9e9c6afLogo_C_sharp.svg.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "75234"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 26 Jul 2024 10:16:15 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
-      "Route": "Images/Blogs/66da9527-ad14-4218-9912-3c8152162dc7Logo_C_sharp.svg.png",
-      "AssetFile": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Blogs\\66da9527-ad14-4218-9912-3c8152162dc7Logo_C_sharp.svg.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "75234"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 26 Jul 2024 10:13:48 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
-      "Route": "Images/Blogs/6833d173-3b69-4b53-aa37-fe0a3d336146Logo_C_sharp.svg.png",
-      "AssetFile": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Blogs\\6833d173-3b69-4b53-aa37-fe0a3d336146Logo_C_sharp.svg.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "75234"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 26 Jul 2024 10:16:01 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
-      "Route": "Images/Blogs/a7d118e0-21d2-429e-abcb-6cdb719d6ee5Logo_C_sharp.svg.png",
-      "AssetFile": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Blogs\\a7d118e0-21d2-429e-abcb-6cdb719d6ee5Logo_C_sharp.svg.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "75234"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 26 Jul 2024 10:16:44 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
-      "Route": "Images/Blogs/d4b7e5f5-d88d-4fce-a224-e25034de5e7aLogo_C_sharp.svg.png",
-      "AssetFile": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Blogs\\d4b7e5f5-d88d-4fce-a224-e25034de5e7aLogo_C_sharp.svg.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "75234"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 26 Jul 2024 10:15:49 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
-      "Route": "Images/Blogs/dec507ae-02ca-403b-8517-a5d8af063cc2Logo_C_sharp.svg.png",
-      "AssetFile": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Blogs\\dec507ae-02ca-403b-8517-a5d8af063cc2Logo_C_sharp.svg.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "75234"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 26 Jul 2024 10:17:12 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
-      "Route": "Images/Blogs/e2670900-161e-489e-a5b2-61a9108bf6a9Logo_C_sharp.svg.png",
-      "AssetFile": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Blogs\\e2670900-161e-489e-a5b2-61a9108bf6a9Logo_C_sharp.svg.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "75234"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 26 Jul 2024 10:03:20 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
-      "Route": "Images/Blogs/ed2bfe65-4ef5-4262-b7f2-70ead7651615Logo_C_sharp.svg.png",
-      "AssetFile": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Blogs\\ed2bfe65-4ef5-4262-b7f2-70ead7651615Logo_C_sharp.svg.png",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "75234"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/png"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"M+HjNDZ1UTwnurHLzcNLm6lnogocu9QZ/Y9ScoBpYvc=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 26 Jul 2024 10:16:01 GMT"
-        }
-      ],
-      "EndpointProperties": []
     }
   ]
 }

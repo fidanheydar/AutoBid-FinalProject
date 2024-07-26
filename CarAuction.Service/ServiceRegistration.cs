@@ -31,6 +31,8 @@ namespace CarAuction.Service
             service.AddScoped<IBlogService, BlogService>();
             service.AddScoped<IFuelService,FuelService>();
             service.AddScoped<ISubscribeService, SubscribeService>();
+            service.AddScoped<ICarService,CarService>();
+            service.AddScoped<IColorService, ColorService>();
          
         }
     }

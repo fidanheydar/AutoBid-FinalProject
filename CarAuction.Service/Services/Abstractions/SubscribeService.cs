@@ -23,11 +23,11 @@ namespace CarAuction.Service.Services.Abstractions
             _readRepository = readRepository;
         }
 
-        public async Task<ApiResponse> CreateAsync(Subscribe entity)
+        public async Task<ApiResponse> CreateAsync(string email)
         {
 
             Regex re = new Regex("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
-            if (!re.IsMatch(entity.Email))
+            if (!re.IsMatch(email))
             {
                 return new ApiResponse()
                 {
@@ -35,7 +35,7 @@ namespace CarAuction.Service.Services.Abstractions
                     Description = "Invalid email format"
                 };
             }
-            await _writeRepository.AddAsync(entity);
+            await _writeRepository.AddAsync(new() { Email = email});
             await _writeRepository.SaveAsync();
             return new ApiResponse()
             {

@@ -10,7 +10,7 @@ namespace CarAuction.Service.Services.Interfaces
 {
     public interface ISubscribeService
     {
-        public Task<ApiResponse> CreateAsync(Subscribe entity);
+        public Task<ApiResponse> CreateAsync(string email);
         public Task<ApiResponse> GetAllAsync(int count, int page);
         public Task<ApiResponse> RemoveAsync(string id);
 
