@@ -9,10 +9,16 @@ C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\CarAu
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Humanizer.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\MailKit.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -25,6 +31,9 @@ C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Micro
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.Identity.Client.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
@@ -36,6 +45,7 @@ C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Micro
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.OpenApi.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\MimeKit.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Mono.TextTemplating.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -133,6 +143,7 @@ C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\CarAu
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\CarAuction.App.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\CarAuction.App.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\CarAuction.App.sourcelink.json
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\scopedcss\bundle\CarAuction.App.styles.css
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\staticwebassets\msbuild.CarAuction.App.Microsoft.AspNetCore.StaticWebAssets.props
@@ -140,7 +151,6 @@ C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\stati
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CarAuction.App.props
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CarAuction.App.props
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\scopedcss\bundle\CarAuction.App.styles.css
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\CarAucti.D4D047B5.Up2Date
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\CarAuction.App.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\refint\CarAuction.App.dll

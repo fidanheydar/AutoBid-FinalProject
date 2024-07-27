@@ -10,13 +10,16 @@ using CarAuction.Service.DTOs.Tags;
 using CarAuction.Service.Extensions;
 using CarAuction.Service.Responses;
 using CarAuction.Service.Services.Interfaces;
+using CarAuction.Service.Structs;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Miles.Service.Services.Implementations;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
@@ -133,13 +136,33 @@ namespace CarAuction.Service.Services.Abstractions
             };
         }
 
+        public async Task<ApiResponse> RemoveImage(string imageId)
+        {
+            CarImage image = await _carImageReadRepository.GetByIdAsync(imageId, x => !x.IsDeleted);
+            if (image is null)
+            {
+                return new ApiResponse
+                {
+                    StatusCode = 404,
+                    Description = "Not found"
+                };
+            }
+            image.IsDeleted = true;
+            await _carWriteRepository.SaveAsync();
+            return new ApiResponse
+            {
+                StatusCode = 200,
+                items = image
+            };
+        }
+
         public async Task<ApiResponse> SetMainImage(string carId, string imageId)
         {
-           var images =  await _carImageReadRepository.GetAll(x => !x.IsDeleted && x.CarId.ToString() == carId,0,0).ToListAsync();
+            var images = await _carImageReadRepository.GetAll(x => !x.IsDeleted && x.CarId.ToString() == carId, 0, 0).ToListAsync();
 
             foreach (var image in images)
             {
-                if(image.Id.ToString() == imageId)
+                if (image.Id.ToString() == imageId)
                     image.isMain = true;
                 else
                     image.isMain = false;
@@ -150,7 +173,6 @@ namespace CarAuction.Service.Services.Abstractions
                 StatusCode = 204,
             };
         }
-
         public async Task<ApiResponse> UpdateAsync(string id, CarUpdateDto dto)
         {
             Car Car = await _carReadRepository.GetByIdAsync(id, x => !x.IsDeleted, true, "Ban", "Fuel", "CarAuctionDetail", "CarImages", "Model");
@@ -193,6 +215,52 @@ namespace CarAuction.Service.Services.Abstractions
                 items = Car
             };
 
+        }
+        public async Task<ApiResponse> AdvancedSearch(AdvancedSearch search)
+        {
+            var cars = _carReadRepository.GetAll(x => !x.IsDeleted, 0, 0);
+
+            if (search.brand is not null)
+            {
+                cars = cars.Where(x => x.Model.Brand.Name == search.brand);
+            }
+            if (search.model is not null && search.model != default(Guid))
+            {
+                cars = cars.Where(x => x.ModelId == search.model);
+            }
+            if (search.minyear is not null)
+            {
+                cars = cars.Where(x => x.FabricationYear >= search.minyear);
+            }
+            if (search.maxyear is not null)
+            {
+                cars = cars.Where(x => x.FabricationYear <= search.maxyear);
+            }
+            if (search.minprice is not null)
+            {
+                cars = cars.Where(x => x.CarAuctionDetail.InitialPrice >= search.minprice);
+            }
+            if (search.maxprice is not null)
+            {
+                cars = cars.Where(x => x.CarAuctionDetail.InitialPrice <= search.maxprice);
+            }
+            if (search.color is not null && search.color != default(Guid))
+            {
+                cars = cars.Where(x => x.ColorId == search.color);
+            }
+            if (search.ban is not null && search.ban != default(Guid))
+            {
+                cars = cars.Where(x => x.BanId == search.ban);
+            }
+            if (search.fuel is not null && search.fuel != default(Guid))
+            {
+                cars = cars.Where(x => x.FuelId == search.fuel);
+            }
+            return new()
+            {
+                StatusCode = 200,
+                items = await cars.ToListAsync(),
+            };
         }
     }
 }

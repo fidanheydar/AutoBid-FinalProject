@@ -1,5 +1,6 @@
 ﻿using CarAuction.Core.Models;
 using CarAuction.Core.Models.BaseModels;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CarAuction.Data.Context
 {
-    public class AuctionDbContext : DbContext
+    public class AuctionDbContext : IdentityDbContext<AppUser, AppRole, string>
     {
         public AuctionDbContext(DbContextOptions<AuctionDbContext> options) : base(options) { }
         public DbSet<Category> Categories { get; set; }
@@ -50,7 +51,7 @@ namespace CarAuction.Data.Context
          .HasOne(s => s.Car)
          .WithOne(ad => ad.CarAuctionDetail)
          .HasForeignKey<CarAuctionDetail>(ad => ad.Id);
-
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

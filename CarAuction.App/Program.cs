@@ -1,6 +1,7 @@
 
 using CarAuction.App.Extensions;
 using CarAuction.App.Middlewares;
+using CarAuction.Core.Options;
 using CarAuction.Data;
 using CarAuction.Data.Context;
 using CarAuction.Service;
@@ -22,7 +23,14 @@ namespace CarAuction.App
             {
                 options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
                 options.JsonSerializerOptions.WriteIndented = true;
-            }); ;
+            });
+
+            builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
 
 
             builder.Services.DataServiceRegistration();
@@ -30,6 +38,11 @@ namespace CarAuction.App
 
             builder.Services.AddSwaggerExtension();
             builder.Services.AddHttpContextAccessor();
+            builder.Services.Configure<MailSetting>(builder.Configuration.GetSection("MailSetting"));
+
+            builder.Services.AddJWTTokenConfigurations(builder.Configuration["JwtTokenSettings:Audience"],
+                                     builder.Configuration["JwtTokenSettings:Issuer"],
+                                     builder.Configuration["JwtTokenSettings:SignInKey"]);
 
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -60,6 +73,7 @@ namespace CarAuction.App
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("MyPolicy");
 
             app.CustomExceptionHadler();
 

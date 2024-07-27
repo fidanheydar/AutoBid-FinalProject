@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{41C1D96E-F406-4029-A71B-9826DCE0269B}|CarAuction.App\\CarAuction.App.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.app\\apps\\admin\\controllers\\subscribecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41C1D96E-F406-4029-A71B-9826DCE0269B}|CarAuction.App\\CarAuction.App.csproj|solutionrelative:carauction.app\\apps\\admin\\controllers\\subscribecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,21 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SubscribeController.cs",
-              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\Apps\\Admin\\Controllers\\SubscribeController.cs",
-              "RelativeDocumentMoniker": "CarAuction.App\\Apps\\Admin\\Controllers\\SubscribeController.cs",
-              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\Apps\\Admin\\Controllers\\SubscribeController.cs",
-              "RelativeToolTip": "CarAuction.App\\Apps\\Admin\\Controllers\\SubscribeController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABoAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-26T20:57:48.264Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
