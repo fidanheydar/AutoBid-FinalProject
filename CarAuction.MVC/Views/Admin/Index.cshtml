@@ -1,10 +1,9 @@
-﻿@* @model IEnumerable<AppUser>
+﻿@model IEnumerable<UserGetDto>
 <div class="container">
     <table class="table table-sm">
         <thead>
             <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Photo</th>
                 <th scope="col">Name:</th>
                 <th scope="col">UserName:</th>
                 <th scope="col">Email:</th>
@@ -17,9 +16,6 @@
             {
                     <tr>
                         <th scope="row">@item.Id</th>
-                    <th>
-                        <img style="width:50px;height:50px;border-radius:50%;" src="~/Images/Users/@item.Image" />
-                    </th>
                         <th>@item.Name</th>
                         <th>@item.UserName</th>
                         <th>@item.Email</th>
@@ -51,4 +47,4 @@
         <a asp-controller="admin" asp-action="create" style="display: block; text-decoration: none; color: white; width: 100%; height: 100%" a>
             <div style="width:100%; " class="btn btn-outline-success">Create Admin </div></a>
     </div>
-</div> *@
+</div>

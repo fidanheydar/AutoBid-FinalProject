@@ -12,7 +12,7 @@ using System.Text.Json;
 
 namespace CarAuction.MVC.Controllers
 {
-    //[Authorize(Roles = "Admin,SuperAdmin")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class BlogController : Controller
     {
         private readonly IBlogService _service;

@@ -161,13 +161,13 @@ namespace Miles.Service.Services.Implementations
             {
                 string url = dto.BaseImage.CreateImage(_evn.WebRootPath, "Images/Blogs");
                 Blog.BaseImageUrl = _http.HttpContext?.Request.Scheme + "://" + _http.HttpContext?.Request.Host
-                    + $"Images/Blogs/{url}";
+                    + $"/Images/Blogs/{url}";
             }
             if (dto.SectionImage != null)
             {
                 string url = dto.SectionImage.CreateImage(_evn.WebRootPath, "Images/Blogs");
                 Blog.SectionImageUrl = _http.HttpContext?.Request.Scheme + "://" + _http.HttpContext?.Request.Host
-                    + $"Images/Blogs/{url}";
+                    + $"/Images/Blogs/{url}";
             }
             Blog.CategoryId = dto.CategoryId;
             Blog.Description = dto.Description;

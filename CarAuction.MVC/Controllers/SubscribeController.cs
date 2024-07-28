@@ -6,8 +6,7 @@ using System.Security.Claims;
 
 namespace CarAuction.MVC.Controllers
 {
-    //[Area("Admin")]
-    //[Authorize(Roles = "Admin,SuperAdmin")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class SubscribeController : Controller
     {
         private readonly ISubscribeService _service;

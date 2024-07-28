@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\CarAuction.MVC.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Bans\\b2dee9ed-1ecb-4482-b153-31175b35cfe8autobid-main_categ6.png",
+      "PackagePath": "staticwebassets\\Images\\Bans\\b2dee9ed-1ecb-4482-b153-31175b35cfe8autobid-main_categ6.png"
+    },
+    {
       "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Blogs\\61185327-faa9-429f-ab1f-f97db8ee6cf7Logo_C_sharp.svg.png",
       "PackagePath": "staticwebassets\\Images\\Blogs\\61185327-faa9-429f-ab1f-f97db8ee6cf7Logo_C_sharp.svg.png"
     },

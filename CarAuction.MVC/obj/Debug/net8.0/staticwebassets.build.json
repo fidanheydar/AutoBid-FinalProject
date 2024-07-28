@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "xPporXwEzqAg67k6QHS0YVOcMoaghjpbb+d/KiFESKQ=",
+  "Hash": "cyxSo0vvZ1u0HfSzxkvXRM3JyqfejlwhjKUabpINYgA=",
   "Source": "CarAuction.MVC",
   "BasePath": "_content/CarAuction.MVC",
   "Mode": "Default",
@@ -1858,6 +1858,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\assets\\vendors\\mdi\\fonts\\materialdesignicons-webfont.woff2"
+    },
+    {
+      "Identity": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Bans\\b2dee9ed-1ecb-4482-b153-31175b35cfe8autobid-main_categ6.png",
+      "SourceId": "CarAuction.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\",
+      "BasePath": "_content/CarAuction.MVC",
+      "RelativePath": "Images/Bans/b2dee9ed-1ecb-4482-b153-31175b35cfe8autobid-main_categ6.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Bans\\b2dee9ed-1ecb-4482-b153-31175b35cfe8autobid-main_categ6.png"
     },
     {
       "Identity": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Blogs\\61185327-faa9-429f-ab1f-f97db8ee6cf7Logo_C_sharp.svg.png",

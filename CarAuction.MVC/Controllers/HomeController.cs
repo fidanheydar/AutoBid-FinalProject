@@ -4,8 +4,7 @@ using System.Globalization;
 
 namespace CarAuction.MVC.Controllers
 {
-    //[Area("Admin")]
-    //[Authorize(Roles = "Admin,SuperAdmin")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class HomeController : Controller
     {
         //private readonly IAccountService _accountService;

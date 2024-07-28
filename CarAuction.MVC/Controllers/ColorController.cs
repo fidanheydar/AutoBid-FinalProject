@@ -8,8 +8,7 @@ using System.Security.Claims;
 
 namespace CarAuction.MVC.Controllers
 {
-    //[Area("Admin")]
-    //[Authorize(Roles = "Admin,SuperAdmin")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class ColorController : Controller
     {
         private readonly IColorService _service;

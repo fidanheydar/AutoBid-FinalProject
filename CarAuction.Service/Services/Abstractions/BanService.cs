@@ -51,7 +51,7 @@ namespace Miles.Service.Services.Implementations
 
             string url = dto.Image.CreateImage(_evn.WebRootPath, "Images/Bans");
             ban.ImageUrl = _http.HttpContext?.Request.Scheme + "://" + _http.HttpContext?.Request.Host
-                + $"Images/Bans/{url}";
+                + $"/Images/Bans/{url}";
 
             await _writerepository.AddAsync(ban);
             await _writerepository.SaveAsync();
@@ -138,7 +138,7 @@ namespace Miles.Service.Services.Implementations
             {
                 string url = dto.Image.CreateImage(_evn.WebRootPath, "Images/Bans");
                 ban.ImageUrl = _http.HttpContext?.Request.Scheme + "://" + _http.HttpContext?.Request.Host
-                    + $"Images/Bans/{url}";
+                    + $"/Images/Bans/{url}";
             }
             ban.Name = dto.Name;
             await _writerepository.SaveAsync();

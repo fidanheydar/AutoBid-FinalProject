@@ -1,4 +1,4 @@
-﻿@* @model AdminDto
+﻿@model RegisterDto
 
 <div class="container">
     <form method="post" enctype="multipart/form-data">
@@ -32,22 +32,10 @@
                 <span class="text text-danger" asp-validation-for="Password"></span>
         </div>
         <div class="form-group">
-            <label asp-for="CountryId">Country</label>
-            <select asp-for="CountryId" class="form-select" aria-label="Default select example">
-                <option selected value="0">Select one of them</option>
-                @foreach (var item in ViewBag.Countries)
-                {
-                    <option value="@item.Id" style="background-image:url(~/Images/Countries/@item.FlagImage);">@item.Name</option>
-                }
-            </select>
-            <span asp-validation-for="CountryId" class="text text-danger"></span>
+            <label asp-for="ConfirmedPassword">ConfirmedPassword</label>
+            <input type="password" asp-for="ConfirmedPassword" class="form-control" />
+            <span class="text text-danger" asp-validation-for="ConfirmedPassword"></span>
         </div>
-        <div class="form-group">
-            <label asp-for="file">Photo</label>
-            <input asp-for="file" class="form-control" type="file" />
-            <span class="text text-danger" asp-validation-for="file"></span>
-
-               </div>
         <div class="button-box">
             <div class="login-toggle-btn">
 
@@ -57,4 +45,3 @@
         </div>
     </form>
 </div>
- *@

@@ -3,19 +3,22 @@ using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using CarAuction.Service.Services.Interfaces;
 using CarAuction.Service.DTOs.Bans;
+using AutoMapper;
 
 namespace CarAuction.MVC.Controllers
 {
-    //[Authorize(Roles = "Admin,SuperAdmin")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class BanController : Controller
     {
         private readonly IBanService _service;
         private readonly ILogger<BanController> _logger;
+        private readonly IMapper _mapper;
 
-        public BanController(IBanService service, ILogger<BanController> logger)
+        public BanController(IBanService service, ILogger<BanController> logger, IMapper mapper)
         {
             _service = service;
             _logger = logger;
+            _mapper = mapper;
         }
 
         public async Task<IActionResult> Index(int page = 1)
@@ -58,7 +61,7 @@ namespace CarAuction.MVC.Controllers
             {
                 return NotFound();
             }
-            return View(result.items);
+            return View(_mapper.Map<BanUpdateDto>(result.items));
         }
         public async Task<IActionResult> Update(string id, BanUpdateDto dto)
         {

@@ -8,7 +8,7 @@ using System.Text.Json;
 
 namespace CarAuction.MVC.Controllers
 {
-    //[Authorize(Roles = "Admin,SuperAdmin")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class CarController : Controller
     {
         private readonly ICarService _service;

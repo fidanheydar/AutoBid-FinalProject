@@ -8,6 +8,8 @@ using CarAuction.Service.DTOs.Tags;
 using CarAuction.Service.DTOs.Fuels;
 using CarAuction.Service.DTOs.Colors;
 using CarAuction.Service.DTOs.Cars;
+using CarAuction.Service.DTOs.Bans;
+using CarAuction.Service.DTOs.Identity;
 
 namespace CarAuction.Service.Profiles
 {
@@ -51,6 +53,11 @@ namespace CarAuction.Service.Profiles
             CreateMap<TagGetDto, TagUpdateDto>().ReverseMap();
             CreateMap<TagGetDto, Tag>().ReverseMap();
 
+            CreateMap<Ban, BanPostDto>().ReverseMap();
+            CreateMap<Tag, BanUpdateDto>().ReverseMap();
+            CreateMap<BanGetDto, BanUpdateDto>().ReverseMap();
+            CreateMap<BanGetDto, Ban>().ReverseMap();
+
             CreateMap<Color, ColorPostDto>().ReverseMap();
             CreateMap<Color, ColorUpdateDto>().ReverseMap();
             CreateMap<ColorGetDto, ColorUpdateDto>().ReverseMap();
@@ -65,6 +72,8 @@ namespace CarAuction.Service.Profiles
             CreateMap<Car, CarUpdateDto>().ReverseMap();
             CreateMap<CarGetDto, CarUpdateDto>().ReverseMap();
             CreateMap<CarGetDto, Car>().ReverseMap();
+
+            CreateMap<AppUser,UserGetDto>().ReverseMap();
 
         }
     }

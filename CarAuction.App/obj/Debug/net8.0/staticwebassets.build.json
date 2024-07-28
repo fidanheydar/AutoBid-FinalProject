@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "smeTcxHUbDs8WdIqZf7J8ylqd6Lh3lZgOt3f+EsOVNw=",
+  "Hash": "x25TIgrjMIE9D2PxZlEI9oGoGOL2CdlKcc1JZHhJtbM=",
   "Source": "CarAuction.App",
   "BasePath": "_content/CarAuction.App",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Bans\\444ca30f-46b5-4043-95c7-8b3cdf2fb17cautobid-main_categ1.png",
+      "SourceId": "CarAuction.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\",
+      "BasePath": "_content/CarAuction.App",
+      "RelativePath": "Images/Bans/444ca30f-46b5-4043-95c7-8b3cdf2fb17cautobid-main_categ1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Images\\Bans\\444ca30f-46b5-4043-95c7-8b3cdf2fb17cautobid-main_categ1.png"
+    },
     {
       "Identity": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.App\\wwwroot\\Images\\Blogs\\01be222a-8c3f-4fad-ace5-dad3cbe7ddbfPepsi_black_1672149368.jpg",
       "SourceId": "CarAuction.App",

@@ -50,7 +50,7 @@ namespace CarAuction.Service.Controllers
             ApiResponse result = new ApiResponse();
             try
             {
-                 result = await _identityService.Login(dto, 200, "Admin");
+                result = await _identityService.Login(dto, 200, "Admin");
             }
             catch (Exception ex)
             {
@@ -62,102 +62,64 @@ namespace CarAuction.Service.Controllers
         [Authorize]
         public async Task<IActionResult> LogOut()
         {
-             await _identityService.Logout();
+            await _identityService.Logout();
             return RedirectToAction("index", "home");
         }
-        //[Authorize]
-        //public async Task<IActionResult> Update()
-        //{
-        //    var resultCountry = await _countryService.GetAllAsync(0, 0);
-        //    ViewBag.Countries = resultCountry.items;
-        //    var result = await _service.GetUser();
-        //    if (result.StatusCode != 203)
-        //    {
-        //        return NotFound();
-        //    }
-        //    AppUser user = (AppUser)result.items;
-        //    UpdateDto dto = new UpdateDto()
-        //    {
-        //        UserName = user.UserName,
-        //        Email = user.Email,
-        //        Name = user.Name,
-        //        Surname = user.Surname,
-        //        CountryId = user.CountryId,
-        //        Image = user.Image
-        //    };
-        //    return View(dto);
-        //}
-        //[HttpPost]
-        //[Authorize]
-        //public async Task<IActionResult> Update(UpdateDto dto)
-        //{
-        //    var resultCountry = await _countryService.GetAllAsync(0, 0);
-        //    ViewBag.Countries = resultCountry.items;
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(dto);
-        //    }
-        //    var result = await _service.Update(dto, null);
-        //    if (result.StatusCode != 203)
-        //    {
-        //        if (result.StatusCode == 404)
-        //        {
-        //            return NotFound();
-        //        }
-        //        ModelState.AddModelError("", result.Description);
-        //        return View(dto);
-        //    }
-        //    return RedirectToAction(nameof(Info));
-        //}
-        //public async Task<IActionResult> AdminCreate()
-        //{
-        //    AppUser SuperAdmin = new AppUser
-        //    {
-        //        Name = "SuperAdmin",
-        //        Surname = "SuperAdmin",
-        //        Email = "superadmin@miles.com",
-        //        UserName = "SuperAdmin",
-        //        Image = "fbcfba13-c108-4de8-ba04-dd8372b1fa78nijat.jpg",
-        //        CountryId = 1,
-        //        UserPricingId = 3,
-        //        EmailConfirmed = true
-        //    };
-        //    await _userManager.CreateAsync(SuperAdmin, "Admin123.");
-        //    AppUser Admin = new AppUser
-        //    {
-        //        Name = "Admin",
-        //        Surname = "Admin",
-        //        Email = "admin@miles.com",
-        //        UserName = "Admin",
-        //        Image  = "fbcfba13-c108-4de8-ba04-dd8372b1fa78nijat.jpg",
-        //        CountryId = 1,
-        //        UserPricingId = 3,
-        //        EmailConfirmed = true
-        //    };
-        //    await _userManager.CreateAsync(Admin, "Admin123.");
+        [Authorize]
+        public async Task<IActionResult> Update()
+        {
+            var result = await _identityService.GetAllUsers(0, 0, "Admin");
+            List<UserGetDto> admins = (List<UserGetDto>)result.items;
 
-        //    await _userManager.AddToRoleAsync(SuperAdmin, "SuperAdmin");
-        //    await _userManager.AddToRoleAsync(Admin, "Admin");
-        //    return Json("ok");
-        //}
-        //public async Task<IActionResult> AddRole()
-        //{
-        //    IdentityRole role = new IdentityRole
-        //    {
-        //        Name = "User"
-        //    };
-        //    IdentityRole role1 = new IdentityRole
-        //    {
-        //        Name = "Admin"
-        //    };
-        //    IdentityRole role2 = new IdentityRole
-        //    {
-        //        Name = "SuperAdmin"
-        //    };
-        //   await _roleManager.CreateAsync(role);
-        //   await _roleManager.CreateAsync(role1);
-        //    await _roleManager.CreateAsync(role2);
-        //    return RedirectToAction("index", "home");
-        //}
+            try
+            {
+                var user = admins.FirstOrDefault(x => x.UserName == User.Identity.Name);
+
+                UpdateDto dto = new UpdateDto()
+                {
+                    UserName = user.UserName,
+                    Email = user.Email,
+                    Name = user.Name,
+                    Surname = user.Surname,
+                };
+                return View(dto);
+
+            }
+            catch
+            {
+                await _identityService.Logout();
+                return RedirectToAction("login", "account");
+            }
+        }
+        [HttpPost]
+        [Authorize]
+        public async Task<IActionResult> Update(UpdateDto dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(dto);
+            }
+            try
+            {
+                var result = await _identityService.UpdateUser(dto);
+                if (result.StatusCode != 200)
+                {
+                    if (result.StatusCode == 404)
+                    {
+                        return NotFound();
+                    }
+                    ModelState.AddModelError("", result.Description);
+                    return View(dto);
+                }
+                //_logger.LogInformation("Admin Updated by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
+                return RedirectToAction("index", "home");
+
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return View(dto);
+            }
+        }
     }
 }

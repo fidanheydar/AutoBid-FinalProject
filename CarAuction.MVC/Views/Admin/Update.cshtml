@@ -1,4 +1,4 @@
-﻿@* @model UpdateDto
+﻿@model UpdateDto
 <div class="container">
  <form method="post" enctype="multipart/form-data">
         <div class="text text-danger" asp-validation-summary="ModelOnly"></div>
@@ -25,47 +25,15 @@
                 <input  asp-for="UserName" class="form-control" />
                 <span class="text text-danger" asp-validation-for="UserName"></span>
             </div>
-        <div class="form-group">
-            <label asp-for="CurrentPassword">CurrentPassword</label>
-                <input type="password" asp-for="CurrentPassword" class="form-control" />
-                <span class="text text-danger" asp-validation-for="CurrentPassword"></span>
-        </div>
          <div class="form-group">
             <label asp-for="Password">Password</label>
                 <input type="password" asp-for="Password" class="form-control" />
                 <span class="text text-danger" asp-validation-for="Password"></span>
         </div>
          <div class="form-group">
-            <label asp-for="ConfirmPassword">ConfirmPassword</label>
-                <input type="password" asp-for="ConfirmPassword" class="form-control" />
-                <span class="text text-danger" asp-validation-for="ConfirmPassword"></span>
-        </div>
-        <div class="form-group">
-                                    <label asp-for="CountryId">Country</label>
-                                    <select asp-for="CountryId" class="form-select" aria-label="Default select example">
-                                        <option value="0">Choose one of them</option>
-                                        @foreach (var item in ViewBag.Countries)
-                                        {
-                                            if (Model.CountryId != null)
-                                            {
-                                                if (Model.CountryId == item.Id)
-                                                {
-                                                    <option selected value="@item.Id">@item.Name</option>
-                                                    continue;
-                                                }
-                                            }
-                                            <option value="@item.Id">@item.Name</option>
-                                        }
-                                    </select>
-                                    <span asp-validation-for="CountryId" class="text text-danger"></span>
-                                </div>
-        <div class="form-group" style="display:flex; align-items:center; gap:15px; margin-bottom:20px;">
-            <img style="width:50px;height:50px;border-radius:50%;" src="~/Images/Users/@Model.Image" />
-            <div>
-                <span class="text text-danger" asp-validation-for="file"></span>
-                <input asp-for="file"
-                       placeholder="Photo" style="height:max-content;padding:0;margin:0" />
-            </div>
+            <label asp-for="ConfirmedPassword">ConfirmPassword</label>
+            <input type="password" asp-for="ConfirmedPassword" class="form-control" />
+            <span class="text text-danger" asp-validation-for="ConfirmedPassword"></span>
         </div>
         <div class="button-box">
             <div class="login-toggle-btn">
@@ -77,4 +45,3 @@
     </form>
 
 </div>
- *@

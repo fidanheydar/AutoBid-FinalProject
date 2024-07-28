@@ -86,7 +86,7 @@ namespace CarAuction.Service.Services.Abstractions
                     throw new LoginFailedException();
                 }
             }
-            
+
 
             SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, true);
             if (!result.Succeeded)
@@ -109,23 +109,47 @@ namespace CarAuction.Service.Services.Abstractions
                 StatusCode = (int)HttpStatusCode.OK,
             };
         }
-        public async Task<ApiResponse> GetAllUsers()
+        public async Task<ApiResponse> GetAllUsers(int count, int page, string role)
         {
-            var userList = await _userManager.Users.Select(c => new UserGetDto()
+            List<AppUser> users = new();
+
+            var userList = await _userManager.Users.ToListAsync();
+
+            foreach (var user in userList)
+            {
+                if (await _userManager.IsInRoleAsync(user, role))
+                {
+                    users.Add(user);
+                }
+            };
+
+            var items = users.Select(c => new UserGetDto()
             {
                 Id = c.Id,
                 Name = c.Name,
-                Surname = c.Surname
-            }).ToListAsync();
+                Surname = c.Surname,
+                Email = c.Email,
+                EmailConfirmed = c.EmailConfirmed,
+                UserName = c.UserName
+            });
+            if (page != 0 && count != 0)
+                items = items.Skip((page - 1) * count).Take(count);
+
             return new ApiResponse()
             {
                 StatusCode = 200,
-                items = userList
+                items = items.ToList(),
             };
         }
-        public async Task<ApiResponse> UpdateUser(UpdateDto dto)
+        public async Task<ApiResponse> UpdateUser(UpdateDto dto, string id = null)
         {
-            var userName = _contextAccessor.HttpContext?.User.Identity.Name;
+            string userName = string.Empty;
+            if (id != null)
+                userName = (await _userManager.FindByIdAsync(id)).UserName;
+            else
+                userName = _contextAccessor.HttpContext?.User.Identity.Name;
+
+
             AppUser? appUser = default;
             if (!string.IsNullOrWhiteSpace(userName))
             {
@@ -148,7 +172,7 @@ namespace CarAuction.Service.Services.Abstractions
                         StatusCode = 200,
                     };
                 }
-                
+                await _signInManager.SignInAsync(appUser, false);
                 return new()
                 {
                     StatusCode = 200,
@@ -161,6 +185,22 @@ namespace CarAuction.Service.Services.Abstractions
         {
             var user = await _userManager.FindByNameAsync(userName);
             return user;
+        }
+        public async Task<ApiResponse> Remove(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user is null)
+            {
+                return new()
+                {
+                    StatusCode = 404
+                };
+            }
+            await _userManager.DeleteAsync(user);
+            return new()
+            {
+                StatusCode = 203
+            };
         }
         public async Task Logout()
         {
