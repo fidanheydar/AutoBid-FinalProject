@@ -29,7 +29,7 @@ namespace CarAuction.Service.Services.Abstractions
         public async Task<TokenResponseDTO> CreateAccessTokenAsync(AppUser user, int minute)
         {
             TokenResponseDTO tokenResponseDto = new();
-            tokenResponseDto.Expiration = DateTime.UtcNow.AddMinutes(minute);
+            tokenResponseDto.Expiration = DateTime.Now.AddMinutes(minute);
             List<Claim> myClaims = new() {
                new(ClaimTypes.Name,user.UserName),
                new(ClaimTypes.Email,user.Email),
@@ -50,7 +50,7 @@ namespace CarAuction.Service.Services.Abstractions
                 issuer: _configuration["JwtTokenSettings:Issuer"],
                 audience: _configuration["JwtTokenSettings:Audience"],
                 claims: myClaims,
-                notBefore: DateTime.UtcNow,
+                notBefore: DateTime.Now,
                 expires: tokenResponseDto.Expiration,
                 signingCredentials: signingCredentials
                 );

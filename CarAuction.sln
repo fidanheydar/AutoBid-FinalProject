@@ -3,13 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAuction.App", "CarAuction.App\CarAuction.App.csproj", "{41C1D96E-F406-4029-A71B-9826DCE0269B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarAuction.App", "CarAuction.App\CarAuction.App.csproj", "{41C1D96E-F406-4029-A71B-9826DCE0269B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAuction.Core", "CarAuction.Core\CarAuction.Core.csproj", "{B60981A1-2899-4F45-A3FA-70EE7AACD467}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarAuction.Core", "CarAuction.Core\CarAuction.Core.csproj", "{B60981A1-2899-4F45-A3FA-70EE7AACD467}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAuction.Data", "CarAuction.Data\CarAuction.Data.csproj", "{4B496CE8-53B8-4629-99D9-ECF8A2122096}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarAuction.Data", "CarAuction.Data\CarAuction.Data.csproj", "{4B496CE8-53B8-4629-99D9-ECF8A2122096}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarAuction.Service", "CarAuction.Service\CarAuction.Service.csproj", "{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarAuction.Service", "CarAuction.Service\CarAuction.Service.csproj", "{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarAuction.MVC", "CarAuction.MVC\CarAuction.MVC.csproj", "{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A7B300F7-CBF8-46B6-A90C-AE5E835C634E} = {A7B300F7-CBF8-46B6-A90C-AE5E835C634E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +38,10 @@ Global
 		{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,5 +17,6 @@ namespace CarAuction.Service.DTOs.Blogs
         public string Fact { get; set; }
         public Guid CategoryId { get; set; }
         public Guid[] TagIds { get; set; }
+        public string? AdminId { get; set; }
     }
 }

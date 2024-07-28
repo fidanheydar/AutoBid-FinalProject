@@ -1,4 +1,5 @@
-﻿using CarAuction.Service.DTOs.Identity;
+﻿using CarAuction.Core.Models;
+using CarAuction.Service.DTOs.Identity;
 using CarAuction.Service.Responses;
 using System;
 using System.Collections.Generic;
@@ -14,5 +15,8 @@ namespace CarAuction.Service.Services.Interfaces
         public Task<ApiResponse> Login(LoginDto loginDto, int accessTokenLifeTime, string role = null);
         public  Task<ApiResponse> GetAllUsers();
         public Task<ApiResponse> UpdateUser(UpdateDto dto);
+        public Task<AppUser> GetUserByName(string userName);
+        public Task Logout();
+
     }
 }

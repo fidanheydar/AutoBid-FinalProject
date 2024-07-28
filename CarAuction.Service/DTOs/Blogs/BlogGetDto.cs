@@ -16,6 +16,7 @@ namespace CarAuction.Service.DTOs.Blogs
         public string BaseImageUrl { get; set; }
         public string SectionImageUrl { get; set; }
         public string Fact { get; set; }
+        public string Author  { get; set; }
         public Category Category { get; set; }
         public List<Tag> Tags { get; set; }
     }

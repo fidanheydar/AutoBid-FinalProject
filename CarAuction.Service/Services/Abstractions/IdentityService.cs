@@ -86,11 +86,20 @@ namespace CarAuction.Service.Services.Abstractions
                     throw new LoginFailedException();
                 }
             }
+            
 
             SignInResult result = await _signInManager.CheckPasswordSignInAsync(user, loginDto.Password, true);
             if (!result.Succeeded)
             {
                 throw new LoginFailedException();
+            }
+            if (accessTokenLifeTime == 200)
+            {
+                await _signInManager.SignInAsync(user, false);
+                return new()
+                {
+                    StatusCode = (int)HttpStatusCode.OK,
+                };
             }
             TokenResponseDTO tokenResponseDto = await _tokenService.CreateAccessTokenAsync(user, accessTokenLifeTime);
             await _authService.UpdateRefreshToken(user, tokenResponseDto.RefreshToken, tokenResponseDto.Expiration, 5);
@@ -132,16 +141,30 @@ namespace CarAuction.Service.Services.Abstractions
                 {
                     var token = await _userManager.GeneratePasswordResetTokenAsync(appUser);
                     var result = await _userManager.ResetPasswordAsync(appUser, token, dto.Password);
+                    var loginResult = await Login(new LoginDto { EmailorUserName = dto.Email, Password = dto.Password }, 100);
+                    return new()
+                    {
+                        items = loginResult,
+                        StatusCode = 200,
+                    };
                 }
-                var loginResult = await Login(new LoginDto { EmailorUserName = dto.Email, Password = dto.Password }, 100);
+                
                 return new()
                 {
-                    items = loginResult,
                     StatusCode = 200,
                 };
             }
 
             return new() { StatusCode = 403 };
+        }
+        public async Task<AppUser> GetUserByName(string userName)
+        {
+            var user = await _userManager.FindByNameAsync(userName);
+            return user;
+        }
+        public async Task Logout()
+        {
+            await _signInManager.SignOutAsync();
         }
     }
 }

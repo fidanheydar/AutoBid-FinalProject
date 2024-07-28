@@ -1,0 +1,54 @@
+﻿@model BlogPostDto
+
+<div class="container">
+	<form method="post" enctype="multipart/form-data">
+		<div class="text text-danger" asp-validation-summary="ModelOnly"></div>
+	<div class="form-group">
+			<label asp-for="Title">Title:</label>
+			<input type="text" class="form-control" asp-for="Title" />
+			<span asp-validation-for="Title" class="text text-danger"></span>
+	</div>
+		<div class="form-group">
+			<label asp-for="Description">Description:</label>
+			<input type="text" class="form-control" asp-for="Description" />
+			<span asp-validation-for="Description" class="text text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label asp-for="Fact">Fact:</label>
+			<input type="text" class="form-control" asp-for="Fact" />
+			<span asp-validation-for="Fact" class="text text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label asp-for="CategoryId">Categories</label>
+			<select asp-for="CategoryId" class="form-select" aria-label="Default select example">
+				@foreach (var item in ViewBag.Categories)
+				{
+					<option value="@item.Id">@item.Name</option>
+				}
+			</select>
+			<span asp-validation-for="CategoryId" class="text text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label asp-for="TagIds">Tags</label>
+			<select multiple asp-for="TagIds" class="form-select" aria-label="Default select example">
+				@foreach (var item in ViewBag.Tags)
+				{
+					<option value="@item.Id">@item.Name</option>
+				}
+			</select>
+			<span asp-validation-for="TagIds" class="text text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label asp-for="@Model.BaseImage">Main Photo:</label>
+			<input type="file" class="form-control" asp-for="@Model.BaseImage" />
+			<span asp-validation-for="BaseImage" class="text text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label asp-for="@Model.SectionImage">Section Photo:</label>
+			<input type="file" class="form-control" asp-for="@Model.SectionImage" />
+			<span asp-validation-for="SectionImage" class="text text-danger"></span>
+		</div>
+			@Html.AntiForgeryToken()
+		<button type="submit" style="width:100%; " class="btn btn-outline-dark">Create</button>
+	</form>
+</div>

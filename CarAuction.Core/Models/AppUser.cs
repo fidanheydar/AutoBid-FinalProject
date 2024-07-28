@@ -13,5 +13,6 @@ namespace CarAuction.Core.Models
         public string Surname { get; set; } 
         public string? RefreshToken { get; set; }
         public DateTime? RefreshTokenExpirationDate { get; set; }
+        public virtual List<Blog> Blogs { get; set; }
     }
 }

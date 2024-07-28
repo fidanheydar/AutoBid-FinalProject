@@ -18,16 +18,14 @@ namespace CarAuction.App.Extensions
             {
                 options.TokenValidationParameters = new()
                 {
-                    ValidateIssuer = true,
                     ValidateAudience = true,
+                    ValidateIssuer = true,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
-
                     ValidAudience = audience,
                     ValidIssuer = issuer,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(signInKey)),
-                    LifetimeValidator = (_, expires, _, _) => expires != null ? expires > DateTime.UtcNow : false,
-
+                    LifetimeValidator = (notBefore, expires, securityToken, validationParameters) => expires != null ? expires > DateTime.UtcNow : false,
                     NameClaimType = ClaimTypes.Name
 
                 };

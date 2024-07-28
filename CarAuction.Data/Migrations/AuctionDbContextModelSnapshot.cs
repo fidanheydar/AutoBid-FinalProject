@@ -162,6 +162,10 @@ namespace CarAuction.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("AdminId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("BaseImageUrl")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -195,6 +199,8 @@ namespace CarAuction.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AdminId");
 
                     b.HasIndex("CategoryId");
 
@@ -649,11 +655,19 @@ namespace CarAuction.Data.Migrations
 
             modelBuilder.Entity("CarAuction.Core.Models.Blog", b =>
                 {
+                    b.HasOne("CarAuction.Core.Models.AppUser", "Admin")
+                        .WithMany("Blogs")
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("CarAuction.Core.Models.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Admin");
 
                     b.Navigation("Category");
                 });
@@ -794,6 +808,11 @@ namespace CarAuction.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CarAuction.Core.Models.AppUser", b =>
+                {
+                    b.Navigation("Blogs");
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Blog", b =>

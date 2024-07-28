@@ -1,11 +1,11 @@
 ﻿<Project>
   <ItemGroup>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\01cfa536-d621-4062-b1bf-2a3a3971a74eLogo_C_sharp.svg.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\01be222a-8c3f-4fad-ace5-dad3cbe7ddbfPepsi_black_1672149368.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>CarAuction.App</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CarAuction.App</BasePath>
-      <RelativePath>Images/Blogs/01cfa536-d621-4062-b1bf-2a3a3971a74eLogo_C_sharp.svg.png</RelativePath>
+      <RelativePath>Images/Blogs/01be222a-8c3f-4fad-ace5-dad3cbe7ddbfPepsi_black_1672149368.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -14,14 +14,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\01cfa536-d621-4062-b1bf-2a3a3971a74eLogo_C_sharp.svg.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\01be222a-8c3f-4fad-ace5-dad3cbe7ddbfPepsi_black_1672149368.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\410d1ddb-b9ac-47f9-aa46-a749020a7c38Logo_C_sharp.svg.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\651906ca-86cc-496b-a253-94e4005da1cbHavu_dilim_paxlava_1673434321.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>CarAuction.App</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CarAuction.App</BasePath>
-      <RelativePath>Images/Blogs/410d1ddb-b9ac-47f9-aa46-a749020a7c38Logo_C_sharp.svg.png</RelativePath>
+      <RelativePath>Images/Blogs/651906ca-86cc-496b-a253-94e4005da1cbHavu_dilim_paxlava_1673434321.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -30,14 +30,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\410d1ddb-b9ac-47f9-aa46-a749020a7c38Logo_C_sharp.svg.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\651906ca-86cc-496b-a253-94e4005da1cbHavu_dilim_paxlava_1673434321.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\453990a1-01d7-4bd9-86ed-867670309089Logo_C_sharp.svg.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\75639b3e-d46d-473b-947f-770f4106c888Pepsi_black_1672149368.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>CarAuction.App</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CarAuction.App</BasePath>
-      <RelativePath>Images/Blogs/453990a1-01d7-4bd9-86ed-867670309089Logo_C_sharp.svg.png</RelativePath>
+      <RelativePath>Images/Blogs/75639b3e-d46d-473b-947f-770f4106c888Pepsi_black_1672149368.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -46,14 +46,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\453990a1-01d7-4bd9-86ed-867670309089Logo_C_sharp.svg.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\75639b3e-d46d-473b-947f-770f4106c888Pepsi_black_1672149368.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\58f53c08-f2b7-4c23-bdf6-f54982f5ef4dLogo_C_sharp.svg.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\83f569da-e847-4117-9b2e-38670e168c73Havu_dilim_paxlava_1673434321.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>CarAuction.App</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CarAuction.App</BasePath>
-      <RelativePath>Images/Blogs/58f53c08-f2b7-4c23-bdf6-f54982f5ef4dLogo_C_sharp.svg.png</RelativePath>
+      <RelativePath>Images/Blogs/83f569da-e847-4117-9b2e-38670e168c73Havu_dilim_paxlava_1673434321.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -62,14 +62,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\58f53c08-f2b7-4c23-bdf6-f54982f5ef4dLogo_C_sharp.svg.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\83f569da-e847-4117-9b2e-38670e168c73Havu_dilim_paxlava_1673434321.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\5ac0ab73-e0ff-49f6-b410-c3be1209b05dLogo_C_sharp.svg.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\88a42c7b-4e1a-4abf-b025-aa8f14dc562cHavu_dilim_paxlava_1673434321.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>CarAuction.App</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CarAuction.App</BasePath>
-      <RelativePath>Images/Blogs/5ac0ab73-e0ff-49f6-b410-c3be1209b05dLogo_C_sharp.svg.png</RelativePath>
+      <RelativePath>Images/Blogs/88a42c7b-4e1a-4abf-b025-aa8f14dc562cHavu_dilim_paxlava_1673434321.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -78,14 +78,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\5ac0ab73-e0ff-49f6-b410-c3be1209b05dLogo_C_sharp.svg.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\88a42c7b-4e1a-4abf-b025-aa8f14dc562cHavu_dilim_paxlava_1673434321.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\64d55d6e-04e0-4ae0-9c9e-65eca9e9c6afLogo_C_sharp.svg.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\9331a386-5176-41db-b1c6-a825801339fcPepsi_black_1672149368.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>CarAuction.App</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CarAuction.App</BasePath>
-      <RelativePath>Images/Blogs/64d55d6e-04e0-4ae0-9c9e-65eca9e9c6afLogo_C_sharp.svg.png</RelativePath>
+      <RelativePath>Images/Blogs/9331a386-5176-41db-b1c6-a825801339fcPepsi_black_1672149368.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -94,14 +94,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\64d55d6e-04e0-4ae0-9c9e-65eca9e9c6afLogo_C_sharp.svg.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\9331a386-5176-41db-b1c6-a825801339fcPepsi_black_1672149368.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\66da9527-ad14-4218-9912-3c8152162dc7Logo_C_sharp.svg.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\9615e455-d2f8-4a4e-a7e0-2f3ad2559b9cHavu_dilim_paxlava_1673434321.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>CarAuction.App</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CarAuction.App</BasePath>
-      <RelativePath>Images/Blogs/66da9527-ad14-4218-9912-3c8152162dc7Logo_C_sharp.svg.png</RelativePath>
+      <RelativePath>Images/Blogs/9615e455-d2f8-4a4e-a7e0-2f3ad2559b9cHavu_dilim_paxlava_1673434321.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -110,14 +110,14 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\66da9527-ad14-4218-9912-3c8152162dc7Logo_C_sharp.svg.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\9615e455-d2f8-4a4e-a7e0-2f3ad2559b9cHavu_dilim_paxlava_1673434321.jpg))</OriginalItemSpec>
     </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\6833d173-3b69-4b53-aa37-fe0a3d336146Logo_C_sharp.svg.png))">
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\da68e5d2-f0ad-4384-8aac-4a7012342915Pepsi_black_1672149368.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>CarAuction.App</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/CarAuction.App</BasePath>
-      <RelativePath>Images/Blogs/6833d173-3b69-4b53-aa37-fe0a3d336146Logo_C_sharp.svg.png</RelativePath>
+      <RelativePath>Images/Blogs/da68e5d2-f0ad-4384-8aac-4a7012342915Pepsi_black_1672149368.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>
       <AssetRole>Primary</AssetRole>
@@ -126,87 +126,7 @@
       <AssetTraitValue></AssetTraitValue>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\6833d173-3b69-4b53-aa37-fe0a3d336146Logo_C_sharp.svg.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\a7d118e0-21d2-429e-abcb-6cdb719d6ee5Logo_C_sharp.svg.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>CarAuction.App</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CarAuction.App</BasePath>
-      <RelativePath>Images/Blogs/a7d118e0-21d2-429e-abcb-6cdb719d6ee5Logo_C_sharp.svg.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\a7d118e0-21d2-429e-abcb-6cdb719d6ee5Logo_C_sharp.svg.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\d4b7e5f5-d88d-4fce-a224-e25034de5e7aLogo_C_sharp.svg.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>CarAuction.App</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CarAuction.App</BasePath>
-      <RelativePath>Images/Blogs/d4b7e5f5-d88d-4fce-a224-e25034de5e7aLogo_C_sharp.svg.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\d4b7e5f5-d88d-4fce-a224-e25034de5e7aLogo_C_sharp.svg.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\dec507ae-02ca-403b-8517-a5d8af063cc2Logo_C_sharp.svg.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>CarAuction.App</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CarAuction.App</BasePath>
-      <RelativePath>Images/Blogs/dec507ae-02ca-403b-8517-a5d8af063cc2Logo_C_sharp.svg.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\dec507ae-02ca-403b-8517-a5d8af063cc2Logo_C_sharp.svg.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\e2670900-161e-489e-a5b2-61a9108bf6a9Logo_C_sharp.svg.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>CarAuction.App</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CarAuction.App</BasePath>
-      <RelativePath>Images/Blogs/e2670900-161e-489e-a5b2-61a9108bf6a9Logo_C_sharp.svg.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\e2670900-161e-489e-a5b2-61a9108bf6a9Logo_C_sharp.svg.png))</OriginalItemSpec>
-    </StaticWebAsset>
-    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\ed2bfe65-4ef5-4262-b7f2-70ead7651615Logo_C_sharp.svg.png))">
-      <SourceType>Package</SourceType>
-      <SourceId>CarAuction.App</SourceId>
-      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
-      <BasePath>_content/CarAuction.App</BasePath>
-      <RelativePath>Images/Blogs/ed2bfe65-4ef5-4262-b7f2-70ead7651615Logo_C_sharp.svg.png</RelativePath>
-      <AssetKind>All</AssetKind>
-      <AssetMode>All</AssetMode>
-      <AssetRole>Primary</AssetRole>
-      <RelatedAsset></RelatedAsset>
-      <AssetTraitName></AssetTraitName>
-      <AssetTraitValue></AssetTraitValue>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\ed2bfe65-4ef5-4262-b7f2-70ead7651615Logo_C_sharp.svg.png))</OriginalItemSpec>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\da68e5d2-f0ad-4384-8aac-4a7012342915Pepsi_black_1672149368.jpg))</OriginalItemSpec>
     </StaticWebAsset>
   </ItemGroup>
 </Project>

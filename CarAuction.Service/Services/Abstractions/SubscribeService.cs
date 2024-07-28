@@ -46,7 +46,7 @@ namespace CarAuction.Service.Services.Abstractions
 
         public async Task<ApiResponse> GetAllAsync(int count, int page)
         {
-            var response = await _readRepository.GetAll(null, count, page, false).ToListAsync();
+            var response = await _readRepository.GetAll(x=>!x.IsDeleted, count, page, false).ToListAsync();
             return new ApiResponse()
             {
                 items = response,

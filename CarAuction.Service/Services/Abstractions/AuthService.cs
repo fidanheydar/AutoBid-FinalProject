@@ -41,14 +41,14 @@ namespace CarAuction.Service.Services.Abstractions
                 emailResponseDto.Email = email;
                 emailResponseDto.Token = newResetToken;
                 emailResponseDto.UserId = user.Id;
-                string resetLink = $"http://localhost:3000/resetPassword?token={newResetToken}&userId={user.Id}";
+                string resetLink = $"https://localhost:7105/resetPassword?token={newResetToken}&userId={user.Id}";
 
                 await _mailService.SendEmailAsync(new MailRequestDTO
                 {
                     Attachments = null,
                     Subject = "ResetPassword",
                     Body = $"Please click on the link below to reset your password: \n {resetLink}",
-                    ToEmails = new List<string> { user.Email }
+                    ToEmails = new List<string> { user.Email },
                 }); ;
                 return new()
                 {

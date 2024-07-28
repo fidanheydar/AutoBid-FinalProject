@@ -111,7 +111,7 @@ namespace Miles.Service.Services.Implementations
 
         public async Task<ApiResponse> UpdateAsync(string id, ColorUpdateDto dto)
         {
-            if (await _readRepository.isExsist(x => x.Name.Trim().ToLower() == dto.Name.Trim().ToLower()))
+            if (await _readRepository.isExsist(x => x.Name.Trim().ToLower() == dto.Name.Trim().ToLower() && id != x.Id.ToString()))
             {
                 return new ApiResponse
                 {

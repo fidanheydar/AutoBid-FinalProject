@@ -19,6 +19,7 @@ using System.Diagnostics.Metrics;
 using CarAuction.Service.Extensions;
 using CarAuction.Core.Repositories.BlogTags;
 using CarAuction.Core.Repositories.Tags;
+using CarAuction.Service.Services.Abstractions;
 
 namespace Miles.Service.Services.Implementations
 {
@@ -31,8 +32,8 @@ namespace Miles.Service.Services.Implementations
         private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _evn;
         private readonly IHttpContextAccessor _http;
-
-        public BlogService(IMapper mapper, IBlogWriteRepository writerepository, IBlogReadRepository readRepository, IHttpContextAccessor http, IWebHostEnvironment evn, IBlogTagWriteRepository tagWriteRepository, IBlogTagReadRepository tagReadRepository)
+        private readonly IIdentityService _identityService;
+        public BlogService(IMapper mapper, IBlogWriteRepository writerepository, IBlogReadRepository readRepository, IHttpContextAccessor http, IWebHostEnvironment evn, IBlogTagWriteRepository tagWriteRepository, IBlogTagReadRepository tagReadRepository, IIdentityService identityService)
         {
             _mapper = mapper;
             _writerepository = writerepository;
@@ -41,20 +42,28 @@ namespace Miles.Service.Services.Implementations
             _evn = evn;
             _tagWriteRepository = tagWriteRepository;
             _tagReadRepository = tagReadRepository;
+            _identityService = identityService;
         }
 
         public async Task<ApiResponse> CreateAsync(BlogPostDto dto)
         {
+           string userName =  _http.HttpContext?.User.Identity.Name;
+           var user = await _identityService.GetUserByName(userName);
+            if (user == null) 
+                throw new Exception("User not found");
+
+            dto.AdminId = user.Id;
+
 
             Blog Blog = _mapper.Map<Blog>(dto);
 
             string url = dto.BaseImage.CreateImage(_evn.WebRootPath, "Images/Blogs");
             Blog.BaseImageUrl = _http.HttpContext?.Request.Scheme + "://" + _http.HttpContext?.Request.Host
-                + $"Images/Blogs/{url}";
+                + $"/Images/Blogs/{url}";
 
             url = dto.SectionImage.CreateImage(_evn.WebRootPath, "Images/Blogs");
             Blog.SectionImageUrl = _http.HttpContext?.Request.Scheme + "://" + _http.HttpContext?.Request.Host
-                + $"Images/Blogs/{url}";
+                + $"/Images/Blogs/{url}";
 
             foreach (var item in dto.TagIds)
             {
@@ -77,13 +86,14 @@ namespace Miles.Service.Services.Implementations
 
         public async Task<ApiResponse> GetAllAsync(int count, int page)
         {
-            IEnumerable<Blog> Blogs = await _readRepository.GetAll(x => !x.IsDeleted, count, page).Include(x => x.Category).Include(x => x.BlogTags).ThenInclude(x => x.Tag).ToListAsync();
+            IEnumerable<Blog> Blogs = await _readRepository.GetAll(x => !x.IsDeleted, count, page).Include(x => x.Category).Include(x=>x.Admin).Include(x => x.BlogTags).ThenInclude(x => x.Tag).ToListAsync();
 
             List<BlogGetDto> dtos = _mapper.Map<List<BlogGetDto>>(Blogs);
 
             foreach (BlogGetDto dto in dtos)
             {
                 dto.Tags =  _tagReadRepository.GetAll(x=>!x.IsDeleted && x.BlogId == dto.Id, count, page).Include(x=>x.Tag).ToList().Select(x=>x.Tag).ToList();
+
             }
 
             return new ApiResponse
@@ -95,7 +105,10 @@ namespace Miles.Service.Services.Implementations
 
         public async Task<ApiResponse> GetAsync(string id)
         {
-            Blog Blog = await _readRepository.GetByIdAsync(id, x => !x.IsDeleted, true);
+            Blog Blog = await _readRepository.GetByIdAsync(id, x => !x.IsDeleted, true, "Category","Admin","BlogTags");
+
+            Blog.BlogTags = await( _tagReadRepository.GetAll(x=>x.BlogId == Blog.Id,0,0)).Include(x=>x.Tag).ToListAsync();
+
             if (Blog is null)
             {
                 return new ApiResponse

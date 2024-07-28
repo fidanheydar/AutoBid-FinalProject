@@ -17,38 +17,53 @@ namespace CarAuction.Service.Profiles
         {
             CreateMap<Blog, BlogPostDto>().ReverseMap();
             CreateMap<Blog, BlogUpdateDto>().ReverseMap();
+            CreateMap<BlogGetDto, BlogUpdateDto>().ReverseMap();
             CreateMap<BlogGetDto, Blog>().ReverseMap();
 
             CreateMap<Brand, BrandPostDto>().ReverseMap();
             CreateMap<Brand, BrandUpdateDto>().ReverseMap();
+            CreateMap<BrandGetDto, BrandUpdateDto>().ReverseMap();
             CreateMap<BrandGetDto, Brand>().ReverseMap();
 
             CreateMap<Model, ModelPostDto>().ReverseMap();
             CreateMap<Model, ModelUpdateDto>().ReverseMap();
+            CreateMap<ModelGetDto, ModelUpdateDto>().ReverseMap();
             CreateMap<ModelGetDto, Model>().ReverseMap();
 
             CreateMap<Fuel, FuelPostDto>().ReverseMap();
             CreateMap<Fuel, FuelUpdateDto>().ReverseMap();
+            CreateMap<FuelGetDto, FuelUpdateDto>().ReverseMap();
             CreateMap<FuelGetDto, Fuel>().ReverseMap();
 
             CreateMap<Blog, BlogPostDto>().ReverseMap();
             CreateMap<Blog, BlogUpdateDto>().ReverseMap();
-            CreateMap<BlogGetDto, Blog>().ReverseMap();
+            CreateMap<BlogUpdateDto, BlogGetDto>().ReverseMap().ForMember(dto => dto.TagIds,
+               opt => opt.MapFrom(src =>
+               src.Tags.Select(x => x.Id).ToList()));
+
+            CreateMap<BlogGetDto, Blog>().ReverseMap().ForMember(dto => dto.Author, opt => opt.MapFrom(src =>
+               src.Admin.Name + " "+ src.Admin.Surname )).ForMember(dto=>dto.Tags,
+               opt=> opt.MapFrom(src=>
+               src.BlogTags.Select(x=>x.Tag).ToList()));
 
             CreateMap<Tag, TagPostDto>().ReverseMap();
             CreateMap<Tag, TagUpdateDto>().ReverseMap();
+            CreateMap<TagGetDto, TagUpdateDto>().ReverseMap();
             CreateMap<TagGetDto, Tag>().ReverseMap();
 
             CreateMap<Color, ColorPostDto>().ReverseMap();
             CreateMap<Color, ColorUpdateDto>().ReverseMap();
+            CreateMap<ColorGetDto, ColorUpdateDto>().ReverseMap();
             CreateMap<ColorGetDto, Color>().ReverseMap();
 
             CreateMap<Category, CategoryPostDto>().ReverseMap();
             CreateMap<Category, CategoryUpdateDto>().ReverseMap();
+            CreateMap<CategoryGetDto, CategoryUpdateDto>().ReverseMap();
             CreateMap<CategoryGetDto, Category>().ReverseMap();
 
             CreateMap<Car, CarPostDto>().ReverseMap();
             CreateMap<Car, CarUpdateDto>().ReverseMap();
+            CreateMap<CarGetDto, CarUpdateDto>().ReverseMap();
             CreateMap<CarGetDto, Car>().ReverseMap();
 
         }

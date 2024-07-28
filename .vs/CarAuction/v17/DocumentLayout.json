@@ -1,7 +1,32 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|solutionrelative:carauction.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.service\\services\\abstractions\\colorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\services\\abstractions\\colorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.mvc\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|solutionrelative:carauction.mvc\\controllers\\brandcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.mvc\\controllers\\modelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|solutionrelative:carauction.mvc\\controllers\\modelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.mvc\\controllers\\colorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|solutionrelative:carauction.mvc\\controllers\\colorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|c:\\users\\nijat\\onedrive\\desktop\\carauction\\carauction.mvc\\controllers\\fuelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|solutionrelative:carauction.mvc\\controllers\\fuelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -18,6 +43,79 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ColorService.cs",
+              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Services\\Abstractions\\ColorService.cs",
+              "RelativeDocumentMoniker": "CarAuction.Service\\Services\\Abstractions\\ColorService.cs",
+              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\Services\\Abstractions\\ColorService.cs",
+              "RelativeToolTip": "CarAuction.Service\\Services\\Abstractions\\ColorService.cs",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAowHUAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T18:00:44.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BrandController.cs",
+              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\Controllers\\BrandController.cs",
+              "RelativeDocumentMoniker": "CarAuction.MVC\\Controllers\\BrandController.cs",
+              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\Controllers\\BrandController.cs",
+              "RelativeToolTip": "CarAuction.MVC\\Controllers\\BrandController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T18:29:19.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ModelController.cs",
+              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\Controllers\\ModelController.cs",
+              "RelativeDocumentMoniker": "CarAuction.MVC\\Controllers\\ModelController.cs",
+              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\Controllers\\ModelController.cs",
+              "RelativeToolTip": "CarAuction.MVC\\Controllers\\ModelController.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAkwEkAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T18:28:48.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ColorController.cs",
+              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\Controllers\\ColorController.cs",
+              "RelativeDocumentMoniker": "CarAuction.MVC\\Controllers\\ColorController.cs",
+              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\Controllers\\ColorController.cs",
+              "RelativeToolTip": "CarAuction.MVC\\Controllers\\ColorController.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAA3wBAAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T18:28:19.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FuelController.cs",
+              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\Controllers\\FuelController.cs",
+              "RelativeDocumentMoniker": "CarAuction.MVC\\Controllers\\FuelController.cs",
+              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\Controllers\\FuelController.cs",
+              "RelativeToolTip": "CarAuction.MVC\\Controllers\\FuelController.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAkwD4AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T18:25:31.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "CarAuction.MVC\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "CarAuction.MVC\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAKUAAAAAAAAAAAAAALMAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-28T18:25:28.399Z",
+              "EditorCaption": ""
             }
           ]
         },

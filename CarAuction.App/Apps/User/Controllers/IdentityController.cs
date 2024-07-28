@@ -1,6 +1,7 @@
 ﻿using CarAuction.Core.Models;
 using CarAuction.Service.DTOs.Identity;
 using CarAuction.Service.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +30,7 @@ namespace CarAuction.App.Apps.User.Controllers
 
         [HttpPut]
         [ActionName("Update")]
+        [Authorize]
         public async Task<IActionResult> Update(UpdateDto dto)
         {
             var response = await _identityService.UpdateUser(dto);

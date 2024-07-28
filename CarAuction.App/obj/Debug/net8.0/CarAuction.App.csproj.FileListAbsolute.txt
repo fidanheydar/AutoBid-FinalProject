@@ -143,7 +143,6 @@ C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\CarAu
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\CarAuction.App.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\CarAuction.App.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\CarAuction.App.sourcelink.json
-C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\scopedcss\bundle\CarAuction.App.styles.css
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\staticwebassets\msbuild.CarAuction.App.Microsoft.AspNetCore.StaticWebAssets.props
@@ -151,6 +150,7 @@ C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\stati
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.CarAuction.App.props
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.CarAuction.App.props
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\scopedcss\bundle\CarAuction.App.styles.css
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\CarAucti.D4D047B5.Up2Date
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\CarAuction.App.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\refint\CarAuction.App.dll

@@ -26,20 +26,20 @@ namespace CarAuction.Service
 
             service.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            service.AddScoped<ICategoryService, CategoryService>();
-            service.AddScoped<IBanService, BanService>();
-            service.AddScoped<IBrandService, BrandService>();
-            service.AddScoped<IModelService, ModelService>();
-            service.AddScoped<ITagService, TagService>();
-            service.AddScoped<IBlogService, BlogService>();
-            service.AddScoped<IFuelService, FuelService>();
-            service.AddScoped<ISubscribeService, SubscribeService>();
-            service.AddScoped<ICarService, CarService>();
-            service.AddScoped<IColorService, ColorService>();
-            service.AddScoped<IMailService, MailService>();
-            service.AddScoped<ITokenService, TokenService>();
-            service.AddScoped<IAuthService, AuthService>();
-            service.AddScoped<IIdentityService, IdentityService>();
+            service.AddTransient<ICategoryService, CategoryService>();
+            service.AddTransient<IBanService, BanService>();
+            service.AddTransient<IBrandService, BrandService>();
+            service.AddTransient<IModelService, ModelService>();
+            service.AddTransient<ITagService, TagService>();
+            service.AddTransient<IBlogService, BlogService>();
+            service.AddTransient<IFuelService, FuelService>();
+            service.AddTransient<ISubscribeService, SubscribeService>();
+            service.AddTransient<ICarService, CarService>();
+            service.AddTransient<IColorService, ColorService>();
+            service.AddTransient<IMailService, MailService>();
+            service.AddTransient<ITokenService, TokenService>();
+            service.AddTransient<IAuthService, AuthService>();
+            service.AddTransient<IIdentityService, IdentityService>();
 
             service.AddIdentity<AppUser, AppRole>(
            options =>

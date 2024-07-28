@@ -46,6 +46,7 @@ namespace CarAuction.Data.Repositories
             foreach (string include in includes)
                 query = query.Include(include);
 
+
             Guid.TryParse(id, out var guid);
             return await query.FirstOrDefaultAsync(e => e.Id == guid);
         }

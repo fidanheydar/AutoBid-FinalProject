@@ -79,6 +79,7 @@ namespace CarAuction.App
 
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseStaticFiles();
 
             app.MapControllers();
 
