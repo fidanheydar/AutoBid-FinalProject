@@ -264,6 +264,10 @@ namespace CarAuction.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("AdminId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<Guid>("BanId")
                         .HasColumnType("uniqueidentifier");
 
@@ -319,6 +323,8 @@ namespace CarAuction.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AdminId");
 
                     b.HasIndex("BanId");
 
@@ -497,6 +503,54 @@ namespace CarAuction.Data.Migrations
                     b.HasIndex("BrandId");
 
                     b.ToTable("Models");
+                });
+
+            modelBuilder.Entity("CarAuction.Core.Models.Setting", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AboutImageUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("LogoUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("WorkHours")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Settings");
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Subscribe", b =>
@@ -693,6 +747,12 @@ namespace CarAuction.Data.Migrations
 
             modelBuilder.Entity("CarAuction.Core.Models.Car", b =>
                 {
+                    b.HasOne("CarAuction.Core.Models.AppUser", "Admin")
+                        .WithMany("Cars")
+                        .HasForeignKey("AdminId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("CarAuction.Core.Models.Ban", "Ban")
                         .WithMany()
                         .HasForeignKey("BanId")
@@ -716,6 +776,8 @@ namespace CarAuction.Data.Migrations
                         .HasForeignKey("ModelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Admin");
 
                     b.Navigation("Ban");
 
@@ -813,6 +875,8 @@ namespace CarAuction.Data.Migrations
             modelBuilder.Entity("CarAuction.Core.Models.AppUser", b =>
                 {
                     b.Navigation("Blogs");
+
+                    b.Navigation("Cars");
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Blog", b =>

@@ -26,6 +26,7 @@ namespace CarAuction.Data.Context
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<BlogTag> BlogTags { get; set; }
         public DbSet<Subscribe> Subscribes { get; set; }
+        public DbSet<Setting> Settings { get; set; }
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
             var datas = ChangeTracker.Entries<BaseEntity>();

@@ -10,6 +10,7 @@ namespace CarAuction.Service.DTOs.Cars
 {
     public record CarPostDto
     {
+        //public string AdminId { get; set; }
         public string Vin { get; set; }
         public int FabricationYear { get; set; }
         public double Odometer { get; set; }

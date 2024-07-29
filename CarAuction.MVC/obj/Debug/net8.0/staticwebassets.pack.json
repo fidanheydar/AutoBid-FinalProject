@@ -17,6 +17,26 @@
       "PackagePath": "staticwebassets\\Images\\Blogs\\78f112ba-efa3-46d9-bcb1-9c92db41e49fBMW.svg.png"
     },
     {
+      "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Cars\\43f2cb71-0e6c-46dc-aa5c-cbf2e7ec7922images.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Cars\\43f2cb71-0e6c-46dc-aa5c-cbf2e7ec7922images.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Cars\\9e675d81-b1dd-434e-94b8-638f7c5720b1images (1).jpeg",
+      "PackagePath": "staticwebassets\\Images\\Cars\\9e675d81-b1dd-434e-94b8-638f7c5720b1images (1).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Cars\\d9d37953-0d09-4a4a-bd6b-e80371f3c254images (2).jpeg",
+      "PackagePath": "staticwebassets\\Images\\Cars\\d9d37953-0d09-4a4a-bd6b-e80371f3c254images (2).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Settings\\87c10bfe-d70f-4e95-a95a-8cdb0343f6cflogo.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Settings\\87c10bfe-d70f-4e95-a95a-8cdb0343f6cflogo.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Settings\\de9ae9af-3101-4709-9771-a60c36330c75Autobid-About_comp.jpg",
+      "PackagePath": "staticwebassets\\Images\\Settings\\de9ae9af-3101-4709-9771-a60c36330c75Autobid-About_comp.jpg"
+    },
+    {
       "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\css\\car-update.css",
       "PackagePath": "staticwebassets\\admin\\assets\\css\\car-update.css"
     },
@@ -247,6 +267,10 @@
     {
       "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\js\\Chart.min.js",
       "PackagePath": "staticwebassets\\admin\\assets\\js\\Chart.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\js\\car-update.js",
+      "PackagePath": "staticwebassets\\admin\\assets\\js\\car-update.js"
     },
     {
       "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\js\\chart.js",

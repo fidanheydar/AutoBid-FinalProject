@@ -1,4 +1,6 @@
-﻿using CarAuction.Service.DTOs.Cars;
+﻿using AutoMapper;
+using CarAuction.Core.Models;
+using CarAuction.Service.DTOs.Cars;
 using CarAuction.Service.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -16,18 +18,22 @@ namespace CarAuction.MVC.Controllers
         private readonly IBanService _banService;
         private readonly IColorService _colorService;
         private readonly IBrandService _brandService;
+        private readonly IModelService _modelService;
         private readonly ILogger<CarController> _logger;
-        public CarController(ICarService service,IFuelService fuelService, IBanService banService, IColorService colorService, IBrandService brandService, ILogger<CarController> logger)
-        {
-            _service = service;
-            _fuelService = fuelService;
-            _banService = banService;
-            _colorService = colorService;
-            _brandService = brandService;
-            _logger = logger;
-        }
+        private readonly IMapper _mapper;
+		public CarController(ICarService service, IFuelService fuelService, IBanService banService, IColorService colorService, IBrandService brandService, ILogger<CarController> logger, IModelService modelService, IMapper mapper)
+		{
+			_service = service;
+			_fuelService = fuelService;
+			_banService = banService;
+			_colorService = colorService;
+			_brandService = brandService;
+			_logger = logger;
+			_modelService = modelService;
+			_mapper = mapper;
+		}
 
-        public async Task<IActionResult> Index(int page = 1)
+		public async Task<IActionResult> Index(int page = 1)
         {
             var result = await _service.GetAllAsync(0, 0);
             int TotalCount = ((IEnumerable<CarGetDto>)result.items).Count();
@@ -82,16 +88,18 @@ namespace CarAuction.MVC.Controllers
             var resultBan = await _banService.GetAllAsync(0, 0);
             var resultColor = await _colorService.GetAllAsync(0, 0);
             var resultBrand = await _brandService.GetAllAsync(0, 0);
-            ViewBag.Fuels = resultFuel.items;
+			var resultImage = await _service.GetAllImages(id);
+			ViewBag.Fuels = resultFuel.items;
             ViewBag.Bans = resultBan.items;
             ViewBag.Colors = resultColor.items;
             ViewBag.Brands = resultBrand.items;
-            var result = await _service.GetAsync(id);
+			ViewBag.Images = resultImage.items;
+			var result = await _service.GetAsync(id);
             if (result.StatusCode == 404)
             {
                 return NotFound();
             }
-            return View(result.items);
+            return View(_mapper.Map<CarUpdateDto>(result.items));
         }
         [HttpPost]
 		[ValidateAntiForgeryToken]
@@ -101,10 +109,12 @@ namespace CarAuction.MVC.Controllers
 			var resultBan = await _banService.GetAllAsync(0, 0);
 			var resultColor = await _colorService.GetAllAsync(0, 0);
 			var resultBrand = await _brandService.GetAllAsync(0, 0);
+			var resultImage = await _service.GetAllImages(id);
 			ViewBag.Fuels = resultFuel.items;
 			ViewBag.Bans = resultBan.items;
 			ViewBag.Colors = resultColor.items;
 			ViewBag.Brands = resultBrand.items;
+			ViewBag.Images = resultImage.items;
 			if (!ModelState.IsValid)
             {
                 return View(dto);
@@ -129,42 +139,46 @@ namespace CarAuction.MVC.Controllers
             //_logger.LogInformation("Car Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
-		//public async Task<IActionResult> SetAsMainImage(int id)
-		//{
-  //          var result =await _carImageService.GetAsync(id,null);
-		//	CarImage carImage = (CarImage)result.itemView;
+		public async Task<IActionResult> GetAllModel()
+		{
+			var result = await _modelService.GetAllAsync(0, 0);
+			return Json(result.items);
+		}
+        public async Task<IActionResult> SetAsMainImage(string id)
+        {
+            var result = await _service.GetImage(x=>x.Id.ToString() == id && !x.IsDeleted);
+            CarImage carImage = (CarImage)result.items;
 
-		//	if (carImage == null)
-		//	{
-		//		return Json(new { status = 404 });
-		//	}
+            if (carImage == null)
+            {
+                return Json(new { status = 404 });
+            }
 
-		//	carImage.isMain = true;
-		//	result = await _carImageService.GetAsync(id, x => x.isMain && x.CarId == carImage.CarId);
-		//	CarImage? carImage1 = (CarImage)result.itemView;
-		//	if (carImage1 is not null)
-  //          {
-  //              carImage1.isMain = false;
-  //          }
-		//	await _carImageService.Save();
-  //          _logger.LogInformation("Car Main Image Updated by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
-  //          return Json(new { status = 200 });
-		//}
-		//public async Task<IActionResult> RemoveImage(int id)
-		//{
-  //          var result = await _carImageService.GetAllAsync(0, 0, x => !x.IsDeleted && x.Id == id);
-  //          CarImage? carImage = ((IEnumerable<CarImage>)result.items).FirstOrDefault();
+            carImage.isMain = true;
+            result = await _service.GetImage(x => x.isMain && x.CarId == carImage.CarId);
+            CarImage? carImage1 = (CarImage)result.items;
+            if (carImage1 is not null)
+            {
+                carImage1.isMain = false;
+            }
+            await _service.SaveImage();
+            //_logger.LogInformation("Car Main Image Updated by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
+            return Json(new { status = 200 });
+        }
+        public async Task<IActionResult> RemoveImage(string id)
+        {
+            CarImage carImage = (CarImage)(await _service.GetImage(x => !x.IsDeleted && x.Id.ToString() == id)).items;
 
-		//	if (carImage == null)
-		//		return Json(new { status = 404, desc = "image not found" });
+            if (carImage == null)
+                return Json(new { status = 404, desc = "image not found" });
 
-		//	if (carImage.isMain)
-		//		return Json(new { status = 400, desc = "You cannot remove main image" });
+            if (carImage.isMain)
+                return Json(new { status = 400, desc = "You cannot remove main image" });
 
-		//	carImage.IsDeleted = true;
-		//	await _carImageService.Save();
-  //          _logger.LogInformation("Car Image Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
-  //          return Json(new { status = 200 });
-		//}
-	}
+            carImage.IsDeleted = true;
+			await _service.SaveImage();
+			//_logger.LogInformation("Car Image Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
+			return Json(new { status = 200 });
+        }
+    }
 }

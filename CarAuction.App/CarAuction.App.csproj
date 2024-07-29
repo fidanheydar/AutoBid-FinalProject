@@ -25,6 +25,8 @@
     <Folder Include="Controllers\" />
     <Folder Include="wwwroot\Images\Bans\" />
     <Folder Include="wwwroot\Images\Blogs\" />
+    <Folder Include="wwwroot\Images\Cars\" />
+    <Folder Include="wwwroot\Images\Settings\" />
   </ItemGroup>
 
 </Project>

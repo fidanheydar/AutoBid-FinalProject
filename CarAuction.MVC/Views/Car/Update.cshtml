@@ -1,4 +1,4 @@
-﻿@* @model CarUpdateDto
+﻿@model CarUpdateDto
 <div class="container">
 	<form method="post" enctype="multipart/form-data">
 		<div class="text text-danger" asp-validation-summary="ModelOnly"></div>
@@ -31,14 +31,6 @@
 						<option value="0">Choose one of them</option>
 						@foreach (var item in ViewBag.Bans)
 						{
-							if (Model.BanId != null)
-							{
-								if (Model.BanId == item.Id)
-								{
-									<option selected value="@item.Id">@item.Name</option>
-									continue;
-								}
-							}
 							<option value="@item.Id">@item.Name</option>
 						}
 					</select>
@@ -62,6 +54,16 @@
 					</select>
 					<span asp-validation-for="FabricationYear" class="text text-danger"></span>
 				</div>
+				<div class="col-sm">
+					<label asp-for="ColorId">Color:</label>
+					<select asp-for="ColorId" class="form-select" aria-label="Default select example">
+						@foreach (var item in ViewBag.Colors)
+						{
+							<option value="@item.Id" style="color:@item.Name">&#11044;@item.Name</option>
+						}
+					</select>
+					<span asp-validation-for="ColorId" class="text text-danger"></span>
+				</div>
 			</div>
 		</div>
 		<div class="form-group">
@@ -69,17 +71,8 @@
 				<div class="col-sm">
 					<label asp-for="FuelId">Fuel:</label>
 					<select asp-for="FuelId" class="form-select" aria-label="Default select example">
-						<option value="0">Choose one of them</option>
 						@foreach (var item in ViewBag.Fuels)
 						{
-							if (Model.FuelId != null)
-							{
-								if (Model.FuelId == item.Id)
-								{
-									<option selected value="@item.Id">@item.Name</option>
-									continue;
-								}
-							}
 							<option value="@item.Id">@item.Name</option>
 						}
 					</select>
@@ -129,52 +122,19 @@
 		<div class="form-group">
 			<div class="row">
 				<div class="col-sm">
-					<label asp-for="AppUserId">User:</label>
-					<select asp-for="AppUserId" class="form-select" aria-label="Default select example">
-						<option value="0">Choose one of them</option>
-						@foreach (var item in ViewBag.Users)
-						{
-							if (Model.AppUserId != null)
-							{
-								if (Model.AppUserId == item.Id)
-								{
-									<option selected value="@item.Id">@item.Name</option>
-									continue;
-								}
-							}
-							<option value="@item.Id">@item.Name</option>
-						}
-					</select>
-					<span asp-validation-for="AppUserId" class="text text-danger"></span>
+					<label asp-for="AuctionDate">Action Date:</label>
+					<input class="form-control" asp-for="AuctionDate" />
+					<span asp-validation-for="AuctionDate" class="text text-danger"></span>
 				</div>
 				<div class="col-sm">
-					<label asp-for="ColorId">Color:</label>
-					<select asp-for="ColorId" class="form-select" aria-label="Default select example">
-						<option value="0">Choose one of them</option>
-						@foreach (var item in ViewBag.Colors)
-						{
-							if (Model.ColorId != null)
-							{
-								if (Model.ColorId == item.Id)
-								{
-									<option selected value="@item.Id" style="color:@item.Name">&#11044; @item.Name</option>
-									continue;
-								}
-							}
-							<option value="@item.Id" style="color:@item.Name">&#11044;@item.Name</option>
-						}
-					</select>
-					<span asp-validation-for="ColorId" class="text text-danger"></span>
+					<label asp-for="FinishDate">Finish Date:</label>
+					<input class="form-control" asp-for="FinishDate" />
+					<span asp-validation-for="FinishDate" class="text text-danger"></span>
 				</div>
 				<div class="col-sm">
-					<label asp-for="ActionDate">Action Date:</label>
-					<input class="form-control auctionDate" asp-for="ActionDate" />
-					<span asp-validation-for="ActionDate" class="text text-danger"></span>
-				</div>
-				<div class="col-sm">
-					<label asp-for="Price">Price:</label>
-					<input class="form-control" asp-for="Price" />
-					<span asp-validation-for="Price" class="text text-danger"></span>
+					<label asp-for="InitialPrice">Initial Price:</label>
+					<input class="form-control" asp-for="InitialPrice" />
+					<span asp-validation-for="InitialPrice" class="text text-danger"></span>
 				</div>
 			</div>
 		</div>
@@ -184,9 +144,9 @@
 			<span asp-validation-for="Description" class="text text-danger"></span>
 		</div>
 		<div class="form-group">
-			<label asp-for="@Model.FormFiles">File:</label>
-			<input multiple type="file" class="form-control" asp-for="@Model.FormFiles" />
-			<span asp-validation-for="FormFiles" class="text text-danger"></span>
+			<label asp-for="@Model.Images">Images:</label>
+			<input multiple type="file" class="form-control" asp-for="@Model.Images" />
+			<span asp-validation-for="Images" class="text text-danger"></span>
 
 		</div>
 		<div class="form-group">
@@ -195,7 +155,7 @@
 			{
 					<div class="col-sm" style="display:flex;flex-direction:column;align-items: center;gap: 10px">
 						<div style="position:relative;">
-						<img style="width:200px;height:200px;" src="~/Images/Cars/@item.Image" />
+						<img style="width:200px;height:200px;" src="@item.ImageUrl" />
 						
 								<a class="delete-button removeimage" type="button" asp-action="RemoveImage" asp-controller="car" asp-route-id="@item.Id">
 									<svg class="delete-svgIcon" viewBox="0 0 448 512">
@@ -231,5 +191,4 @@
 	</form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="~/JavaScript/car-update.js"></script>
- *@
+<script src="~/admin/assets/js/car-update.js"></script>

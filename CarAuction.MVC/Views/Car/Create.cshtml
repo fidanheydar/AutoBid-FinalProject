@@ -1,4 +1,4 @@
-﻿@* @model CarPostDto
+﻿@model CarPostDto
 <div class="container">
 	<form method="post" enctype="multipart/form-data">
 		<div class="text text-danger" asp-validation-summary="ModelOnly"></div>
@@ -46,6 +46,16 @@
 					</select>
 					<span asp-validation-for="FabricationYear" class="text text-danger"></span>
 			</div>
+				<div class="col-sm">
+					<label asp-for="ColorId">Color:</label>
+					<select asp-for="ColorId" id="colors" class="form-select" aria-label="Default select example">
+						@foreach (var item in ViewBag.Colors)
+						{
+							<option value="@item.Id" style="color:@item.Name">&#11044; @item.Name</option>
+						}
+					</select>
+					<span asp-validation-for="ColorId" class="text text-danger"></span>
+				</div>
 			</div>
 		</div>
 		<div class="form-group">
@@ -93,45 +103,34 @@
 					<input class="form-control" asp-for="Odometer" />
 					<span asp-validation-for="Odometer" class="text text-danger"></span>
 				</div>
-				
 				<div class="col-sm">
 					<label asp-for="Motor">Motor:</label>
 					<input class="form-control" asp-for="Motor" />
 					<span asp-validation-for="Motor" class="text text-danger"></span>
+				</div>
+				<div class="col-sm">
+					<label asp-for="Power">Power:</label>
+					<input class="form-control" asp-for="Power" />
+					<span asp-validation-for="Power" class="text text-danger"></span>
 				</div>
 			</div>
 		</div>
 		<div class="form-group">
 			<div class="row">
 				<div class="col-sm">
-					<label asp-for="AppUserId">User:</label>
-					<select asp-for="AppUserId" class="form-select" aria-label="Default select example">
-						@foreach (var item in ViewBag.Users)
-						{
-							<option value="@item.Id">@item.Name @item.Surname</option>
-						}
-					</select>
-					<span asp-validation-for="AppUserId" class="text text-danger"></span>
+					<label asp-for="AuctionDate">Action Date:</label>
+					<input class="form-control" asp-for="AuctionDate" />
+					<span asp-validation-for="AuctionDate" class="text text-danger"></span>
 				</div>
 				<div class="col-sm">
-					<label asp-for="ColorId">Color:</label>
-					<select asp-for="ColorId" id="colors" class="form-select" aria-label="Default select example">
-						@foreach (var item in ViewBag.Colors)
-						{
-												<option value="@item.Id" style="color:@item.Name">&#11044; @item.Name</option>
-						}
-					</select>
-					<span asp-validation-for="ColorId" class="text text-danger"></span>
+					<label asp-for="FinishDate">FinishDate:</label>
+					<input class="form-control" asp-for="FinishDate" />
+					<span asp-validation-for="FinishDate" class="text text-danger"></span>
 				</div>
 				<div class="col-sm">
-					<label asp-for="ActionDate">Action Date:</label>
-					<input class="form-control" asp-for="ActionDate" />
-					<span asp-validation-for="ActionDate" class="text text-danger"></span>
-				</div>
-				<div class="col-sm">
-					<label asp-for="Price">Price:</label>
-					<input class="form-control" asp-for="Price" />
-					<span asp-validation-for="Price" class="text text-danger"></span>
+					<label asp-for="InitialPrice">Initial Price:</label>
+					<input class="form-control" asp-for="InitialPrice" />
+					<span asp-validation-for="InitialPrice" class="text text-danger"></span>
 				</div>
 			</div>
 		</div>
@@ -141,9 +140,9 @@
 			<span asp-validation-for="Description" class="text text-danger"></span>
 		</div>
 		<div class="form-group">
-			<label asp-for="@Model.FormFiles">File:</label>
-			<input multiple type="file" class="form-control" asp-for="@Model.FormFiles" />
-			<span asp-validation-for="FormFiles" class="text text-danger"></span>
+			<label asp-for="@Model.Images">Images:</label>
+			<input multiple type="file" class="form-control" asp-for="@Model.Images" />
+			<span asp-validation-for="Images" class="text text-danger"></span>
 
 		</div>
 			@Html.AntiForgeryToken()
@@ -157,13 +156,13 @@
 	let currentYear = new Date().getFullYear();
 	let earliestYear = 2000;
 	let href = `/car/GetAllModel`;
-
 	fetch(href)
 		.then(x => x.json())
 		.then(x => {
 			const elements = x;
+
 			for (let i = 0; i < elements.length; i++) {
-				if (elements[i].brandId == input.value) {
+				if (elements[i].brand.id == input.value) {
 					var opt = document.createElement('option');
 					opt.value = elements[i].id;
 					opt.innerHTML = elements[i].name;
@@ -173,7 +172,7 @@
 			input.addEventListener("change", () => {
 				modelInput.innerHTML =""
 				for (let i = 0; i < elements.length; i++) {
-					if (elements[i].brandId == input.value){
+					if (elements[i].brand.id == input.value) {
 					    var opt = document.createElement('option');
 						opt.value = elements[i].id;
 						opt.innerHTML = elements[i].name;
@@ -198,5 +197,6 @@
 	const minutes = String(currentDate.getMinutes()).padStart(2, '0');
 
 	const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
-	document.querySelector(".auctionDate").min = formattedDate;
-</script> *@
+	document.querySelector("#AuctionDate").min = formattedDate;
+	document.querySelector("#FinishDate").min = formattedDate;
+</script>

@@ -9,6 +9,7 @@ namespace CarAuction.Service.DTOs.Cars
 {
     public record CarUpdateDto
     {
+        //public string AdminId { get; set; }
         public string Vin { get; set; }
         public int FabricationYear { get; set; }
         public double Odometer { get; set; }
@@ -27,6 +28,6 @@ namespace CarAuction.Service.DTOs.Cars
         public DateTime AuctionDate { get; set; }
         public DateTime FinishDate { get; set; }
         public List<IFormFile>? Images { get; set; }
-        public List<string> OldImageUrls { get; set; }
+        public List<string>? OldImageUrls { get; set; }
     }
 }

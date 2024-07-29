@@ -1,12 +1,13 @@
-﻿@* @model IEnumerable<Setting>
+﻿@model IEnumerable<SettingGetDto>
 <div class="container">
     <table class="table table-sm">
         <thead>
             <tr>
-                <th scope="col">Id</th>
                 <th scope="col">Email:</th>
                 <th scope="col">Phone 1:</th>
+                <th scope="col">Phone 2:</th>
                 <th scope="col">Logo:</th>
+                <th scope="col">About Image:</th>
                 <th scope="col">Update</th>
                 <th scope="col">Delete</th>
             </tr>
@@ -15,10 +16,11 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <th scope="row">@item.Id</th>
                     <th>@item.Email</th>
                     <th>@item.Phone1</th>
-                    <th><img style="width:100px;height:100px" src="~/Images/Settings/@item.Logo" /></th>
+                    <th>@item.Phone2</th>
+                    <th><img style="width:100px;height:100px" src="@item.LogoUrl" /></th>
+                    <th><img style="width:100px;height:100px" src="@item.AboutImageUrl" /></th>
                     <td>
                         <a asp-controller="Setting" asp-action="update" asp-route-id="@item.Id">
                             <i class="fas fa-edit text text-primary"></i>
@@ -33,6 +35,13 @@
             }
         </tbody>
     </table>
+    <div>
+            @if (Model.Count() == 0)
+        {
+            <a asp-controller="setting" asp-action="create" style="display: block; text-decoration: none; color: white; width: 100%; height: 100%" a>
+                <div style="width:100%; " class="btn btn-outline-success">Create Setting </div>
+        </a>
+        }
+    </div>
    
 </div>
- *@
