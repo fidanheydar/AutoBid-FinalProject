@@ -2,6 +2,7 @@
 using CarAuction.MVC.ViewModels;
 using CarAuction.Service.DTOs.Cars;
 using CarAuction.Service.DTOs.Identity;
+using CarAuction.Service.DTOs.Statuses;
 using CarAuction.Service.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -15,14 +16,16 @@ namespace CarAuction.MVC.Controllers
     {
         private readonly IIdentityService _identityService;
         private readonly ICarService _carService;
+        private readonly IStatusService _statusService;
 		//private readonly IBidService _bidService;
 
-		public HomeController(ICarService carService, IIdentityService identityService)
+		public HomeController(ICarService carService, IIdentityService identityService, IStatusService statusService)
 		{
 			_carService = carService;
 			_identityService = identityService;
+			_statusService = statusService;
 		}
-        public async Task<IActionResult> DateSearch(string? date, string? todate)
+		public async Task<IActionResult> DateSearch(string? date, string? todate)
         {
             var result = await _identityService.GetAllUsers(0, 0,"Admin");
             HomeVM vm = new()
@@ -74,6 +77,8 @@ namespace CarAuction.MVC.Controllers
             };
             result = await _carService.GetAllAsync(0, 0);
             vm.Cars = (IEnumerable<CarGetDto>)result.items;
+            result = await _statusService.GetAllAsync(0, 0);
+            vm.Statuses = (IEnumerable<StatusGetDto>)result.items;
             //result = await _bidService.GetAllAsync(0, 0, null);
             //adminPanelVM.Bids = (IEnumerable<Bid>)result.items;
             result = await _identityService.GetAllUsers(0, 0,"User");

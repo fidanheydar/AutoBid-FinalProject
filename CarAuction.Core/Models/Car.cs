@@ -35,5 +35,7 @@ namespace CarAuction.Core.Models
         public virtual AppUser Admin { get; set; }
         public virtual CarAuctionDetail CarAuctionDetail { get; set; }
         public virtual ICollection<CarImage> CarImages { get; set; }
+        [InverseProperty("Car")]
+        public virtual ICollection<Bid> Bids { get; set; }
     }
 }

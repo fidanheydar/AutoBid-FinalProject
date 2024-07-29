@@ -157,3 +157,8 @@ C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\refin
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\CarAuction.App.pdb
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\CarAuction.App.genruntimeconfig.cache
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\ref\CarAuction.App.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\CarAuction.App.staticwebassets.endpoints.json
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.App\obj\Debug\net8.0\staticwebassets\msbuild.CarAuction.App.Microsoft.AspNetCore.StaticWebAssetEndpoints.props

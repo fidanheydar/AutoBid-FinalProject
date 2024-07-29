@@ -12,6 +12,7 @@ using CarAuction.Service.DTOs.Settings;
 using CarAuction.Service.DTOs.Identity;
 using CarAuction.Service.DTOs.Bans;
 using CarAuction.Service.DTOs.Statuses;
+using CarAuction.Service.DTOs.Bids;
 
 namespace CarAuction.Service.Profiles
 {
@@ -50,10 +51,10 @@ namespace CarAuction.Service.Profiles
 			   opt => opt.MapFrom(src =>
 			   src.BlogTags.Select(x => x.Tag).ToList()));
 
-			CreateMap<Status, TagPostDto>().ReverseMap();
-			CreateMap<Status, TagUpdateDto>().ReverseMap();
+			CreateMap<Tag, TagPostDto>().ReverseMap();
+			CreateMap<Tag, TagUpdateDto>().ReverseMap();
 			CreateMap<TagGetDto, TagUpdateDto>().ReverseMap();
-			CreateMap<TagGetDto, Status>().ReverseMap();
+			CreateMap<TagGetDto, Tag>().ReverseMap();
 
             CreateMap<Status, StatusPostDto>().ReverseMap();
             CreateMap<Status, StatusUpdateDto>().ReverseMap();
@@ -90,7 +91,9 @@ namespace CarAuction.Service.Profiles
 			   src.Admin.Name + " " + src.Admin.Surname)).ForMember(dto => dto.AuctionDate, opt => opt.MapFrom(src =>src.CarAuctionDetail.AuctionDate)).ForMember(dto => dto.InitialPrice, opt => opt.MapFrom(src => src.CarAuctionDetail.InitialPrice)).ForMember(dto => dto.FinishDate, opt => opt.MapFrom(src => src.CarAuctionDetail.FinishDate)); ;
 
 			CreateMap<AppUser, UserGetDto>().ReverseMap();
+            CreateMap<BidPostDto, Bid>().ReverseMap();
+            CreateMap<Bid, BidGetDto>().ReverseMap();
 
-		}
-	}
+        }
+    }
 }

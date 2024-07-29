@@ -146,3 +146,4 @@ const minutes = String(currentDate.getMinutes()).padStart(2, '0');
 
 const formattedDate = `${year}-${month}-${day}T${hours}:${minutes}`;
 document.querySelector("#AuctionDate").min = formattedDate; 
+document.querySelector("#FinishDate").min = formattedDate; 

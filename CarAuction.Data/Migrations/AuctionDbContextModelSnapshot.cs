@@ -156,6 +156,40 @@ namespace CarAuction.Data.Migrations
                     b.ToTable("Bans");
                 });
 
+            modelBuilder.Entity("CarAuction.Core.Models.Bid", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CarId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("Count")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Bid");
+                });
+
             modelBuilder.Entity("CarAuction.Core.Models.Blog", b =>
                 {
                     b.Property<Guid>("Id")
@@ -742,6 +776,25 @@ namespace CarAuction.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("CarAuction.Core.Models.Bid", b =>
+                {
+                    b.HasOne("CarAuction.Core.Models.Car", "Car")
+                        .WithMany("Bids")
+                        .HasForeignKey("CarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CarAuction.Core.Models.AppUser", "User")
+                        .WithMany("Bids")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Car");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("CarAuction.Core.Models.Blog", b =>
                 {
                     b.HasOne("CarAuction.Core.Models.AppUser", "Admin")
@@ -807,7 +860,7 @@ namespace CarAuction.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("CarAuction.Core.Models.Model", "Model")
-                        .WithMany()
+                        .WithMany("Cars")
                         .HasForeignKey("ModelId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -917,6 +970,8 @@ namespace CarAuction.Data.Migrations
 
             modelBuilder.Entity("CarAuction.Core.Models.AppUser", b =>
                 {
+                    b.Navigation("Bids");
+
                     b.Navigation("Blogs");
 
                     b.Navigation("Cars");
@@ -934,10 +989,17 @@ namespace CarAuction.Data.Migrations
 
             modelBuilder.Entity("CarAuction.Core.Models.Car", b =>
                 {
+                    b.Navigation("Bids");
+
                     b.Navigation("CarAuctionDetail")
                         .IsRequired();
 
                     b.Navigation("CarImages");
+                });
+
+            modelBuilder.Entity("CarAuction.Core.Models.Model", b =>
+                {
+                    b.Navigation("Cars");
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Status", b =>

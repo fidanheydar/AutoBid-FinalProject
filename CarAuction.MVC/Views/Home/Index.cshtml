@@ -99,7 +99,7 @@
             </div>
         </div>
         <div class="row" style="margin-bottom: 30px;">
-            <div class="col-md-12 stretch-card">
+            <div class="col-md-6 stretch-card">
                 <div class="card">
                     <div class="card-body">
                         <p class="card-title">Cars</p>
@@ -107,18 +107,18 @@
                             <table  class="table">
                                 <thead>
                                     <tr>
-                                   @*        @foreach (var item in Model.Statuses)
+                                          @foreach (var item in Model.Statuses)
                                     {
                                         <th>@item.Name</th>
-                                    } *@
+                                    }
                                     </tr>
                                 </thead>
                                 <tbody>
                                         <tr>
-                                          @*   @foreach (var item in Model.Statuses)
+                                            @foreach (var item in Model.Statuses)
                                             {
                                                 <td>@item.Cars.Count()</td>
-                                            } *@
+                                            }
                                         </tr>
                                 </tbody>
                             </table>
@@ -126,9 +126,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-          
             <div class="col-md-6 stretch-card">
                 <div class="card">
                     <div class="card-body">
@@ -158,6 +155,5 @@
                 </div>
             </div>
         </div>
-   
     </div>
 </div>

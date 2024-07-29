@@ -17,5 +17,7 @@ namespace CarAuction.Core.Models
         public virtual List<Blog> Blogs { get; set; }
         [InverseProperty("Admin")]
         public virtual List<Car> Cars { get; set; }
+        [InverseProperty("User")]
+        public virtual List<Bid> Bids { get; set; }
     }
 }

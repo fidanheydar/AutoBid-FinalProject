@@ -21,6 +21,7 @@ using CarAuction.Data.Repositories.Cars;
 using CarAuction.Data.Repositories.CarImages;
 using CarAuction.Data.Repositories.BlogTags;
 using CarAuction.Core.Repositories.Statuss;
+using CarAuction.Core.Repositories.Bids;
 
 namespace CarAuction.Data
 {
@@ -51,6 +52,9 @@ namespace CarAuction.Data
 
             service.AddScoped<IFuelWriteRepository, FuelWriteRepository>();
             service.AddScoped<IFuelReadRepository, FuelReadRepository>();
+
+            service.AddScoped<IBidWriteRepository, BidWriteRepository>();
+            service.AddScoped<IBidReadRepository, BidReadRepository>();
 
             service.AddScoped<IBanWriteRepository, BanWriteRepository>();
             service.AddScoped<IBanReadRepository, BanReadRepository>();
