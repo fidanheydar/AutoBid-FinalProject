@@ -14,5 +14,7 @@ namespace CarAuction.Core.Models
         public Guid BrandId { get; set; }
         [JsonIgnore]
         public virtual Brand Brand { get; set; }
+        [JsonIgnore]
+        public virtual ICollection<Car> Cars { get; set; }
     }
 }

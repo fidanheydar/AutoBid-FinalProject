@@ -20,6 +20,7 @@ using CarAuction.Core.Repositories.Colors;
 using CarAuction.Data.Repositories.Cars;
 using CarAuction.Data.Repositories.CarImages;
 using CarAuction.Data.Repositories.BlogTags;
+using CarAuction.Core.Repositories.Statuss;
 
 namespace CarAuction.Data
 {
@@ -65,6 +66,9 @@ namespace CarAuction.Data
 
             service.AddScoped<IColorWriteRepository, ColorWriteRepository>();
             service.AddScoped<IColorReadRepository, ColorReadRepository>();
+
+            service.AddScoped<IStatusReadRepository, StatusReadRepository>();
+            service.AddScoped<IStatusWriteRepository, StatusWriteRepository>();
         }
     }
 }

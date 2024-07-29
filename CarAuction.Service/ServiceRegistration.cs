@@ -41,6 +41,8 @@ namespace CarAuction.Service
             service.AddTransient<IAuthService, AuthService>();
             service.AddTransient<IIdentityService, IdentityService>();
             service.AddTransient<ISettingService, SettingService>();
+            service.AddTransient<IStatusService, StatusService>();
+
 
             service.AddIdentity<AppUser, AppRole>(
            options =>

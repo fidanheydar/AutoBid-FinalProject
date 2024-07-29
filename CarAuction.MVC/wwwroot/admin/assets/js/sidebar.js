@@ -43,8 +43,8 @@ const searchInputs = document.querySelector(".navbar .navbar-menu-wrapper .navba
 const containers = document.querySelector(".searchValue")
 containers.style.width = width.offsetWidth + "px";
 function setSearch() {
-const width = document.querySelector(".navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search");
-containers.style.width = width.offsetWidth + "px";
+    const width = document.querySelector(".navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-search");
+    containers.style.width = width.offsetWidth + "px";
 }
 window.addEventListener('resize', setSearch);
 searchInputs.addEventListener("input", (e) => {
@@ -53,7 +53,7 @@ searchInputs.addEventListener("input", (e) => {
         containers.style.display = "none";
         return;
     }
-    let href = `/shop/search?search=${searchInputs.value}`;
+    let href = `/home/search?search=${searchInputs.value}`;
     fetch(href)
         .then(x => x.json())
         .then(x => {
@@ -62,16 +62,16 @@ searchInputs.addEventListener("input", (e) => {
                 containers.style.display = "block";
             }
             x.forEach(item => {
-                let price = item.price.toLocaleString('en-US');
+                let price = item.initialPrice.toLocaleString('en-US');
                 let image = null;
                 for (let i = 0; i < item.carImages.length; i++) {
                     if (item.carImages[i].isMain) {
-                        image = item.carImages[i].image;
+                        image = item.carImages[i].imageUrl;
                     }
                 }
                 let view = `<div class="searchItem">
-                                                    <img src="/Images/Cars/${image}"/>
-                                                    <a href="/shop/detail/${item.id}">
+                                                    <img src="${image}"/>
+                                                    <a href="/car/update/${item.id}">
                                                         <h4>Brand Model</h4>
                                                         <p>${item.model.name} ${item.fabricationYear}</p>
                                                     </a>

@@ -19,6 +19,7 @@ namespace CarAuction.Data.Context
         public DbSet<Car> Cars { get; set; }
         public DbSet<CarAuctionDetail> CarAuctionDetails { get; set; }
         public DbSet<CarImage> CarImages { get; set; }
+        public DbSet<Status> Statuses { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Fuel> Fuels { get; set; }
         public DbSet<Color> Colors { get; set; }

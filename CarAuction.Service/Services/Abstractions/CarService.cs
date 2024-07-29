@@ -3,6 +3,7 @@ using CarAuction.Core.Models;
 using CarAuction.Core.Repositories;
 using CarAuction.Core.Repositories.CarImages;
 using CarAuction.Core.Repositories.Cars;
+using CarAuction.Core.Repositories.Statuss;
 using CarAuction.Data.Repositories;
 using CarAuction.Service.DTOs.Cars;
 using CarAuction.Service.DTOs.Colors;
@@ -37,25 +38,29 @@ namespace CarAuction.Service.Services.Abstractions
         private readonly ICarImageReadRepository _carImageReadRepository;
         private readonly ICarImageWriteRepository _carImageWriteRepository;
         private readonly IIdentityService _identityService;
+        private readonly IStatusReadRepository _statusReadRepository;
 
-        public CarService(ICarImageReadRepository carImageReadRepository, ICarWriteRepository carWriteRepository, ICarReadRepository carReadRepository, IHttpContextAccessor http, IWebHostEnvironment evn, IMapper mapper, ICarImageWriteRepository carImageWriteRepository, IIdentityService identityService)
-        {
-            _carImageReadRepository = carImageReadRepository;
-            _carWriteRepository = carWriteRepository;
-            _carReadRepository = carReadRepository;
-            _http = http;
-            _evn = evn;
-            _mapper = mapper;
-            _carImageWriteRepository = carImageWriteRepository;
-            _identityService = identityService;
-        }
-
-        public async Task<ApiResponse> CreateAsync(CarPostDto dto)
+		public CarService(ICarImageReadRepository carImageReadRepository, ICarWriteRepository carWriteRepository, ICarReadRepository carReadRepository, IHttpContextAccessor http, IWebHostEnvironment evn, IMapper mapper, ICarImageWriteRepository carImageWriteRepository, IIdentityService identityService, IStatusReadRepository statusReadRepository)
+		{
+			_carImageReadRepository = carImageReadRepository;
+			_carWriteRepository = carWriteRepository;
+			_carReadRepository = carReadRepository;
+			_http = http;
+			_evn = evn;
+			_mapper = mapper;
+			_carImageWriteRepository = carImageWriteRepository;
+			_identityService = identityService;
+			_statusReadRepository = statusReadRepository;
+		}
+		public async Task<ApiResponse> CreateAsync(CarPostDto dto)
         {
             int i = 0;
             Car car = _mapper.Map<Car>(dto);
 
-            string userName = _http.HttpContext?.User.Identity.Name;
+            car.Status = await _statusReadRepository.GetAll(x => x.Level == 1 && !x.IsDeleted, 0, 0).FirstOrDefaultAsync();
+
+
+			string userName = _http.HttpContext?.User.Identity.Name;
             var user = await _identityService.GetUserByName(userName);
             if (user == null)
                 throw new Exception("User not found");
@@ -91,11 +96,10 @@ namespace CarAuction.Service.Services.Abstractions
                 items = car
             };
         }
-
         public async Task<ApiResponse> GetAllAsync(int count, int page)
         {
-            IEnumerable<Car> cars = await _carReadRepository.GetAll(x => !x.IsDeleted, count, page).Include(x => x.Ban).Include(x => x.Fuel).Include(x => x.CarAuctionDetail)
-                .Include(x => x.CarImages).Include(x => x.Model).ThenInclude(x => x.Brand).Include(x => x.Admin).ToListAsync();
+            IEnumerable<Car> cars = await _carReadRepository.GetAll(x => !x.IsDeleted, count, page).Include(x=>x.Color).Include(x => x.Ban).Include(x => x.Fuel).Include(x => x.CarAuctionDetail)
+                .Include(x => x.CarImages).Include(x => x.Status).Include(x => x.Model).ThenInclude(x => x.Brand).Include(x => x.Admin).ToListAsync();
 
             List<CarGetDto> dtos = _mapper.Map<List<CarGetDto>>(cars);
 
@@ -105,7 +109,20 @@ namespace CarAuction.Service.Services.Abstractions
                 StatusCode = 200
             };
         }
-        public async Task<ApiResponse> GetAsync(string id)
+		public async Task<ApiResponse> GetAllAsync(int count, int page, Expression<Func<Car, bool>> expression)
+		{
+			IEnumerable<Car> cars = await _carReadRepository.GetAll(expression, count, page).Include(x => x.Color).Include(x => x.Ban).Include(x => x.Fuel).Include(x => x.CarAuctionDetail)
+				.Include(x => x.CarImages).Include(x=>x.Status).Include(x => x.Model).ThenInclude(x => x.Brand).Include(x => x.Admin).ToListAsync();
+
+			List<CarGetDto> dtos = _mapper.Map<List<CarGetDto>>(cars);
+
+			return new ApiResponse
+			{
+				items = dtos,
+				StatusCode = 200
+			};
+		}
+		public async Task<ApiResponse> GetAsync(string id)
         {
             Car car = await _carReadRepository.GetByIdAsync(id, x => !x.IsDeleted, true, "Ban", "Fuel", "CarAuctionDetail", "CarImages", "Model"); 
 

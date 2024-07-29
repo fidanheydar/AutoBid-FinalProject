@@ -311,6 +311,9 @@ namespace CarAuction.Data.Migrations
                     b.Property<int>("Power")
                         .HasColumnType("int");
 
+                    b.Property<Guid>("StatusId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Transmission")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -333,6 +336,8 @@ namespace CarAuction.Data.Migrations
                     b.HasIndex("FuelId");
 
                     b.HasIndex("ModelId");
+
+                    b.HasIndex("StatusId");
 
                     b.ToTable("Cars");
                 });
@@ -551,6 +556,36 @@ namespace CarAuction.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Settings");
+                });
+
+            modelBuilder.Entity("CarAuction.Core.Models.Status", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Level")
+                        .IsUnique();
+
+                    b.ToTable("Statuses");
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Subscribe", b =>
@@ -777,6 +812,12 @@ namespace CarAuction.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("CarAuction.Core.Models.Status", "Status")
+                        .WithMany("Cars")
+                        .HasForeignKey("StatusId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Admin");
 
                     b.Navigation("Ban");
@@ -786,6 +827,8 @@ namespace CarAuction.Data.Migrations
                     b.Navigation("Fuel");
 
                     b.Navigation("Model");
+
+                    b.Navigation("Status");
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.CarAuctionDetail", b =>
@@ -895,6 +938,11 @@ namespace CarAuction.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("CarImages");
+                });
+
+            modelBuilder.Entity("CarAuction.Core.Models.Status", b =>
+                {
+                    b.Navigation("Cars");
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Tag", b =>

@@ -102,7 +102,7 @@ function display() {
 
 document.querySelector("#amountCar").textContent ="$"+ parseFloat(document.querySelector("#amountCar").textContent.split("$")[1]).toLocaleString();
 document.querySelector("#maxBid").textContent = "$" + parseFloat(document.querySelector("#maxBid").textContent.split("$")[1]).toLocaleString();
-document.querySelector(".incomeUser").textContent = "$" + parseFloat(document.querySelector(".incomeUser").textContent.split("$")[1]).toLocaleString();
+/*document.querySelector(".incomeUser").textContent = "$" + parseFloat(document.querySelector(".incomeUser").textContent.split("$")[1]).toLocaleString();*/
 document.querySelector(".reportBtn").addEventListener("click", () => {
     let date = new Date(document.querySelector(".carSaleDate").value).toLocaleDateString();
     let todate = new Date(document.querySelector(".carSaleToDate").value).toLocaleDateString();
@@ -117,7 +117,7 @@ document.querySelector(".reportBtn").addEventListener("click", () => {
         date = null
     }
   
-    href = `/admin/home/search?date=${date}&todate=${todate}`;
+    href = `/home/datesearch?date=${date}&todate=${todate}`;
     fetch(href)
         .then(x => x.json())
         .then(x => {

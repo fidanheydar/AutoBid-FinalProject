@@ -11,6 +11,7 @@ using CarAuction.Service.DTOs.Cars;
 using CarAuction.Service.DTOs.Settings;
 using CarAuction.Service.DTOs.Identity;
 using CarAuction.Service.DTOs.Bans;
+using CarAuction.Service.DTOs.Statuses;
 
 namespace CarAuction.Service.Profiles
 {
@@ -49,12 +50,18 @@ namespace CarAuction.Service.Profiles
 			   opt => opt.MapFrom(src =>
 			   src.BlogTags.Select(x => x.Tag).ToList()));
 
-			CreateMap<Tag, TagPostDto>().ReverseMap();
-			CreateMap<Tag, TagUpdateDto>().ReverseMap();
+			CreateMap<Status, TagPostDto>().ReverseMap();
+			CreateMap<Status, TagUpdateDto>().ReverseMap();
 			CreateMap<TagGetDto, TagUpdateDto>().ReverseMap();
-			CreateMap<TagGetDto, Tag>().ReverseMap();
+			CreateMap<TagGetDto, Status>().ReverseMap();
 
-			CreateMap<Setting, SettingPostDto>().ReverseMap();
+            CreateMap<Status, StatusPostDto>().ReverseMap();
+            CreateMap<Status, StatusUpdateDto>().ReverseMap();
+            CreateMap<StatusGetDto, StatusUpdateDto>().ReverseMap();
+            CreateMap<StatusGetDto, Status>().ReverseMap();
+
+
+            CreateMap<Setting, SettingPostDto>().ReverseMap();
 			CreateMap<Setting, SettingUpdateDto>().ReverseMap();
 			CreateMap<SettingGetDto, SettingUpdateDto>().ReverseMap();
 			CreateMap<SettingGetDto, Setting>().ReverseMap();

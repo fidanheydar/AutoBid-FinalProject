@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace CarAuction.Core.Models
@@ -12,6 +13,7 @@ namespace CarAuction.Core.Models
         public string ImageUrl { get; set; }
         public Guid CarId { get; set; }
         public bool isMain { get; set; }
-        public virtual Car Car { get; set; }
+		[JsonIgnore]
+		public virtual Car Car { get; set; }
     }
 }

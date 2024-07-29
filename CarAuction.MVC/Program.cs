@@ -3,8 +3,12 @@ using CarAuction.Data.Context;
 using CarAuction.MVC.Middlewares;
 using CarAuction.Service;
 using CarAuction.Service.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using System.Buffers;
+using System.Text.Json.Serialization;
 
 namespace CarAuction.MVC
 {
@@ -19,10 +23,20 @@ namespace CarAuction.MVC
 				opt.UseSqlServer(builder.Configuration.GetConnectionString("Develop"));
 			});
 			// Add services to the container.
+			//builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+			//{
+			//	builder.AllowAnyOrigin()
+			//		   .AllowAnyMethod()
+			//		   .AllowAnyHeader();
+			//}));
 			builder.Services.AddControllersWithViews();
             builder.Services.ServiceServiceRegistration();
             builder.Services.DataServiceRegistration();
-
+			builder.Services.AddControllers().AddJsonOptions(options =>
+			{
+				options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+				options.JsonSerializerOptions.WriteIndented = true;
+			});
 			var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -38,12 +52,13 @@ namespace CarAuction.MVC
 
             app.UseRouting();
 
-            app.UseAuthorization();
+			app.UseAuthorization();
             app.UseAuthorization();
 
             app.CustomExceptionHadler();
+			app.MapControllers();
 
-            app.MapControllerRoute(
+			app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Account}/{action=Login}/{id?}");
 

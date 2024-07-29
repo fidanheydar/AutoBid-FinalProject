@@ -17,8 +17,16 @@
       "PackagePath": "staticwebassets\\Images\\Blogs\\78f112ba-efa3-46d9-bcb1-9c92db41e49fBMW.svg.png"
     },
     {
+      "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Cars\\31d38d55-3691-4751-b2dc-4df7dee8f832images (1).jpeg",
+      "PackagePath": "staticwebassets\\Images\\Cars\\31d38d55-3691-4751-b2dc-4df7dee8f832images (1).jpeg"
+    },
+    {
       "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Cars\\43f2cb71-0e6c-46dc-aa5c-cbf2e7ec7922images.jpeg",
       "PackagePath": "staticwebassets\\Images\\Cars\\43f2cb71-0e6c-46dc-aa5c-cbf2e7ec7922images.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Cars\\553c5125-744f-4694-a5a4-c94ec84cbde6images (2).jpeg",
+      "PackagePath": "staticwebassets\\Images\\Cars\\553c5125-744f-4694-a5a4-c94ec84cbde6images (2).jpeg"
     },
     {
       "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Cars\\9e675d81-b1dd-434e-94b8-638f7c5720b1images (1).jpeg",
@@ -27,6 +35,10 @@
     {
       "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Cars\\d9d37953-0d09-4a4a-bd6b-e80371f3c254images (2).jpeg",
       "PackagePath": "staticwebassets\\Images\\Cars\\d9d37953-0d09-4a4a-bd6b-e80371f3c254images (2).jpeg"
+    },
+    {
+      "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Cars\\e2b00b49-955e-4498-b14c-6ef4f8df4649images.jpeg",
+      "PackagePath": "staticwebassets\\Images\\Cars\\e2b00b49-955e-4498-b14c-6ef4f8df4649images.jpeg"
     },
     {
       "Id": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\wwwroot\\Images\\Settings\\87c10bfe-d70f-4e95-a95a-8cdb0343f6cflogo.jpeg",

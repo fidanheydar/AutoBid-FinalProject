@@ -12,6 +12,7 @@ namespace CarAuction.Core.Models
     {
         public string Name { get; set; }
         [JsonIgnore]
+        
         public virtual ICollection<Model> Models { get; set; }
     }
 }

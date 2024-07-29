@@ -17,19 +17,6 @@ namespace CarAuction.Service.Controllers
             _identityService = identityService;
             _authService = authService;
         }
-
-        //[Authorize]
-        //public async Task<IActionResult> Info()
-        //{
-        //    var result = await _service.Info();
-        //    if (result.StatusCode != 200)
-        //    {
-        //        TempData["AdminInfo"] = result.Description;
-        //        return RedirectToAction("index", "home");
-        //    }
-        //    InfoVM info = (InfoVM)result.items;
-        //    return View(info);
-        //}
         [HttpGet]
         public async Task<IActionResult> Login()
         {
