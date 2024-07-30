@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XUzWaSQL3qM=",
+  "dgSpecHash": "mt3S0g3khSQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Core\\CarAuction.Core.csproj",
+  "projectFilePath": "D:\\Codes\\CarAuction\\CarAuction.Core\\CarAuction.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nijat\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\Nijat\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

@@ -4126,11 +4126,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\CarAuction.MVC.csproj",
+      "projectUniqueName": "D:\\Codes\\CarAuction\\CarAuction.MVC\\CarAuction.MVC.csproj",
       "projectName": "CarAuction.MVC",
-      "projectPath": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\CarAuction.MVC.csproj",
+      "projectPath": "D:\\Codes\\CarAuction\\CarAuction.MVC\\CarAuction.MVC.csproj",
       "packagesPath": "C:\\Users\\Nijat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\obj\\",
+      "outputPath": "D:\\Codes\\CarAuction\\CarAuction.MVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nijat\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4148,8 +4148,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\CarAuction.Service.csproj": {
-              "projectPath": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Service\\CarAuction.Service.csproj"
+            "D:\\Codes\\CarAuction\\CarAuction.Service\\CarAuction.Service.csproj": {
+              "projectPath": "D:\\Codes\\CarAuction\\CarAuction.Service\\CarAuction.Service.csproj"
             }
           }
         }

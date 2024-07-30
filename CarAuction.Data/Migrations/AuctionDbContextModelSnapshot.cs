@@ -402,7 +402,12 @@ namespace CarAuction.Data.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("WinnerId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("WinnerId");
 
                     b.ToTable("CarAuctionDetails");
                 });
@@ -892,7 +897,13 @@ namespace CarAuction.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("CarAuction.Core.Models.AppUser", "Winner")
+                        .WithMany("CarAuctionDetails")
+                        .HasForeignKey("WinnerId");
+
                     b.Navigation("Car");
+
+                    b.Navigation("Winner");
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.CarImage", b =>
@@ -973,6 +984,8 @@ namespace CarAuction.Data.Migrations
                     b.Navigation("Bids");
 
                     b.Navigation("Blogs");
+
+                    b.Navigation("CarAuctionDetails");
 
                     b.Navigation("Cars");
                 });

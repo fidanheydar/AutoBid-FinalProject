@@ -1,8 +1,5 @@
-﻿using AutoMapper;
-using CarAuction.Core.Models;
-using CarAuction.Core.Repositories.Categories;
+﻿using CarAuction.Core.Models;
 using CarAuction.Data.Context;
-using CarAuction.Data.Repositories.Categories;
 using CarAuction.Service.DTOs.Categories;
 using CarAuction.Service.Services.Abstractions;
 using CarAuction.Service.Services.Interfaces;
@@ -10,11 +7,6 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Miles.Service.Services.Implementations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CarAuction.Service
 {
@@ -42,6 +34,7 @@ namespace CarAuction.Service
             service.AddTransient<IIdentityService, IdentityService>();
             service.AddTransient<ISettingService, SettingService>();
             service.AddTransient<IStatusService, StatusService>();
+            service.AddTransient<IBidService, BidService>();
 
 
             service.AddIdentity<AppUser, AppRole>(

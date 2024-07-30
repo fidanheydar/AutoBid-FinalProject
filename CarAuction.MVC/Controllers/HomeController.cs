@@ -1,5 +1,6 @@
 ﻿using CarAuction.Core.Models;
 using CarAuction.MVC.ViewModels;
+using CarAuction.Service.DTOs.Bids;
 using CarAuction.Service.DTOs.Cars;
 using CarAuction.Service.DTOs.Identity;
 using CarAuction.Service.DTOs.Statuses;
@@ -17,15 +18,16 @@ namespace CarAuction.MVC.Controllers
         private readonly IIdentityService _identityService;
         private readonly ICarService _carService;
         private readonly IStatusService _statusService;
-		//private readonly IBidService _bidService;
+		private readonly IBidService _bidService;
 
-		public HomeController(ICarService carService, IIdentityService identityService, IStatusService statusService)
-		{
-			_carService = carService;
-			_identityService = identityService;
-			_statusService = statusService;
-		}
-		public async Task<IActionResult> DateSearch(string? date, string? todate)
+        public HomeController(ICarService carService, IIdentityService identityService, IStatusService statusService, IBidService bidService)
+        {
+            _carService = carService;
+            _identityService = identityService;
+            _statusService = statusService;
+            _bidService = bidService;
+        }
+        public async Task<IActionResult> DateSearch(string? date, string? todate)
         {
             var result = await _identityService.GetAllUsers(0, 0,"Admin");
             HomeVM vm = new()
@@ -39,8 +41,8 @@ namespace CarAuction.MVC.Controllers
                 DateTime tempDate = Convert.ToDateTime(date, culture);
                 result = await _carService.GetAllAsync(0, 0, x => x.Status.Level == 3 && x.CarAuctionDetail.FinishDate > tempDate);
                 vm.Cars = (IEnumerable<CarGetDto>)result.items;
-                //result = await _bidService.GetAllAsync(0, 0, x => !x.IsDeleted && x.CreatedAt > tempDate);
-                //vm.Bids = (IEnumerable<Bid>)result.items;
+                result = await _bidService.GetAllAsync(0, 0, x => !x.IsDeleted && x.CreatedAt > tempDate);
+                vm.Bids = (IEnumerable<BidGetDto>)result.items;
                 return Json(vm);
             }
             else if (todate != "null" && date == "null")
@@ -48,8 +50,8 @@ namespace CarAuction.MVC.Controllers
                 DateTime tempDate = Convert.ToDateTime(todate, culture);
                 result = await _carService.GetAllAsync(0, 0, x => x.Status.Level == 3 && x.CarAuctionDetail.FinishDate < tempDate);
                 vm.Cars = (IEnumerable<CarGetDto>)result.items;
-                //result = await _bidService.GetAllAsync(0, 0, x => !x.IsDeleted && x.CreatedAt < tempDate);
-                //adminPanelVM.Bids = (IEnumerable<Bid>)result.items;
+                result = await _bidService.GetAllAsync(0, 0, x => !x.IsDeleted && x.CreatedAt < tempDate);
+                vm.Bids = (IEnumerable<BidGetDto>)result.items;
                 return Json(vm);
             }
             else if (todate == "null" && date == "null")
@@ -62,8 +64,8 @@ namespace CarAuction.MVC.Controllers
                 DateTime tempDate1 = Convert.ToDateTime(todate, culture);
                 result = await _carService.GetAllAsync(0, 0, x => x.Status.Level == 3 && x.CarAuctionDetail.FinishDate > tempDate && x.CarAuctionDetail.FinishDate < tempDate1);
                 vm.Cars = (IEnumerable<CarGetDto>)result.items;
-                //result = await _bidService.GetAllAsync(0, 0, x => !x.IsDeleted && x.CreatedAt > tempDate && x.CreatedAt < tempDate1);
-                //adminPanelVM.Bids = (IEnumerable<Bid>)result.items;
+                result = await _bidService.GetAllAsync(0, 0, x => !x.IsDeleted && x.CreatedAt > tempDate && x.CreatedAt < tempDate1);
+                vm.Bids = (IEnumerable<BidGetDto>)result.items;
                 return Json(vm);
             }
         }
@@ -79,8 +81,8 @@ namespace CarAuction.MVC.Controllers
             vm.Cars = (IEnumerable<CarGetDto>)result.items;
             result = await _statusService.GetAllAsync(0, 0);
             vm.Statuses = (IEnumerable<StatusGetDto>)result.items;
-            //result = await _bidService.GetAllAsync(0, 0, null);
-            //adminPanelVM.Bids = (IEnumerable<Bid>)result.items;
+            result = await _bidService.GetAllAsync(0, 0, null);
+            vm.Bids = (IEnumerable<BidGetDto>)result.items;
             result = await _identityService.GetAllUsers(0, 0,"User");
             vm.Users = (IEnumerable<UserGetDto>)result.items;
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/cYd6Dp1CR8=",
+  "dgSpecHash": "7IY/Qel9r9c=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.MVC\\CarAuction.MVC.csproj",
+  "projectFilePath": "D:\\Codes\\CarAuction\\CarAuction.MVC\\CarAuction.MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nijat\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Nijat\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

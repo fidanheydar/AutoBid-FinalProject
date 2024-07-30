@@ -19,5 +19,7 @@ namespace CarAuction.Core.Models
         public virtual List<Car> Cars { get; set; }
         [InverseProperty("User")]
         public virtual List<Bid> Bids { get; set; }
+        [InverseProperty("Winner")]
+        public virtual List<CarAuctionDetail> CarAuctionDetails { get; set; }
     }
 }

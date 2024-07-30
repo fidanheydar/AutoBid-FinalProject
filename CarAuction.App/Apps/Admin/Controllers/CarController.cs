@@ -18,7 +18,7 @@ namespace CarAuction.App.Apps.Admin.Controllers
         }
         [HttpPost]
         [ActionName("CreateCar")]
-        public async Task<IActionResult> Post([FromForm]CarPostDto dto)
+        public async Task<IActionResult> Post([FromForm] CarPostDto dto)
         {
             var response = await _CarService.CreateAsync(dto);
             return StatusCode(response.StatusCode, response);
@@ -27,7 +27,7 @@ namespace CarAuction.App.Apps.Admin.Controllers
         [ActionName("UpdateCar")]
         public async Task<IActionResult> Put([FromRoute] string id, [FromForm] CarUpdateDto dto)
         {
-            var response = await _CarService.UpdateAsync(id,dto);
+            var response = await _CarService.UpdateAsync(id, dto);
             return StatusCode(response.StatusCode, response);
         }
         [HttpDelete("{id}")]
@@ -39,17 +39,24 @@ namespace CarAuction.App.Apps.Admin.Controllers
         }
         [HttpPost]
         [ActionName("SetMainImage")]
-        public async Task<IActionResult> SetMainImage([FromQuery] string carId,string imageId)
+        public async Task<IActionResult> SetMainImage([FromQuery] string carId, string imageId)
         {
-            var response = await _CarService.SetMainImage(carId,imageId);
+            var response = await _CarService.SetMainImage(carId, imageId);
             return StatusCode(response.StatusCode, response);
         }
         [HttpDelete("{imageId}")]
         [ActionName("DeleteImage")]
-        public async Task<IActionResult> SetMainImage([FromRoute]string imageId)
+        public async Task<IActionResult> SetMainImage([FromRoute] string imageId)
         {
             var response = await _CarService.RemoveImage(imageId);
-            
+
+            return StatusCode(response.StatusCode, response);
+        }
+        [HttpPost("{carId}")]
+        [ActionName("FinishAuction")]
+        public async Task<IActionResult> FinishAuction([FromRoute] string carId)
+        {
+            var response = await _CarService.FinishAuction(carId);
             return StatusCode(response.StatusCode, response);
         }
     }

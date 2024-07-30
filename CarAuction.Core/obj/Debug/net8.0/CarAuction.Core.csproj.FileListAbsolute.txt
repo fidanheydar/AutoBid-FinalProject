@@ -11,3 +11,16 @@ C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarA
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Core\obj\Debug\net8.0\refint\CarAuction.Core.dll
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.pdb
 C:\Users\Nijat\OneDrive\Desktop\CarAuction\CarAuction.Core\obj\Debug\net8.0\ref\CarAuction.Core.dll
+D:\Codes\CarAuction\CarAuction.Core\bin\Debug\net8.0\CarAuction.Core.deps.json
+D:\Codes\CarAuction\CarAuction.Core\bin\Debug\net8.0\CarAuction.Core.dll
+D:\Codes\CarAuction\CarAuction.Core\bin\Debug\net8.0\CarAuction.Core.pdb
+D:\Codes\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.csproj.AssemblyReference.cache
+D:\Codes\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Codes\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.AssemblyInfoInputs.cache
+D:\Codes\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.AssemblyInfo.cs
+D:\Codes\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.csproj.CoreCompileInputs.cache
+D:\Codes\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.sourcelink.json
+D:\Codes\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.dll
+D:\Codes\CarAuction\CarAuction.Core\obj\Debug\net8.0\refint\CarAuction.Core.dll
+D:\Codes\CarAuction\CarAuction.Core\obj\Debug\net8.0\CarAuction.Core.pdb
+D:\Codes\CarAuction\CarAuction.Core\obj\Debug\net8.0\ref\CarAuction.Core.dll

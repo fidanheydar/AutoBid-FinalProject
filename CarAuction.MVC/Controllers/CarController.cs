@@ -35,12 +35,12 @@ namespace CarAuction.MVC.Controllers
 
 		public async Task<IActionResult> Index(int page = 1)
         {
-            var result = await _service.GetAllAsync(0, 0);
+            var result = await _service.GetAllAsync(0, 0, x => x.Status.Level != 3);
             int TotalCount = ((IEnumerable<CarGetDto>)result.items).Count();
             ViewBag.TotalPage = (int)Math.Ceiling((decimal)TotalCount / 5);
             ViewBag.CurrentPage = page;
             int count = 5;
-             result = await _service.GetAllAsync(count,page);
+             result = await _service.GetAllAsync(count,page, x => x.Status.Level != 3);
             return View(result.items);
         }
         [HttpGet]
@@ -55,6 +55,17 @@ namespace CarAuction.MVC.Controllers
             ViewBag.Colors = resultColor.items;
 			ViewBag.Brands = resultBrand.items;
 			return View();
+        }
+        [HttpGet]
+        public async Task<IActionResult> Archive(int page = 1)
+        {
+            var result = await _service.GetAllAsync(0, 0,x=>x.Status.Level ==3);
+            int TotalCount = ((IEnumerable<CarGetDto>)result.items).Count();
+            ViewBag.TotalPage = (int)Math.Ceiling((decimal)TotalCount / 5);
+            ViewBag.CurrentPage = page;
+            int count = 5;
+            result = await _service.GetAllAsync(count, page,x => x.Status.Level == 3);
+            return View(result.items);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -139,7 +150,23 @@ namespace CarAuction.MVC.Controllers
             //_logger.LogInformation("Car Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
-		public async Task<IActionResult> GetAllModel()
+        public async Task<IActionResult> FinishAuction(string id)
+        {
+            try
+            {
+                var result = await _service.FinishAuction(id);
+                if (result.StatusCode == 404)
+                {
+                    return NotFound();
+                }
+            }
+            catch 
+            {
+                TempData["Error"] = "Please check car details and try again";
+            }
+            return RedirectToAction(nameof(Index));
+        }
+        public async Task<IActionResult> GetAllModel()
 		{
 			var result = await _modelService.GetAllAsync(0, 0);
 			return Json(result.items);

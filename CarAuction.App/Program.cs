@@ -6,7 +6,9 @@ using CarAuction.Data;
 using CarAuction.Data.Context;
 using CarAuction.Service;
 using CarAuction.Service.Services.Interfaces;
+using Hangfire;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System.Text.Json.Serialization;
 
 namespace CarAuction.App
@@ -52,6 +54,13 @@ namespace CarAuction.App
                  ServiceLifetime.Transient
             );
 
+            builder.Services.AddHangfire((sp, config) =>
+            {
+                var connectionString = sp.GetRequiredService<IConfiguration>().GetConnectionString("Develop");
+                config.UseSqlServerStorage(connectionString);
+            });
+            builder.Services.AddHangfireServer();
+           
 
             builder.Services.AddSwaggerGen();
 
@@ -80,8 +89,8 @@ namespace CarAuction.App
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseStaticFiles();
-
-			app.MapControllers();
+            app.UseHangfireDashboard();
+            app.MapControllers();
 
             app.Run();
         }

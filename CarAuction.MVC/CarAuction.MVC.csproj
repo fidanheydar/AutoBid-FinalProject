@@ -21,4 +21,11 @@
     <ProjectReference Include="..\CarAuction.Service\CarAuction.Service.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="Views\Car\Archive.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

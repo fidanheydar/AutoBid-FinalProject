@@ -1,9 +1,14 @@
 ﻿@model IEnumerable<CarGetDto>
+@if (!string.IsNullOrWhiteSpace((string)TempData["Error"]))
+{
+    <div style="display:none;" id="error">
+        @TempData["Error"]
+    </div>
+}
 <div class="container">
-    <table class="table table-sm">
+    <table class="table table-sm text-center">
         <thead>
             <tr>
-                <th scope="col">Id</th>
                 <th scope="col">Vin:</th>
                 <th scope="col">Admin:</th>
                 <th scope="col">Model:</th>
@@ -11,6 +16,7 @@
                 <th scope="col">Finish Date:</th>
                 <th scope="col">Initial Price:</th>
                 <th scope="col">Image:</th>
+                <th scope="col">Finish Auction</th>
                 <th scope="col">Update</th>
                 <th scope="col">Delete</th>
             </tr>
@@ -19,18 +25,22 @@
             @foreach (var item in Model)
             {
                 <tr>
-                    <th scope="row">@item.Id</th>
                     <th>@item.Vin</th>
                     <th>@item.Admin</th>
                     <th>@item.Model.Name</th>
                     <th>@item.CarAuctionDetail.AuctionDate</th>
                     <th>@item.CarAuctionDetail.FinishDate</th>
                     <th>@item.CarAuctionDetail.InitialPrice</th>
-                    @foreach(var image in item.CarImages.Where(x => x.isMain))
+                    @foreach (var image in item.CarImages.Where(x => x.isMain))
                     {
                         <th><img style="width:100px;height:100px" src="@image.ImageUrl" /></th>
 
                     }
+                    <td>
+                        <a asp-controller="Car" asp-action="finishAuction" asp-route-id="@item.Id">
+                            <i class="fas fa-flag-checkered text-warning"></i>
+                        </a>
+                    </td>
                     <td>
                         <a asp-controller="Car" asp-action="update" asp-route-id="@item.Id">
                             <i class="fas fa-edit text text-primary"></i>
@@ -66,3 +76,17 @@
         </a>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                <script>
+    const errorM = document.querySelector("#error");
+    if (errorM != undefined) {
+        const message = errorM.innerHTML;
+        if (message != "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `${message}`,
+            })
+        }
+    }
+                </script>

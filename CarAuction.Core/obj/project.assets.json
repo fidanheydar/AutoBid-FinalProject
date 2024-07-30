@@ -1900,11 +1900,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Core\\CarAuction.Core.csproj",
+      "projectUniqueName": "D:\\Codes\\CarAuction\\CarAuction.Core\\CarAuction.Core.csproj",
       "projectName": "CarAuction.Core",
-      "projectPath": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Core\\CarAuction.Core.csproj",
+      "projectPath": "D:\\Codes\\CarAuction\\CarAuction.Core\\CarAuction.Core.csproj",
       "packagesPath": "C:\\Users\\Nijat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Nijat\\OneDrive\\Desktop\\CarAuction\\CarAuction.Core\\obj\\",
+      "outputPath": "D:\\Codes\\CarAuction\\CarAuction.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Nijat\\AppData\\Roaming\\NuGet\\NuGet.Config",
