@@ -10,11 +10,9 @@ namespace CarAuction.MVC.Controllers
     public class SubscribeController : Controller
     {
         private readonly ISubscribeService _service;
-        private readonly ILogger<SubscribeController> _logger;
-        public SubscribeController(ISubscribeService service, ILogger<SubscribeController> logger)
+        public SubscribeController(ISubscribeService service)
         {
             _service = service;
-            _logger = logger;
         }
 
         public async Task<IActionResult> Index(int page = 1)
@@ -36,7 +34,6 @@ namespace CarAuction.MVC.Controllers
             {
                 return NotFound();
             }
-            //_logger.LogInformation("Subscribe Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
     }

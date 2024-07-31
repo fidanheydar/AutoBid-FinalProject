@@ -11,10 +11,12 @@ namespace CarAuction.App.Apps.Admin.Controllers
     public class CarController : ControllerBase
     {
         private readonly ICarService _CarService;
+        private readonly IAuctionService _AuctionService;
 
-        public CarController(ICarService CarService)
+        public CarController(ICarService CarService, IAuctionService auctionService)
         {
             _CarService = CarService;
+            _AuctionService = auctionService;
         }
         [HttpPost]
         [ActionName("CreateCar")]
@@ -46,7 +48,7 @@ namespace CarAuction.App.Apps.Admin.Controllers
         }
         [HttpDelete("{imageId}")]
         [ActionName("DeleteImage")]
-        public async Task<IActionResult> SetMainImage([FromRoute] string imageId)
+        public async Task<IActionResult> DeleteImage([FromRoute] string imageId)
         {
             var response = await _CarService.RemoveImage(imageId);
 
@@ -56,7 +58,7 @@ namespace CarAuction.App.Apps.Admin.Controllers
         [ActionName("FinishAuction")]
         public async Task<IActionResult> FinishAuction([FromRoute] string carId)
         {
-            var response = await _CarService.FinishAuction(carId);
+            var response = await _AuctionService.FinishAuction(carId);
             return StatusCode(response.StatusCode, response);
         }
     }

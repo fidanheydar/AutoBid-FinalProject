@@ -12,7 +12,9 @@ namespace CarAuction.Data.Context
 {
     public class AuctionDbContext : IdentityDbContext<AppUser, AppRole, string>
     {
-        public AuctionDbContext(DbContextOptions<AuctionDbContext> options) : base(options) { }
+        public AuctionDbContext(DbContextOptions<AuctionDbContext> options) : base(options)
+        {
+        }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Model> Models { get; set; }

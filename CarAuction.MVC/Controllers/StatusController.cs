@@ -11,13 +11,11 @@ namespace CarAuction.MVC.Controllers
 	public class StatusController : Controller
 	{
 		private readonly IStatusService _service;
-		private readonly ILogger<StatusController> _logger;
 		private readonly IMapper _mapper;
 
-		public StatusController(IStatusService service, ILogger<StatusController> logger, IMapper mapper)
+		public StatusController(IStatusService service, IMapper mapper)
 		{
 			_service = service;
-			_logger = logger;
 			_mapper = mapper;
 		}
 
@@ -52,7 +50,6 @@ namespace CarAuction.MVC.Controllers
 					ModelState.AddModelError("", result.Description);
 					return View(dto);
 				}
-				//_logger.LogInformation("Status Created by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
 				return RedirectToAction(nameof(Index));
 			}
 			catch (Exception ex)
@@ -85,7 +82,6 @@ namespace CarAuction.MVC.Controllers
 					ModelState.AddModelError("", result.Description);
 					return View(dto);
 				}
-				//_logger.LogInformation("Status Updated by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
 				return RedirectToAction(nameof(Index));
 			}
 			catch (Exception ex)
@@ -101,7 +97,6 @@ namespace CarAuction.MVC.Controllers
 			{
 				return NotFound();
 			}
-			//_logger.LogInformation("Status Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
 			return RedirectToAction(nameof(Index));
 		}
 	}

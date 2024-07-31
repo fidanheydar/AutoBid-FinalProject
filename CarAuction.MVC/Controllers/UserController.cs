@@ -12,12 +12,10 @@ namespace CarAuction.MVC.Controllers
     {
         private readonly IIdentityService _service;
         private readonly IWebHostEnvironment _evn;
-        private readonly ILogger<UserController> _logger;
-        public UserController(IIdentityService service, IWebHostEnvironment evn, ILogger<UserController> logger)
+        public UserController(IIdentityService service, IWebHostEnvironment evn)
         {
             _service = service;
             _evn = evn;
-            _logger = logger;
         }
         public async Task<IActionResult> Index(int page = 1)
         {
@@ -44,7 +42,6 @@ namespace CarAuction.MVC.Controllers
                 return RedirectToAction(nameof(Index));
 
             }
-            //_logger.LogInformation("User Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
     }

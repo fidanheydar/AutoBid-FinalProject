@@ -1,3 +1,4 @@
+using CarAuction.Core.Options;
 using CarAuction.Data;
 using CarAuction.Data.Context;
 using CarAuction.MVC.Middlewares;
@@ -22,14 +23,15 @@ namespace CarAuction.MVC
 			{
 				opt.UseSqlServer(builder.Configuration.GetConnectionString("Develop"));
 			});
-			// Add services to the container.
-			//builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
-			//{
-			//	builder.AllowAnyOrigin()
-			//		   .AllowAnyMethod()
-			//		   .AllowAnyHeader();
-			//}));
-			builder.Services.AddControllersWithViews();
+            // Add services to the container.
+            //builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            //{
+            //	builder.AllowAnyOrigin()
+            //		   .AllowAnyMethod()
+            //		   .AllowAnyHeader();
+            //}));
+            builder.Services.Configure<MailSetting>(builder.Configuration.GetSection("MailSetting"));
+            builder.Services.AddControllersWithViews();
             builder.Services.ServiceServiceRegistration();
             builder.Services.DataServiceRegistration();
 			builder.Services.AddControllers().AddJsonOptions(options =>

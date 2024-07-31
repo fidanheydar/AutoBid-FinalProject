@@ -19,28 +19,28 @@ namespace CarAuction.MVC.Controllers
         private readonly IColorService _colorService;
         private readonly IBrandService _brandService;
         private readonly IModelService _modelService;
-        private readonly ILogger<CarController> _logger;
         private readonly IMapper _mapper;
-		public CarController(ICarService service, IFuelService fuelService, IBanService banService, IColorService colorService, IBrandService brandService, ILogger<CarController> logger, IModelService modelService, IMapper mapper)
-		{
-			_service = service;
-			_fuelService = fuelService;
-			_banService = banService;
-			_colorService = colorService;
-			_brandService = brandService;
-			_logger = logger;
-			_modelService = modelService;
-			_mapper = mapper;
-		}
+        private readonly IAuctionService _auctionService;
+        public CarController(ICarService service, IFuelService fuelService, IBanService banService, IColorService colorService, IBrandService brandService, IModelService modelService, IMapper mapper, IAuctionService auctionService)
+        {
+            _service = service;
+            _fuelService = fuelService;
+            _banService = banService;
+            _colorService = colorService;
+            _brandService = brandService;
+            _modelService = modelService;
+            _mapper = mapper;
+            _auctionService = auctionService;
+        }
 
-		public async Task<IActionResult> Index(int page = 1)
+        public async Task<IActionResult> Index(int page = 1)
         {
             var result = await _service.GetAllAsync(0, 0, x => x.Status.Level != 3);
             int TotalCount = ((IEnumerable<CarGetDto>)result.items).Count();
             ViewBag.TotalPage = (int)Math.Ceiling((decimal)TotalCount / 5);
             ViewBag.CurrentPage = page;
             int count = 5;
-             result = await _service.GetAllAsync(count,page, x => x.Status.Level != 3);
+            result = await _service.GetAllAsync(count, page, x => x.Status.Level != 3);
             return View(result.items);
         }
         [HttpGet]
@@ -49,37 +49,37 @@ namespace CarAuction.MVC.Controllers
             var resultFuel = await _fuelService.GetAllAsync(0, 0);
             var resultBan = await _banService.GetAllAsync(0, 0);
             var resultColor = await _colorService.GetAllAsync(0, 0);
-			var resultBrand = await _brandService.GetAllAsync(0, 0);
-			ViewBag.Fuels = resultFuel.items;
+            var resultBrand = await _brandService.GetAllAsync(0, 0);
+            ViewBag.Fuels = resultFuel.items;
             ViewBag.Bans = resultBan.items;
             ViewBag.Colors = resultColor.items;
-			ViewBag.Brands = resultBrand.items;
-			return View();
+            ViewBag.Brands = resultBrand.items;
+            return View();
         }
         [HttpGet]
         public async Task<IActionResult> Archive(int page = 1)
         {
-            var result = await _service.GetAllAsync(0, 0,x=>x.Status.Level ==3);
+            var result = await _service.GetAllAsync(0, 0, x => x.Status.Level == 3);
             int TotalCount = ((IEnumerable<CarGetDto>)result.items).Count();
             ViewBag.TotalPage = (int)Math.Ceiling((decimal)TotalCount / 5);
             ViewBag.CurrentPage = page;
             int count = 5;
-            result = await _service.GetAllAsync(count, page,x => x.Status.Level == 3);
+            result = await _service.GetAllAsync(count, page, x => x.Status.Level == 3);
             return View(result.items);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(CarPostDto dto)
         {
-			var resultFuel = await _fuelService.GetAllAsync(0, 0);
-			var resultBan = await _banService.GetAllAsync(0, 0);
-			var resultColor = await _colorService.GetAllAsync(0, 0);
-			var resultBrand = await _brandService.GetAllAsync(0, 0);
-			ViewBag.Fuels = resultFuel.items;
-			ViewBag.Bans = resultBan.items;
-			ViewBag.Colors = resultColor.items;
-			ViewBag.Brands = resultBrand.items;
-			if (!ModelState.IsValid)
+            var resultFuel = await _fuelService.GetAllAsync(0, 0);
+            var resultBan = await _banService.GetAllAsync(0, 0);
+            var resultColor = await _colorService.GetAllAsync(0, 0);
+            var resultBrand = await _brandService.GetAllAsync(0, 0);
+            ViewBag.Fuels = resultFuel.items;
+            ViewBag.Bans = resultBan.items;
+            ViewBag.Colors = resultColor.items;
+            ViewBag.Brands = resultBrand.items;
+            if (!ModelState.IsValid)
             {
                 return View(dto);
             }
@@ -89,7 +89,6 @@ namespace CarAuction.MVC.Controllers
                 ModelState.AddModelError("", result.Description);
                 return View(dto);
             }
-            //_logger.LogInformation("Car Created by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
@@ -99,13 +98,13 @@ namespace CarAuction.MVC.Controllers
             var resultBan = await _banService.GetAllAsync(0, 0);
             var resultColor = await _colorService.GetAllAsync(0, 0);
             var resultBrand = await _brandService.GetAllAsync(0, 0);
-			var resultImage = await _service.GetAllImages(id);
-			ViewBag.Fuels = resultFuel.items;
+            var resultImage = await _service.GetAllImages(id);
+            ViewBag.Fuels = resultFuel.items;
             ViewBag.Bans = resultBan.items;
             ViewBag.Colors = resultColor.items;
             ViewBag.Brands = resultBrand.items;
-			ViewBag.Images = resultImage.items;
-			var result = await _service.GetAsync(id);
+            ViewBag.Images = resultImage.items;
+            var result = await _service.GetAsync(id);
             if (result.StatusCode == 404)
             {
                 return NotFound();
@@ -113,67 +112,65 @@ namespace CarAuction.MVC.Controllers
             return View(_mapper.Map<CarUpdateDto>(result.items));
         }
         [HttpPost]
-		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Update(string id,CarUpdateDto dto)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Update(string id, CarUpdateDto dto)
         {
-			var resultFuel = await _fuelService.GetAllAsync(0, 0);
-			var resultBan = await _banService.GetAllAsync(0, 0);
-			var resultColor = await _colorService.GetAllAsync(0, 0);
-			var resultBrand = await _brandService.GetAllAsync(0, 0);
-			var resultImage = await _service.GetAllImages(id);
-			ViewBag.Fuels = resultFuel.items;
-			ViewBag.Bans = resultBan.items;
-			ViewBag.Colors = resultColor.items;
-			ViewBag.Brands = resultBrand.items;
-			ViewBag.Images = resultImage.items;
-			if (!ModelState.IsValid)
+            var resultFuel = await _fuelService.GetAllAsync(0, 0);
+            var resultBan = await _banService.GetAllAsync(0, 0);
+            var resultColor = await _colorService.GetAllAsync(0, 0);
+            var resultBrand = await _brandService.GetAllAsync(0, 0);
+            var resultImage = await _service.GetAllImages(id);
+            ViewBag.Fuels = resultFuel.items;
+            ViewBag.Bans = resultBan.items;
+            ViewBag.Colors = resultColor.items;
+            ViewBag.Brands = resultBrand.items;
+            ViewBag.Images = resultImage.items;
+            if (!ModelState.IsValid)
             {
                 return View(dto);
             }
-           
-			var result = await _service.UpdateAsync(id,dto);
+
+            var result = await _service.UpdateAsync(id, dto);
             if (result.StatusCode == 400)
             {
                 ModelState.AddModelError("", result.Description);
                 return View(dto);
             }
-            //_logger.LogInformation("Car Updated by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Remove(string id)
         {
             var result = await _service.RemoveAsync(id);
-            if(result.StatusCode == 404)
+            if (result.StatusCode == 404)
             {
                 return NotFound();
             }
-            //_logger.LogInformation("Car Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> FinishAuction(string id)
         {
             try
             {
-                var result = await _service.FinishAuction(id);
+                var result = await _auctionService.FinishAuction(id);
                 if (result.StatusCode == 404)
                 {
                     return NotFound();
                 }
             }
-            catch 
+            catch
             {
                 TempData["Error"] = "Please check car details and try again";
             }
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> GetAllModel()
-		{
-			var result = await _modelService.GetAllAsync(0, 0);
-			return Json(result.items);
-		}
+        {
+            var result = await _modelService.GetAllAsync(0, 0);
+            return Json(result.items);
+        }
         public async Task<IActionResult> SetAsMainImage(string id)
         {
-            var result = await _service.GetImage(x=>x.Id.ToString() == id && !x.IsDeleted);
+            var result = await _service.GetImage(x => x.Id.ToString() == id && !x.IsDeleted);
             CarImage carImage = (CarImage)result.items;
 
             if (carImage == null)
@@ -203,9 +200,9 @@ namespace CarAuction.MVC.Controllers
                 return Json(new { status = 400, desc = "You cannot remove main image" });
 
             carImage.IsDeleted = true;
-			await _service.SaveImage();
-			//_logger.LogInformation("Car Image Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
-			return Json(new { status = 200 });
+            await _service.SaveImage();
+            //_logger.LogInformation("Car Image Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
+            return Json(new { status = 200 });
         }
     }
 }

@@ -13,13 +13,11 @@ namespace CarAuction.MVC.Controllers
     public class BrandController : Controller
     {
         private readonly IBrandService _service;
-        private readonly ILogger<BrandController> _logger;
         private readonly IMapper _mapper;
 
-        public BrandController(IBrandService service, ILogger<BrandController> logger, IMapper mapper)
+        public BrandController(IBrandService service,IMapper mapper)
         {
             _service = service;
-            _logger = logger;
             _mapper = mapper;
         }
 
@@ -52,7 +50,6 @@ namespace CarAuction.MVC.Controllers
                 ModelState.AddModelError("", result.Description);
                 return View(dto);
             }
-            //_logger.LogInformation("Brand Created by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
@@ -77,7 +74,6 @@ namespace CarAuction.MVC.Controllers
                 ModelState.AddModelError("", result.Description);
                 return View(dto);
             }
-            //_logger.LogInformation("Brand Updated by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Remove(string id)
@@ -87,7 +83,6 @@ namespace CarAuction.MVC.Controllers
             {
                 return NotFound();
             }
-            //_logger.LogInformation("Brand Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
     }

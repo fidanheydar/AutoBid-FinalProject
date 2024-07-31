@@ -1,4 +1,5 @@
 ﻿using CarAuction.Core.Models;
+using CarAuction.Core.Options;
 using CarAuction.Data.Context;
 using CarAuction.Service.DTOs.Categories;
 using CarAuction.Service.Services.Abstractions;
@@ -35,7 +36,7 @@ namespace CarAuction.Service
             service.AddTransient<ISettingService, SettingService>();
             service.AddTransient<IStatusService, StatusService>();
             service.AddTransient<IBidService, BidService>();
-
+            service.AddTransient<IAuctionService, AuctionService>();
 
             service.AddIdentity<AppUser, AppRole>(
            options =>

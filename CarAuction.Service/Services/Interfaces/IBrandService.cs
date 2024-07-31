@@ -12,5 +12,6 @@ namespace CarAuction.Service.Services.Interfaces
 {
     public interface IBrandService : IService<BrandPostDto,BrandUpdateDto>
     {
+        Task<List<ChartResponse>> GetChartData();
     }
 }

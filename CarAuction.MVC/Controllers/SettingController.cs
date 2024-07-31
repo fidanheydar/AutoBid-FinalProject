@@ -11,12 +11,10 @@ namespace CarAuction.MVC.Controllers
     public class SettingController : Controller
     {
         private readonly ISettingService _service;
-        private readonly ILogger<SettingController> _logger;
         private readonly IMapper _mapper;
-        public SettingController(ISettingService service, ILogger<SettingController> logger, IMapper mapper)
+        public SettingController(ISettingService service, IMapper mapper)
         {
             _service = service;
-            _logger = logger;
             _mapper = mapper;
         }
         public async Task<IActionResult> Index(int page = 1)
@@ -72,7 +70,6 @@ namespace CarAuction.MVC.Controllers
                 ModelState.AddModelError("", result.Description);
                 return View(dto);
             }
-            //_logger.LogInformation("Setting Updated by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Remove(string id)
@@ -82,7 +79,6 @@ namespace CarAuction.MVC.Controllers
             {
                 return NotFound();
             }
-            //_logger.LogInformation("Setting Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
     }

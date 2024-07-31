@@ -19,13 +19,15 @@ namespace CarAuction.MVC.Controllers
         private readonly ICarService _carService;
         private readonly IStatusService _statusService;
 		private readonly IBidService _bidService;
+        private readonly IBrandService _brandService;
 
-        public HomeController(ICarService carService, IIdentityService identityService, IStatusService statusService, IBidService bidService)
+        public HomeController(ICarService carService, IIdentityService identityService, IStatusService statusService, IBidService bidService, IBrandService brandService)
         {
             _carService = carService;
             _identityService = identityService;
             _statusService = statusService;
             _bidService = bidService;
+            _brandService = brandService;
         }
         public async Task<IActionResult> DateSearch(string? date, string? todate)
         {
@@ -77,7 +79,7 @@ namespace CarAuction.MVC.Controllers
             {
                 Admins = (IEnumerable<UserGetDto>)result.items
             };
-            result = await _carService.GetAllAsync(0, 0);
+            result = await _carService.GetAllAsync(0, 0,x=>x.Status.Level !=1);
             vm.Cars = (IEnumerable<CarGetDto>)result.items;
             result = await _statusService.GetAllAsync(0, 0);
             vm.Statuses = (IEnumerable<StatusGetDto>)result.items;
@@ -85,7 +87,8 @@ namespace CarAuction.MVC.Controllers
             vm.Bids = (IEnumerable<BidGetDto>)result.items;
             result = await _identityService.GetAllUsers(0, 0,"User");
             vm.Users = (IEnumerable<UserGetDto>)result.items;
-
+            var chartResult = await _brandService.GetChartData();
+            vm.ChartData = chartResult;
             return View(vm);
         }
         public async Task<IActionResult> Date(string? date)
@@ -100,7 +103,7 @@ namespace CarAuction.MVC.Controllers
         }
         public async Task<IActionResult> Search(string search)
         {
-            var result = await _carService.GetAllAsync(0, 0, x => (x.Status.Level == 1 || x.Status.Level == 2) && !x.IsDeleted && (x.Model.Name.Trim().ToLower() + " " + x.Model.Brand.Name.Trim().ToLower()).Contains(search.Trim().ToLower()) || (x.Model.Brand.Name.Trim().ToLower() + " " + x.Model.Name.Trim().ToLower()).Contains(search.Trim().ToLower()));
+            var result = await _carService.GetAllAsync(0, 0, x => x.Status.Level!=3 && !x.IsDeleted && (x.Model.Name.Trim().ToLower() + " " + x.Model.Brand.Name.Trim().ToLower()).Contains(search.Trim().ToLower()) || (x.Model.Brand.Name.Trim().ToLower() + " " + x.Model.Name.Trim().ToLower()).Contains(search.Trim().ToLower()));
 
             IEnumerable<CarGetDto> Cars = ((IEnumerable<CarGetDto>)result.items);
             return Json(Cars);

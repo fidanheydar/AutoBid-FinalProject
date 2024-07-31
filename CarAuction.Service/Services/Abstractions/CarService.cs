@@ -1,14 +1,11 @@
 ﻿using AutoMapper;
 using CarAuction.Core.Models;
-using CarAuction.Core.Repositories;
 using CarAuction.Core.Repositories.Bids;
 using CarAuction.Core.Repositories.CarImages;
 using CarAuction.Core.Repositories.Cars;
 using CarAuction.Core.Repositories.Statuss;
-using CarAuction.Data.Repositories;
+using CarAuction.Core.Repositories.Subscribes;
 using CarAuction.Service.DTOs.Cars;
-using CarAuction.Service.DTOs.Colors;
-using CarAuction.Service.DTOs.Tags;
 using CarAuction.Service.Exceptions;
 using CarAuction.Service.Extensions;
 using CarAuction.Service.Responses;
@@ -16,19 +13,9 @@ using CarAuction.Service.Services.Interfaces;
 using CarAuction.Service.Structs;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
-using Miles.Service.Services.Implementations;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Reflection;
-using System.Runtime.ConstrainedExecution;
-using System.Text;
-using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace CarAuction.Service.Services.Abstractions
 {
@@ -45,7 +32,8 @@ namespace CarAuction.Service.Services.Abstractions
         private readonly IStatusReadRepository _statusReadRepository;
         private readonly IBidReadRepository _bidReadRepository;
         private readonly IMailService _mailService;
-        public CarService(ICarImageReadRepository carImageReadRepository, ICarWriteRepository carWriteRepository, ICarReadRepository carReadRepository, IHttpContextAccessor http, IWebHostEnvironment evn, IMapper mapper, ICarImageWriteRepository carImageWriteRepository, IIdentityService identityService, IStatusReadRepository statusReadRepository, IBidReadRepository bidReadRepository, IMailService mailService)
+        private readonly ISubscribeReadRepository _subscribeReadRepository;
+        public CarService(ICarImageReadRepository carImageReadRepository, ICarWriteRepository carWriteRepository, ICarReadRepository carReadRepository, IHttpContextAccessor http, IWebHostEnvironment evn, IMapper mapper, ICarImageWriteRepository carImageWriteRepository, IIdentityService identityService, IStatusReadRepository statusReadRepository, IBidReadRepository bidReadRepository, IMailService mailService, ISubscribeReadRepository subscribeReadRepository)
         {
             _carImageReadRepository = carImageReadRepository;
             _carWriteRepository = carWriteRepository;
@@ -58,6 +46,7 @@ namespace CarAuction.Service.Services.Abstractions
             _statusReadRepository = statusReadRepository;
             _bidReadRepository = bidReadRepository;
             _mailService = mailService;
+            _subscribeReadRepository = subscribeReadRepository;
         }
         public async Task<ApiResponse> CreateAsync(CarPostDto dto)
         {
@@ -97,6 +86,23 @@ namespace CarAuction.Service.Services.Abstractions
 
             await _carWriteRepository.AddAsync(car);
             await _carWriteRepository.SaveAsync();
+
+            try
+            {
+                await _mailService.SendEmailAsync(new DTOs.Mail.MailRequestDTO()
+                {
+                    Attachments = dto.Images,
+                    Subject = "New Car",
+                    Body = $"{car.Vin} Vin is added. Please check shop and find for you",
+                    ToEmails = _subscribeReadRepository.GetAll(x => !x.IsDeleted, 0, 0, false).Select(x => x.Email).ToList(),
+                });
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
             return new ApiResponse
             {
                 StatusCode = 201,
@@ -118,10 +124,16 @@ namespace CarAuction.Service.Services.Abstractions
         }
         public async Task<ApiResponse> GetAllAsync(int count, int page, Expression<Func<Car, bool>> expression)
         {
-            IEnumerable<Car> cars = await _carReadRepository.GetAll(expression, count, page).Include(x => x.Color).Include(x => x.Ban).Include(x => x.Fuel).Include(x => x.CarAuctionDetail)
-                .Include(x => x.CarImages).Include(x => x.Status).Include(x => x.Model).ThenInclude(x => x.Brand).Include(x => x.Admin).ToListAsync();
+            var cars = _carReadRepository.GetAll(x => !x.IsDeleted, 0, 0).Include(x => x.Color).Include(x => x.Ban).Include(x => x.Fuel).Include(x => x.CarAuctionDetail)
+                .ThenInclude(x => x.Winner)
+                .Include(x => x.CarImages).Include(x => x.Status).Include(x => x.Model).ThenInclude(x => x.Brand).Include(x => x.Admin).Where(expression);
 
-            List<CarGetDto> dtos = _mapper.Map<List<CarGetDto>>(cars);
+            if (count != 0 && page != 0)
+            {
+                cars = cars.Skip((page - 1) * count).Take(count);
+            }
+
+            List<CarGetDto> dtos = _mapper.Map<List<CarGetDto>>(await cars.ToListAsync());
 
             return new ApiResponse
             {
@@ -302,7 +314,7 @@ namespace CarAuction.Service.Services.Abstractions
         }
         public async Task<ApiResponse> GetAllImages(string carId)
         {
-            IEnumerable<CarImage> CarImages = await _carImageReadRepository.GetAll(x => !x.IsDeleted, 0, 0).ToListAsync();
+            IEnumerable<CarImage> CarImages = await _carImageReadRepository.GetAll(x => !x.IsDeleted && x.CarId.ToString() == carId, 0, 0).ToListAsync();
 
             return new ApiResponse
             {
@@ -328,77 +340,6 @@ namespace CarAuction.Service.Services.Abstractions
                 StatusCode = 203
             };
         }
-        public async Task<ApiResponse> FinishAuction(string carId)
-        {
-            Car car = await _carReadRepository.GetByIdAsync(carId, x => !x.IsDeleted, true, "CarAuctionDetail","Status");
-            if (car == null || car.Status.Level !=2)
-                throw new ItemNotFoundException();
 
-            Bid? maxBid = await _bidReadRepository.GetAll(x => x.CarId.ToString() == carId, 0, 0).Include(x => x.User).OrderByDescending(x => x.Count).FirstOrDefaultAsync();
-
-
-            car.CarAuctionDetail.FinishDate = DateTime.Now;
-            if (maxBid == null)
-            {
-                car.CarAuctionDetail.AuctionWinPrice = car.CarAuctionDetail.InitialPrice;
-            }
-            else
-            {
-                car.CarAuctionDetail.AuctionWinPrice = maxBid.Count;
-                car.CarAuctionDetail.Winner = maxBid.User;
-
-                await _mailService.SendEmailAsync(new DTOs.Mail.MailRequestDTO()
-                {
-                    Attachments = null,
-                    Subject = "Car Auction Result",
-                    Body = $"Congratulation.You Win {car.Vin} Car.Please login and check your account",
-                    ToEmails = new() { car.CarAuctionDetail.Winner.Email }
-                }
-                );
-            }
-            car.Status = await _statusReadRepository.GetAll(x => x.Level == 3 && !x.IsDeleted, 0, 0).FirstOrDefaultAsync();
-
-            _carWriteRepository.Update(car);
-            await _carWriteRepository.SaveAsync();
-            return new ApiResponse()
-            {
-                StatusCode = 203
-            };
-        }
-        public async Task<ApiResponse> StartAuction(string carId)
-        {
-            Car car = await _carReadRepository.GetByIdAsync(carId, x => !x.IsDeleted, true, "CarAuctionDetail", "Status");
-            if (car == null || car.Status.Level != 1)
-                throw new ItemNotFoundException();
-
-            car.Status = await _statusReadRepository.GetAll(x => x.Level == 2 && !x.IsDeleted, 0, 0).FirstOrDefaultAsync();
-            _carWriteRepository.Update(car);
-            await _carWriteRepository.SaveAsync();
-            return new ApiResponse()
-            {
-                StatusCode = 203
-            };
-        }
-        public ApiResponse CheckFinishDate()
-        {
-            var cars =  _carReadRepository.GetAll(x => !x.IsDeleted, 0, 0).Include(x => x.Status).Include(x=>x.CarAuctionDetail).Where(x=> x.Status.Level != 3).ToList();
-
-            foreach (var car in cars)
-            {
-                if(car.CarAuctionDetail.FinishDate <= DateTime.Now && car.Status.Level == 2)
-                {
-                    FinishAuction(car.Id.ToString()).Wait();
-                }
-                else if(car.CarAuctionDetail.AuctionDate <= DateTime.Now && car.Status.Level == 1)
-                {
-                    StartAuction(car.Id.ToString()).Wait();
-                }
-            }
-
-            return new()
-            {
-                StatusCode = 200
-            };
-        }
     }
 }

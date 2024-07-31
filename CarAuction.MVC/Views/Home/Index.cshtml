@@ -3,7 +3,8 @@
 @model HomeVM
 @{
     double amountCar = 0;
-    foreach(var item in Model.Cars){
+    foreach (var item in Model.Cars)
+    {
         amountCar += item.CarAuctionDetail.AuctionWinPrice;
     }
 }
@@ -40,7 +41,7 @@
                             <li class="nav-item">
                                 <a class="nav-link active" id="sales-tab" data-bs-toggle="tab" href="#sales" role="tab" aria-controls="sales" aria-selected="false">Sales Car</a>
                             </li>
-                          
+
                         </ul>
                         <div class="tab-content py-0 px-0">
                             <div class="tab-pane fade show active" id="sales" role="tabpanel" aria-labelledby="sales-tab">
@@ -88,7 +89,7 @@
                                         <i class="mdi mdi-cash-usd me-3 icon-lg text-danger"></i>
                                         <div class="d-flex flex-column justify-content-around">
                                             <small class="mb-1 text-muted">Max Bid</small>
-                                            <h5 class="me-2 mb-0" id="maxBid">$@Model.Bids.OrderByDescending(x=>x.Count).FirstOrDefault().Count </h5>
+                                            <h5 class="me-2 mb-0" id="maxBid">$@Model.Bids.OrderByDescending(x => x.Count).FirstOrDefault().Count </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -104,22 +105,22 @@
                     <div class="card-body">
                         <p class="card-title">Cars</p>
                         <div class="table-responsive">
-                            <table  class="table">
+                            <table class="table">
                                 <thead>
                                     <tr>
-                                          @foreach (var item in Model.Statuses)
-                                    {
-                                        <th>@item.Name</th>
-                                    }
+                                        @foreach (var item in Model.Statuses)
+                                        {
+                                            <th>@item.Name</th>
+                                        }
                                     </tr>
                                 </thead>
                                 <tbody>
-                                        <tr>
-                                            @foreach (var item in Model.Statuses)
-                                            {
-                                                <td>@item.Cars.Count()</td>
-                                            }
-                                        </tr>
+                                    <tr>
+                                        @foreach (var item in Model.Statuses)
+                                        {
+                                            <td>@item.Cars.Count()</td>
+                                        }
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -155,5 +156,81 @@
                 </div>
             </div>
         </div>
+        <div class="row" style="margin-bottom: 30px;">
+            <canvas id="myChart" style="width:100%;min-width:600px"></canvas>
+        </div>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+<script>
+    window.onload = function () {
+        var chartData = @Html.Raw(Json.Serialize(@Model.ChartData));
+        const ctx = document.getElementById('myChart');
+        const DATA_COUNT = 12;
+        const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 10000000 };
+        // Define the data object first
+        const labels = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'Jun.', 'Jul.', 'Aug.', 'Sep.', 'Oct.', 'Nov.', 'Dec.'];
+        const data = {
+            labels: labels,
+            datasets: [
+                {
+                    label: chartData[0].modelName,
+                    data: chartData[0].totalSales,
+                    borderColor: 'red',
+                    // backgroundColor: 'rgba(255, 99, 132, 0.5)',
+                    yAxisID: 'y',
+                },
+                {
+                    label: chartData[1].modelName,
+                    data: chartData[1].totalSales,
+                    borderColor: 'blue',
+                    // backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    yAxisID: 'y',
+                },
+                {
+                    label: chartData[2].modelName,
+                    data: chartData[2].totalSales,
+                    borderColor: 'yellow',
+                    // backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                    yAxisID: 'y',
+                }
+            ]
+        };
+        
+        // Create the chart configuration
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {
+                responsive: true,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                stacked: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Line Chart'
+                    }
+                },
+                scales: {
+                    yAxes: [
+                        {
+                        id: 'y',
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        },
+                    ],
+                }
+            },
+        };
+
+        // Create the chart
+
+        new Chart(ctx, config);
+    }
+</script>

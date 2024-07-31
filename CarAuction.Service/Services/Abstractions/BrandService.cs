@@ -135,5 +135,31 @@ namespace Miles.Service.Services.Implementations
                 items = brand
             };
         }
+        public async Task<List<ChartResponse>> GetChartData()
+        {
+            var entities = _readRepository.GetAll(x => !x.IsDeleted, 0, 0)
+         .Include(x => x.Models)
+             .ThenInclude(m => m.Cars)
+                 .ThenInclude(c => c.CarAuctionDetail)
+         .ToList();
+
+            // Step 2: Perform aggregation and ordering in memory
+            var orderedEntities = entities
+                .OrderByDescending(x => x.Models.Sum(m => m.Cars.Sum(c => c.CarAuctionDetail != null ? c.CarAuctionDetail.AuctionWinPrice : 0)))
+                .ToList();
+
+            var res = orderedEntities.Take(3).Select(x => new ChartResponse()
+            {
+                ModelName = x.Name,
+                TotalSales = Enumerable.Range(1, 12)  // Represents months from January (1) to December (12)
+                 .Select(month => x.Models
+                   .SelectMany(m => m.Cars)
+                  .Where(c => c.CarAuctionDetail != null && c.CarAuctionDetail.FinishDate.Month == month)
+                   .Sum(c => c.CarAuctionDetail.AuctionWinPrice))
+                 .ToArray()
+            });
+
+            return res.ToList();
+        }
     }
 }

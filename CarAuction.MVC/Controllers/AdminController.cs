@@ -11,12 +11,10 @@ namespace CarAuction.MVC.Controllers
     public class AdminController : Controller
     {
         private readonly IIdentityService _service;
-        private readonly ILogger<AdminController> _logger;
 
-        public AdminController(IIdentityService service, ILogger<AdminController> logger)
+        public AdminController(IIdentityService service)
         {
             _service = service;
-            _logger = logger;
         }
         public async Task<IActionResult> Index(int page = 1)
         {
@@ -44,7 +42,6 @@ namespace CarAuction.MVC.Controllers
             try
             {
                 var response = await _service.Register(dto, "Admin");
-                //_logger.LogInformation("Admin Created by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)
@@ -89,7 +86,6 @@ namespace CarAuction.MVC.Controllers
                     ModelState.AddModelError("", result.Description);
                     return View(dto);
                 }
-                //_logger.LogInformation("Admin Updated by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
                 return RedirectToAction(nameof(Index));
 
             }
@@ -111,7 +107,6 @@ namespace CarAuction.MVC.Controllers
                 ModelState.AddModelError("", result.Description);
                 return RedirectToAction(nameof(Index));
             }
-            //_logger.LogInformation("Admin Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
     }

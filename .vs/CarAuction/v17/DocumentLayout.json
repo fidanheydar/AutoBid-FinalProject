@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "D:\\Codes\\CarAuction\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|d:\\codes\\carauction\\carauction.service\\services\\abstractions\\carservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\services\\abstractions\\carservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|d:\\codes\\carauction\\carauction.mvc\\controllers\\modelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|solutionrelative:carauction.mvc\\controllers\\modelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|d:\\codes\\carauction\\carauction.service\\services\\interfaces\\ibidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\services\\interfaces\\ibidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|d:\\codes\\carauction\\carauction.service\\services\\interfaces\\icarservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\services\\interfaces\\icarservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|d:\\codes\\carauction\\carauction.mvc\\controllers\\bancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|solutionrelative:carauction.mvc\\controllers\\bancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,40 +31,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CarService.cs",
-              "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.Service\\Services\\Abstractions\\CarService.cs",
-              "RelativeDocumentMoniker": "CarAuction.Service\\Services\\Abstractions\\CarService.cs",
-              "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.Service\\Services\\Abstractions\\CarService.cs",
-              "RelativeToolTip": "CarAuction.Service\\Services\\Abstractions\\CarService.cs",
-              "ViewState": "AQIAAGkAAAAAAAAAAAAYwAAAAAAAAAAA",
+              "Title": "ModelController.cs",
+              "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.MVC\\Controllers\\ModelController.cs",
+              "RelativeDocumentMoniker": "CarAuction.MVC\\Controllers\\ModelController.cs",
+              "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.MVC\\Controllers\\ModelController.cs",
+              "RelativeToolTip": "CarAuction.MVC\\Controllers\\ModelController.cs",
+              "ViewState": "AQIAADwAAAAAAAAAAAAowAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T08:55:30.914Z",
+              "WhenOpened": "2024-07-31T19:49:57.179Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IBidService.cs",
-              "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.Service\\Services\\Interfaces\\IBidService.cs",
-              "RelativeDocumentMoniker": "CarAuction.Service\\Services\\Interfaces\\IBidService.cs",
-              "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.Service\\Services\\Interfaces\\IBidService.cs",
-              "RelativeToolTip": "CarAuction.Service\\Services\\Interfaces\\IBidService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "BanController.cs",
+              "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.MVC\\Controllers\\BanController.cs",
+              "RelativeDocumentMoniker": "CarAuction.MVC\\Controllers\\BanController.cs",
+              "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.MVC\\Controllers\\BanController.cs",
+              "RelativeToolTip": "CarAuction.MVC\\Controllers\\BanController.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAgwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T08:55:21.941Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ICarService.cs",
-              "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.Service\\Services\\Interfaces\\ICarService.cs",
-              "RelativeDocumentMoniker": "CarAuction.Service\\Services\\Interfaces\\ICarService.cs",
-              "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.Service\\Services\\Interfaces\\ICarService.cs",
-              "RelativeToolTip": "CarAuction.Service\\Services\\Interfaces\\ICarService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T08:55:17.836Z",
+              "WhenOpened": "2024-07-31T19:49:49.694Z",
               "EditorCaption": ""
             }
           ]

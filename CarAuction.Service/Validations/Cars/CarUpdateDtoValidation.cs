@@ -27,9 +27,9 @@ namespace CarAuction.Service.Validations.Cars
 			RuleFor(x => x)
 			 .Custom((x, context) =>
 			 {
-				 if (x.FabricationYear <= 2000)
+				 if (x.FabricationYear <= 2010)
 				 {
-					 context.AddFailure("FabricationYear", "FabricationYear must bigger than 2000");
+					 context.AddFailure("FabricationYear", "FabricationYear must bigger than 2010");
 				 }
 			 });
 			RuleFor(x => x.Odometer)

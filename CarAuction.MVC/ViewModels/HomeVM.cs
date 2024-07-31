@@ -3,6 +3,7 @@ using CarAuction.Service.DTOs.Bids;
 using CarAuction.Service.DTOs.Cars;
 using CarAuction.Service.DTOs.Identity;
 using CarAuction.Service.DTOs.Statuses;
+using CarAuction.Service.Responses;
 using System.Security.Cryptography;
 
 namespace CarAuction.MVC.ViewModels
@@ -14,5 +15,6 @@ namespace CarAuction.MVC.ViewModels
 		public IEnumerable<BidGetDto> Bids { get; set; }
 		public IEnumerable<UserGetDto> Admins { get; set; }
 		public IEnumerable<StatusGetDto> Statuses { get; set; }
+		public IEnumerable<ChartResponse> ChartData { get; set; }
 	}
 }

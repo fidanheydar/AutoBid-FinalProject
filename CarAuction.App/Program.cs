@@ -9,6 +9,8 @@ using CarAuction.Service.Services.Interfaces;
 using Hangfire;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Serilog.Sinks.MSSqlServer;
+using Serilog;
 using System.Text.Json.Serialization;
 
 namespace CarAuction.App
@@ -33,7 +35,6 @@ namespace CarAuction.App
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
-
 
             builder.Services.DataServiceRegistration();
             builder.Services.ServiceServiceRegistration();

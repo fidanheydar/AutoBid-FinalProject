@@ -18,15 +18,13 @@ namespace CarAuction.MVC.Controllers
         private readonly IBlogService _service;
         private readonly ICategoryService _categoryService;
         private readonly ITagService _tagService;
-        private readonly ILogger<BlogController> _logger;
         private readonly IMapper _mapper;
 
-        public BlogController(IBlogService service, ICategoryService categoryService, ITagService tagService, ILogger<BlogController> logger, IMapper mapper)
+        public BlogController(IBlogService service, ICategoryService categoryService, ITagService tagService, IMapper mapper)
         {
             _service = service;
             _categoryService = categoryService;
             _tagService = tagService;
-            _logger = logger;
             _mapper = mapper;
         }
 
@@ -67,7 +65,6 @@ namespace CarAuction.MVC.Controllers
                 ModelState.AddModelError("", result.Description);
                 return View(dto);
             }
-            //_logger.LogInformation("Blog Created by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
@@ -103,7 +100,6 @@ namespace CarAuction.MVC.Controllers
                 ModelState.AddModelError("", result.Description);
                 return View(dto);
             }
-            //_logger.LogInformation("Blog Updated by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Remove(string id)
@@ -117,7 +113,6 @@ namespace CarAuction.MVC.Controllers
             {
                 return NotFound();
             }
-            //_logger.LogInformation("Blog Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
     }

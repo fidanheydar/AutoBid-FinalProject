@@ -10,11 +10,11 @@ namespace CarAuction.App.Apps.Admin.Controllers
     [ApiController]
     public class JobController : ControllerBase
     {
-        private readonly ICarService _carService;
+        private readonly IAuctionService _auctionService;
 
-        public JobController(ICarService carService)
+        public JobController( IAuctionService auctionService)
         {
-            _carService = carService;
+            _auctionService = auctionService;
         }
 
         [HttpPost]
@@ -22,7 +22,7 @@ namespace CarAuction.App.Apps.Admin.Controllers
         [ActionName("CreateBackgroudJob")]
         public IActionResult CreateBackgroudJob()
         {
-            RecurringJob.AddOrUpdate(() => _carService.CheckFinishDate(), "*/1 * * * *");
+            RecurringJob.AddOrUpdate(() => _auctionService.CheckFinishDate(), "*/1 * * * *");
             return Ok();
         }
     }

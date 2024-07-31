@@ -23,7 +23,7 @@
                     <th>@item.CarAuctionDetail.FinishDate</th>
                     <th>@item.CarAuctionDetail.InitialPrice</th>
                     <th>@item.CarAuctionDetail.AuctionWinPrice</th>
-                     <th>@item.CarAuctionDetail.WinnerId</th>
+                    <th>@(item.WinnerName!=null ? item.WinnerName: "NO Winner")</th>
                     @foreach (var image in item.CarImages.Where(x => x.isMain))
                     {
                         <th><img style="width:100px;height:100px" src="@image.ImageUrl" /></th>

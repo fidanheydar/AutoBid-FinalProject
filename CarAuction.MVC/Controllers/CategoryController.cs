@@ -11,13 +11,11 @@ namespace CarAuction.MVC.Controllers
     public class CategoryController : Controller
     {
         private readonly ICategoryService _service;
-        private readonly ILogger<CategoryController> _logger;
         private readonly IMapper _mapper;
 
-        public CategoryController(ICategoryService service, ILogger<CategoryController> logger, IMapper mapper)
+        public CategoryController(ICategoryService service,IMapper mapper)
         {
             _service = service;
-            _logger = logger;
             _mapper = mapper;
         }
 
@@ -50,7 +48,6 @@ namespace CarAuction.MVC.Controllers
                 ModelState.AddModelError("", result.Description);
                 return View(dto);
             }
-            //_logger.LogInformation("Category Created by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
@@ -75,7 +72,6 @@ namespace CarAuction.MVC.Controllers
                 ModelState.AddModelError("", result.Description);
                 return View(dto);
             }
-            //_logger.LogInformation("Category Updated by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Remove(string id)
@@ -85,7 +81,6 @@ namespace CarAuction.MVC.Controllers
             {
                 return NotFound();
             }
-            //_logger.LogInformation("Category Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
     }

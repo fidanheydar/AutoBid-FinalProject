@@ -11,12 +11,10 @@ namespace CarAuction.MVC.Controllers
     public class TagController : Controller
     {
         private readonly ITagService _service;
-        private readonly ILogger<TagController> _logger;
         private readonly IMapper _mapper;
-        public TagController(ITagService service, ILogger<TagController> logger, IMapper mapper)
+        public TagController(ITagService service,IMapper mapper)
         {
             _service = service;
-            _logger = logger;
             _mapper = mapper;
         }
 
@@ -49,7 +47,6 @@ namespace CarAuction.MVC.Controllers
                 ModelState.AddModelError("", result.Description);
                 return View(dto);
             }
-            //_logger.LogInformation("Tag Created by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
         [HttpGet]
@@ -74,7 +71,6 @@ namespace CarAuction.MVC.Controllers
                 ModelState.AddModelError("", result.Description);
                 return View(dto);
             }
-            //_logger.LogInformation("Tag Updated by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
         public async Task<IActionResult> Remove(string id)
@@ -84,7 +80,6 @@ namespace CarAuction.MVC.Controllers
             {
                 return NotFound();
             }
-            //_logger.LogInformation("Tag Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return RedirectToAction(nameof(Index));
         }
     }

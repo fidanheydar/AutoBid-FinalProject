@@ -5,7 +5,7 @@ const modelInputNone = document.querySelector(".modelInputNone")
 const sliders = document.querySelectorAll(".sliderMain");
 let dateDropdown = document.getElementById('date-dropdown');
 let currentYear = new Date().getFullYear();
-let earliestYear = 2000;
+let earliestYear = 2010;
 let brand = null;
 let href = `/car/GetAllModel`;
 fetch(href)

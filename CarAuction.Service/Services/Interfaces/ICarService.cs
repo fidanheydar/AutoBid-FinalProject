@@ -20,8 +20,6 @@ namespace CarAuction.Service.Services.Interfaces
         Task<ApiResponse> GetImage(Expression<Func<CarImage, bool>> expression);
         Task<ApiResponse> SaveImage();
         Task<ApiResponse> GetAllAsync(int count, int page, Expression<Func<Car, bool>> expression);
-        Task<ApiResponse> FinishAuction(string carId);
-        Task<ApiResponse> StartAuction(string carId);
-        ApiResponse CheckFinishDate();
+
     }
 }

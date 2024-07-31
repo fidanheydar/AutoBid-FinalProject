@@ -29,6 +29,7 @@ namespace CarAuction.Service.DTOs.Cars
 		public double AuctionWinPrice { get; set; }
 		public DateTime AuctionDate { get; set; }
 		public DateTime FinishDate { get; set; }
+        public string WinnerName { get; set; }
 		public virtual Color Color { get; set; }
         public virtual Model Model { get; set; }
         public virtual Fuel Fuel { get; set; }
