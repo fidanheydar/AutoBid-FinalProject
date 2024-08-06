@@ -31,7 +31,7 @@ namespace CarAuction.Service.DTOs.Cars
         public Guid ModelId { get; set; }
         public Guid ColorId { get; set; }
 		public double InitialPrice { get; set; }
-		public double AuctionWinPrice { get; set; }
+		public double? AuctionWinPrice { get; set; }
 		public DateTime AuctionDate { get; set; }
 		public DateTime FinishDate { get; set; }
         public string WinnerName { get; set; }
@@ -40,7 +40,7 @@ namespace CarAuction.Service.DTOs.Cars
         public virtual FuelGetDto Fuel { get; set; }
         public virtual BanGetDto Ban { get; set; }
         [JsonIgnore]
-        public virtual CarAuctionDetail CarAuctionDetail { get; set; }
+        public virtual CarAuctionDetail? CarAuctionDetail { get; set; }
         public virtual ICollection<CarImage> CarImages { get; set; }
     }
 }

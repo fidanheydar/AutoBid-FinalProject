@@ -9,12 +9,12 @@ using System.Security.Cryptography;
 namespace CarAuction.MVC.ViewModels
 {
 	public class HomeVM
-	{
-		public IEnumerable<UserGetDto> Users { get; set; }
-		public IEnumerable<CarGetDto> Cars { get; set; }
-		public IEnumerable<BidGetDto> Bids { get; set; }
-		public IEnumerable<UserGetDto> Admins { get; set; }
-		public IEnumerable<StatusGetDto> Statuses { get; set; }
-		public IEnumerable<ChartResponse> ChartData { get; set; }
-	}
+    {
+        public IEnumerable<UserGetDto> Users { get; set; } = new List<UserGetDto>();
+		public IEnumerable<CarGetDto> Cars { get; set; } = new List<CarGetDto>();
+		public IEnumerable<BidGetDto> Bids { get; set; } = new List<BidGetDto>();
+        public IEnumerable<UserGetDto> Admins { get; set; } = new List<UserGetDto>();
+		public IEnumerable<StatusGetDto> Statuses { get; set; } = new List<StatusGetDto>();
+        public IEnumerable<ChartResponse> ChartData { get; set; } = new List<ChartResponse>();
+    }
 }

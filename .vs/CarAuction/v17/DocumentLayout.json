@@ -3,12 +3,48 @@
   "WorkspaceRootPath": "D:\\Codes\\CarAuction\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{41C1D96E-F406-4029-A71B-9826DCE0269B}|CarAuction.App\\CarAuction.App.csproj|d:\\codes\\carauction\\carauction.app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{41C1D96E-F406-4029-A71B-9826DCE0269B}|CarAuction.App\\CarAuction.App.csproj|solutionrelative:carauction.app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|d:\\codes\\carauction\\carauction.mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|solutionrelative:carauction.mvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|d:\\codes\\carauction\\carauction.service\\dtos\\statuses\\statusgetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\dtos\\statuses\\statusgetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|d:\\codes\\carauction\\carauction.mvc\\viewmodels\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|solutionrelative:carauction.mvc\\viewmodels\\homevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|d:\\codes\\carauction\\carauction.mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|solutionrelative:carauction.mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B60981A1-2899-4F45-A3FA-70EE7AACD467}|CarAuction.Core\\CarAuction.Core.csproj|d:\\codes\\carauction\\carauction.core\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B60981A1-2899-4F45-A3FA-70EE7AACD467}|CarAuction.Core\\CarAuction.Core.csproj|solutionrelative:carauction.core\\models\\car.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|d:\\codes\\carauction\\carauction.service\\dtos\\cars\\cargetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\dtos\\cars\\cargetdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B60981A1-2899-4F45-A3FA-70EE7AACD467}|CarAuction.Core\\CarAuction.Core.csproj|d:\\codes\\carauction\\carauction.core\\models\\carauctiondetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B60981A1-2899-4F45-A3FA-70EE7AACD467}|CarAuction.Core\\CarAuction.Core.csproj|solutionrelative:carauction.core\\models\\carauctiondetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|d:\\codes\\carauction\\carauction.mvc\\controllers\\subscribecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5558B77C-B0CE-47E5-AA4A-F2AD2F78DF8F}|CarAuction.MVC\\CarAuction.MVC.csproj|solutionrelative:carauction.mvc\\controllers\\subscribecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|d:\\codes\\carauction\\carauction.service\\services\\abstractions\\brandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A7B300F7-CBF8-46B6-A90C-AE5E835C634E}|CarAuction.Service\\CarAuction.Service.csproj|solutionrelative:carauction.service\\services\\abstractions\\brandservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41C1D96E-F406-4029-A71B-9826DCE0269B}|CarAuction.App\\CarAuction.App.csproj|d:\\codes\\carauction\\carauction.app\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{41C1D96E-F406-4029-A71B-9826DCE0269B}|CarAuction.App\\CarAuction.App.csproj|solutionrelative:carauction.app\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{41C1D96E-F406-4029-A71B-9826DCE0269B}|CarAuction.App\\CarAuction.App.csproj|d:\\codes\\carauction\\carauction.app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{41C1D96E-F406-4029-A71B-9826DCE0269B}|CarAuction.App\\CarAuction.App.csproj|solutionrelative:carauction.app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{41C1D96E-F406-4029-A71B-9826DCE0269B}|CarAuction.App\\CarAuction.App.csproj|d:\\codes\\carauction\\carauction.app\\serviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,11 +66,136 @@
       "DocumentGroups": [
         {
           "DockedHeight": 296,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Car.cs",
+              "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.Core\\Models\\Car.cs",
+              "RelativeDocumentMoniker": "CarAuction.Core\\Models\\Car.cs",
+              "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.Core\\Models\\Car.cs",
+              "RelativeToolTip": "CarAuction.Core\\Models\\Car.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAoAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T09:04:49.744Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "StatusGetDto.cs",
+              "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.Service\\DTOs\\Statuses\\StatusGetDto.cs",
+              "RelativeDocumentMoniker": "CarAuction.Service\\DTOs\\Statuses\\StatusGetDto.cs",
+              "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.Service\\DTOs\\Statuses\\StatusGetDto.cs",
+              "RelativeToolTip": "CarAuction.Service\\DTOs\\Statuses\\StatusGetDto.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAkwA0AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T09:04:03.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BrandService.cs",
+              "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.Service\\Services\\Abstractions\\BrandService.cs",
+              "RelativeDocumentMoniker": "CarAuction.Service\\Services\\Abstractions\\BrandService.cs",
+              "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.Service\\Services\\Abstractions\\BrandService.cs",
+              "RelativeToolTip": "CarAuction.Service\\Services\\Abstractions\\BrandService.cs",
+              "ViewState": "AQIAAJMAAAAAAAAAAAD4v50AAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T08:49:41.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CarAuctionDetail.cs",
+              "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.Core\\Models\\CarAuctionDetail.cs",
+              "RelativeDocumentMoniker": "CarAuction.Core\\Models\\CarAuctionDetail.cs",
+              "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.Core\\Models\\CarAuctionDetail.cs",
+              "RelativeToolTip": "CarAuction.Core\\Models\\CarAuctionDetail.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwA0AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T08:49:10.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CarGetDto.cs",
+              "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.Service\\DTOs\\Cars\\CarGetDto.cs",
+              "RelativeDocumentMoniker": "CarAuction.Service\\DTOs\\Cars\\CarGetDto.cs",
+              "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.Service\\DTOs\\Cars\\CarGetDto.cs",
+              "RelativeToolTip": "CarAuction.Service\\DTOs\\Cars\\CarGetDto.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAzwCEAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T08:43:30.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeVM.cs",
+              "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.MVC\\ViewModels\\HomeVM.cs",
+              "RelativeDocumentMoniker": "CarAuction.MVC\\ViewModels\\HomeVM.cs",
+              "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.MVC\\ViewModels\\HomeVM.cs",
+              "RelativeToolTip": "CarAuction.MVC\\ViewModels\\HomeVM.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAABEAAABdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T08:36:45.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.MVC\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "CarAuction.MVC\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.MVC\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "CarAuction.MVC\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAEsAAAAAAAAAAAAAAFwAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T08:34:14.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.MVC\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "CarAuction.MVC\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.MVC\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "CarAuction.MVC\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAQwFsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T08:33:10.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SubscribeController.cs",
+              "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.MVC\\Controllers\\SubscribeController.cs",
+              "RelativeDocumentMoniker": "CarAuction.MVC\\Controllers\\SubscribeController.cs",
+              "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.MVC\\Controllers\\SubscribeController.cs",
+              "RelativeToolTip": "CarAuction.MVC\\Controllers\\SubscribeController.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAswBUAAABLAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T08:33:00.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.App\\appsettings.json",
               "RelativeDocumentMoniker": "CarAuction.App\\appsettings.json",
@@ -46,16 +207,8 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "ServiceRegistration.cs",
               "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.App\\ServiceRegistration.cs",
               "RelativeDocumentMoniker": "CarAuction.App\\ServiceRegistration.cs",
@@ -63,25 +216,24 @@
               "RelativeToolTip": "CarAuction.App\\ServiceRegistration.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T08:07:35.899Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-05T08:07:35.899Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.App\\Program.cs",
               "RelativeDocumentMoniker": "CarAuction.App\\Program.cs",
               "ToolTip": "D:\\Codes\\CarAuction\\CarAuction.App\\Program.cs",
               "RelativeToolTip": "CarAuction.App\\Program.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAwBoAAAAIAAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAQwBoAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-05T07:58:03.824Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "SerilogExtension.cs",
               "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.App\\Extensions\\SerilogExtension.cs",
               "RelativeDocumentMoniker": "CarAuction.App\\Extensions\\SerilogExtension.cs",
@@ -89,12 +241,11 @@
               "RelativeToolTip": "CarAuction.App\\Extensions\\SerilogExtension.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T07:51:38.873Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-05T07:51:38.873Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 13,
               "Title": "BlogService.cs",
               "DocumentMoniker": "D:\\Codes\\CarAuction\\CarAuction.Service\\Services\\Abstractions\\BlogService.cs",
               "RelativeDocumentMoniker": "CarAuction.Service\\Services\\Abstractions\\BlogService.cs",
@@ -102,8 +253,7 @@
               "RelativeToolTip": "CarAuction.Service\\Services\\Abstractions\\BlogService.cs",
               "ViewState": "AQIAAKwAAAAAAAAAAAAgwMEAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T06:50:51.567Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-05T06:50:51.567Z"
             }
           ]
         },

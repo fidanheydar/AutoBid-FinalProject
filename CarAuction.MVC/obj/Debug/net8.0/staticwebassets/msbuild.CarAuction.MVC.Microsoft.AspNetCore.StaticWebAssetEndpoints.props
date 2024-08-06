@@ -16,13 +16,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\assets\css\style.css))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"556703"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022bXjbOwrLPDATWHY5h\u002BKUUosjlWK3bQbNac1o9b\u002Bj3L8=\u0022"},{"Name":"Last-Modified","Value":"Mon, 05 Aug 2024 10:42:17 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"556703"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022bXjbOwrLPDATWHY5h\u002BKUUosjlWK3bQbNac1o9b\u002Bj3L8=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/admin/assets/css/style.css~">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\assets\css\style.css~))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"556703"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022bXjbOwrLPDATWHY5h\u002BKUUosjlWK3bQbNac1o9b\u002Bj3L8=\u0022"},{"Name":"Last-Modified","Value":"Mon, 05 Aug 2024 10:42:17 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"556703"},{"Name":"Content-Type","Value":"application/octet-stream"},{"Name":"ETag","Value":"\u0022bXjbOwrLPDATWHY5h\u002BKUUosjlWK3bQbNac1o9b\u002Bj3L8=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/admin/assets/fonts/Roboto/Roboto-Black.eot">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\assets\fonts\Roboto\Roboto-Black.eot))</AssetFile>
@@ -166,7 +166,7 @@
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\assets\images\excel.png))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"4077"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022f6hmxcUJRP/yAUkmZ6HNjjy\u002Br02mxgMIKC\u002BGg7lXeEw=\u0022"},{"Name":"Last-Modified","Value":"Mon, 05 Aug 2024 10:37:33 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"4077"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022f6hmxcUJRP/yAUkmZ6HNjjy\u002Br02mxgMIKC\u002BGg7lXeEw=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/admin/assets/images/faces/face1.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\assets\images\faces\face1.jpg))</AssetFile>
@@ -358,7 +358,7 @@
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\assets\js\car-update.js))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"4531"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Ze4fFeKIJMEiUXoye\u002BWGf0c2MvvJz1nu0IzTTwbLx3U=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 Aug 2024 19:53:46 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"4531"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022Ze4fFeKIJMEiUXoye\u002BWGf0c2MvvJz1nu0IzTTwbLx3U=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/admin/assets/js/chart.js">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\assets\js\chart.js))</AssetFile>
@@ -442,7 +442,7 @@
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\assets\js\template.js))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"5621"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022dMxzaZWKhJlv8JgUllrNdMXKqx5M4E8QZkzA0X17F\u002Bo=\u0022"},{"Name":"Last-Modified","Value":"Thu, 01 Aug 2024 11:27:47 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"5621"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022dMxzaZWKhJlv8JgUllrNdMXKqx5M4E8QZkzA0X17F\u002Bo=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/admin/assets/pages/charts/chartjs.html">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\admin\assets\pages\charts\chartjs.html))</AssetFile>
@@ -598,7 +598,7 @@
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Bans\5738d069-1789-4a17-95d7-b14c10d21992autobid-main_categ2.png))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"376849"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022EKl4McaKpYmw15x3JCbb\u002B7MFhR5j0vBoKs82tRZPZx4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 31 Jul 2024 19:56:30 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"376849"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022EKl4McaKpYmw15x3JCbb\u002B7MFhR5j0vBoKs82tRZPZx4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/Images/Bans/b2dee9ed-1ecb-4482-b153-31175b35cfe8autobid-main_categ6.png">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Bans\b2dee9ed-1ecb-4482-b153-31175b35cfe8autobid-main_categ6.png))</AssetFile>
@@ -610,7 +610,7 @@
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\41054274-241f-40a9-ad68-b5fbce6c3b8fimages (9).jpeg))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"7482"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022cn\u002Bogsjji1oVp4TQu0x9B6WZymhI2l8PM1EWxGdfqig=\u0022"},{"Name":"Last-Modified","Value":"Wed, 31 Jul 2024 20:22:40 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"7482"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022cn\u002Bogsjji1oVp4TQu0x9B6WZymhI2l8PM1EWxGdfqig=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/Images/Blogs/61185327-faa9-429f-ab1f-f97db8ee6cf7Logo_C_sharp.svg.png">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\61185327-faa9-429f-ab1f-f97db8ee6cf7Logo_C_sharp.svg.png))</AssetFile>
@@ -628,19 +628,19 @@
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\8870da4f-f497-4f8f-9d59-5b9c24c02badimages (6).jpeg))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"7998"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022TfwZElC8sBO54rsdbA//faAYH5lZo550oAeOK\u002BhKTpY=\u0022"},{"Name":"Last-Modified","Value":"Wed, 31 Jul 2024 20:22:40 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"7998"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022TfwZElC8sBO54rsdbA//faAYH5lZo550oAeOK\u002BhKTpY=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/Images/Blogs/c67dea71-975e-4939-bef8-9e0086a665e1cheeseburger_1577043066.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\c67dea71-975e-4939-bef8-9e0086a665e1cheeseburger_1577043066.jpg))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"109137"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022WdsF5iU8uZunFPuScaDo\u002BHeInk4aPc9pB0rzMauC1lI=\u0022"},{"Name":"Last-Modified","Value":"Sat, 03 Aug 2024 22:21:51 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"109137"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022WdsF5iU8uZunFPuScaDo\u002BHeInk4aPc9pB0rzMauC1lI=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/Images/Blogs/df69ee51-1bcb-4583-b9cd-b0270ba84a14images (12).jpeg">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Blogs\df69ee51-1bcb-4583-b9cd-b0270ba84a14images (12).jpeg))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"7910"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00227RxVeLj8l6E9\u002BrxuugIc8ZQ6eLsEkJ\u002BgDTHMBgYk90g=\u0022"},{"Name":"Last-Modified","Value":"Sat, 03 Aug 2024 22:21:51 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"7910"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00227RxVeLj8l6E9\u002BrxuugIc8ZQ6eLsEkJ\u002BgDTHMBgYk90g=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/Images/Cars/10bb4370-a99e-4fba-b9cd-0b256cdb8489images (2).jpeg">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Cars\10bb4370-a99e-4fba-b9cd-0b256cdb8489images (2).jpeg))</AssetFile>
@@ -670,7 +670,7 @@
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Cars\24f1544f-ae86-421e-a246-9863ad5c4665images (11).jpeg))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"11589"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022VpFsQzdQv8PA5ZKD\u002BoARmWbt0pHwhxcXKvgGxHd6o70=\u0022"},{"Name":"Last-Modified","Value":"Wed, 31 Jul 2024 20:11:06 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"11589"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022VpFsQzdQv8PA5ZKD\u002BoARmWbt0pHwhxcXKvgGxHd6o70=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/Images/Cars/270f1c46-eb3e-4099-8cbe-232eb8980e072015_hyundai_sonata_dashboard.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Cars\270f1c46-eb3e-4099-8cbe-232eb8980e072015_hyundai_sonata_dashboard.jpg))</AssetFile>
@@ -748,13 +748,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Cars\8bae3449-85d4-4539-b456-4f5df6a009982018-toyota-prado-suv-navy-frankfurt-1200x800-(2).webp))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"100664"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022utczyEywYHzWAaSVuPUbB7lcSKVftiinm5/rPjmwaMY=\u0022"},{"Name":"Last-Modified","Value":"Wed, 31 Jul 2024 20:11:06 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"100664"},{"Name":"Content-Type","Value":"image/webp"},{"Name":"ETag","Value":"\u0022utczyEywYHzWAaSVuPUbB7lcSKVftiinm5/rPjmwaMY=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/Images/Cars/8c17633c-ad19-415f-b62a-f0cc808e6bdbimages (9).jpeg">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Cars\8c17633c-ad19-415f-b62a-f0cc808e6bdbimages (9).jpeg))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"7482"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022cn\u002Bogsjji1oVp4TQu0x9B6WZymhI2l8PM1EWxGdfqig=\u0022"},{"Name":"Last-Modified","Value":"Wed, 31 Jul 2024 20:11:06 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"7482"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022cn\u002Bogsjji1oVp4TQu0x9B6WZymhI2l8PM1EWxGdfqig=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/Images/Cars/9c519947-9092-428a-a17e-2c2ba1119b1e2015_hyundai_sonata_sedan_eco_fq_oem_1_1600.webp">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Cars\9c519947-9092-428a-a17e-2c2ba1119b1e2015_hyundai_sonata_sedan_eco_fq_oem_1_1600.webp))</AssetFile>
@@ -820,7 +820,7 @@
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Cars\dbb84cbd-c0bc-4d8a-8c3b-3b524af565deimages (10).jpeg))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"7048"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022A7AsKr6bwnNgPb9JNlCNMNJSYC60Pm3Iv7Q1HbSFPQ4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 31 Jul 2024 20:13:57 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"7048"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022A7AsKr6bwnNgPb9JNlCNMNJSYC60Pm3Iv7Q1HbSFPQ4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/Images/Cars/e2b00b49-955e-4498-b14c-6ef4f8df4649images.jpeg">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Cars\e2b00b49-955e-4498-b14c-6ef4f8df4649images.jpeg))</AssetFile>
@@ -832,7 +832,7 @@
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Cars\ef567609-66f5-40ff-8fd0-7f79c2744eccautobid-main_categ8.png))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"269792"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022Zpg5H/uxiuFUAC9EYV5A3bEbLv0KmN0F1FplI7cpH6k=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 Aug 2024 19:55:43 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Content-Length","Value":"269792"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022Zpg5H/uxiuFUAC9EYV5A3bEbLv0KmN0F1FplI7cpH6k=\u0022"},{"Name":"Last-Modified","Value":"Tue, 06 Aug 2024 08:19:10 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/CarAuction.MVC/Images/Cars/fbf66231-1c26-4222-8b59-4dbd8a133886images (6).jpeg">
       <AssetFile>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\Images\Cars\fbf66231-1c26-4222-8b59-4dbd8a133886images (6).jpeg))</AssetFile>

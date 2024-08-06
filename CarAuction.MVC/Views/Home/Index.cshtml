@@ -1,5 +1,4 @@
-﻿@using System.Globalization;
-@using CarAuction.MVC.ViewModels;
+﻿@using CarAuction.MVC.ViewModels;
 @model HomeVM
 @{
     double amountCar = 0;
@@ -68,14 +67,14 @@
                                         <i class="mdi mdi-car me-3 icon-lg text-warning"></i>
                                         <div class="d-flex flex-column justify-content-around">
                                             <small class="mb-1 text-muted">Amount</small>
-                                            <h5 class="me-2 mb-0 carsCount">@Model.Cars.Count()</h5>
+                                            <h5 class="me-2 mb-0 carsCount">@Model.Cars?.Count()</h5>
                                         </div>
                                     </div>
                                     <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                                         <i class="mdi mdi-gesture-double-tap me-3 icon-lg text-success"></i>
                                         <div class="d-flex flex-column justify-content-around">
                                             <small class="mb-1 text-muted">Total Bids</small>
-                                            <h5 class="me-2 mb-0 bidsCount">@Model.Bids.Count()</h5>
+                                            <h5 class="me-2 mb-0 bidsCount">@Model.Bids?.Count()</h5>
                                         </div>
                                     </div>
                                     <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
@@ -89,7 +88,7 @@
                                         <i class="mdi mdi-cash-usd me-3 icon-lg text-danger"></i>
                                         <div class="d-flex flex-column justify-content-around">
                                             <small class="mb-1 text-muted">Max Bid</small>
-                                            <h5 class="me-2 mb-0" id="maxBid">$@Model.Bids.OrderByDescending(x => x.Count).FirstOrDefault().Count </h5>
+                                            <h5 class="me-2 mb-0" id="maxBid">$@(Model.Bids?.OrderByDescending(x => x.Count)?.FirstOrDefault()?.Count ?? 0) </h5>
                                         </div>
                                     </div>
                                 </div>
@@ -110,7 +109,7 @@
                                     <tr>
                                         @foreach (var item in Model.Statuses)
                                         {
-                                            <th>@item.Name</th>
+                                            <th>@item?.Name</th>
                                         }
                                     </tr>
                                 </thead>
@@ -136,21 +135,21 @@
                             <div class="table-responsive">
                                 <table id="recent-purchases-listing" class="table">
                                     <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Surname</th>
-                                        <th>Email</th>
-                                    </tr>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Surname</th>
+                                            <th>Email</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach (var item in Model.Admins)
-                                    {
-                                        <tr>
-                                            <td>@item.Name</td>
-                                            <td>@item.Surname</td>
-                                            <td>@item.Email</td>
-                                        </tr>
-                                    }
+                                        @foreach (var item in Model.Admins)
+                                        {
+                                            <tr>
+                                                <td>@item.Name</td>
+                                                <td>@item.Surname</td>
+                                                <td>@item.Email</td>
+                                            </tr>
+                                        }
                                     </tbody>
                                 </table>
                             </div>
@@ -201,7 +200,7 @@
                 }
             ]
         };
-        
+
         // Create the chart configuration
 
         const config = {
@@ -223,10 +222,10 @@
                 scales: {
                     yAxes: [
                         {
-                        id: 'y',
-                        type: 'linear',
-                        display: true,
-                        position: 'left',
+                            id: 'y',
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
                         },
                     ],
                 }

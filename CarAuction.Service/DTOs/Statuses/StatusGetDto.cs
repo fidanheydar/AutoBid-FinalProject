@@ -11,8 +11,8 @@ namespace CarAuction.Service.DTOs.Statuses
     public record StatusGetDto
     {
         public Guid Id { get; set; }
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public int Level { get; set; }
-        public ICollection<Car> Cars { get; set; }
+        public ICollection<Car> Cars { get; set; } = new List<Car>();
     }
 }

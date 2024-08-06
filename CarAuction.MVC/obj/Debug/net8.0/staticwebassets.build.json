@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dNJOMtCDlB8v0OybB6ZoA024W5Q/gTW8rRz76AdDFBU=",
+  "Hash": "yUcV/1Tk3ekI9XC0sqMLv74d9OfgqGDfkrujuIj9iCk=",
   "Source": "CarAuction.MVC",
   "BasePath": "_content/CarAuction.MVC",
   "Mode": "Default",
@@ -1235,27 +1235,6 @@
       "OriginalItemSpec": "wwwroot\\admin\\assets\\images\\favicon.png"
     },
     {
-      "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\images\\logo-mini.svg",
-      "SourceId": "CarAuction.MVC",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\",
-      "BasePath": "_content/CarAuction.MVC",
-      "RelativePath": "admin/assets/images/logo-mini.svg",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "3cse1aex4y",
-      "Integrity": "869D9s53r9RL/pYUi0RjC9uCEVFzUHNNJjHMYTuojZA=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\admin\\assets\\images\\logo-mini.svg"
-    },
-    {
       "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\images\\logo.jpeg",
       "SourceId": "CarAuction.MVC",
       "SourceType": "Discovered",
@@ -1296,6 +1275,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\assets\\images\\logo.svg"
+    },
+    {
+      "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\images\\logo-mini.svg",
+      "SourceId": "CarAuction.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\",
+      "BasePath": "_content/CarAuction.MVC",
+      "RelativePath": "admin/assets/images/logo-mini.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3cse1aex4y",
+      "Integrity": "869D9s53r9RL/pYUi0RjC9uCEVFzUHNNJjHMYTuojZA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\assets\\images\\logo-mini.svg"
     },
     {
       "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\js\\car-update.js",
@@ -1697,27 +1697,6 @@
       "OriginalItemSpec": "wwwroot\\admin\\assets\\pages\\samples\\lock-screen.html"
     },
     {
-      "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\pages\\samples\\login-2.html",
-      "SourceId": "CarAuction.MVC",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\",
-      "BasePath": "_content/CarAuction.MVC",
-      "RelativePath": "admin/assets/pages/samples/login-2.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "ltaiqfr8sc",
-      "Integrity": "Sa1L6vGslf4h0p8bkGv15UohgdSCShGpF0/d0qCY08E=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\admin\\assets\\pages\\samples\\login-2.html"
-    },
-    {
       "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\pages\\samples\\login.html",
       "SourceId": "CarAuction.MVC",
       "SourceType": "Discovered",
@@ -1739,12 +1718,12 @@
       "OriginalItemSpec": "wwwroot\\admin\\assets\\pages\\samples\\login.html"
     },
     {
-      "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\pages\\samples\\register-2.html",
+      "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\pages\\samples\\login-2.html",
       "SourceId": "CarAuction.MVC",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\",
       "BasePath": "_content/CarAuction.MVC",
-      "RelativePath": "admin/assets/pages/samples/register-2.html",
+      "RelativePath": "admin/assets/pages/samples/login-2.html",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1753,11 +1732,11 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "pdc40e5im7",
-      "Integrity": "UyAKu0KnR1eJoz5vtk9Tx2bmKlXvp01sJpO+bMupdWo=",
+      "Fingerprint": "ltaiqfr8sc",
+      "Integrity": "Sa1L6vGslf4h0p8bkGv15UohgdSCShGpF0/d0qCY08E=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\admin\\assets\\pages\\samples\\register-2.html"
+      "OriginalItemSpec": "wwwroot\\admin\\assets\\pages\\samples\\login-2.html"
     },
     {
       "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\pages\\samples\\register.html",
@@ -1779,6 +1758,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\assets\\pages\\samples\\register.html"
+    },
+    {
+      "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\pages\\samples\\register-2.html",
+      "SourceId": "CarAuction.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\",
+      "BasePath": "_content/CarAuction.MVC",
+      "RelativePath": "admin/assets/pages/samples/register-2.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pdc40e5im7",
+      "Integrity": "UyAKu0KnR1eJoz5vtk9Tx2bmKlXvp01sJpO+bMupdWo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\assets\\pages\\samples\\register-2.html"
     },
     {
       "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\pages\\tables\\basic-table.html",
@@ -1928,6 +1928,27 @@
       "OriginalItemSpec": "wwwroot\\admin\\assets\\vendors\\chart.js\\Chart.min.js"
     },
     {
+      "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\vendors\\datatables.net\\jquery.dataTables.js",
+      "SourceId": "CarAuction.MVC",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\",
+      "BasePath": "_content/CarAuction.MVC",
+      "RelativePath": "admin/assets/vendors/datatables.net/jquery.dataTables.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "v359hfdmgn",
+      "Integrity": "Gx+Dn9lWiRNMl8pgN8PCqa+8G5sXGY1cin0dzvUzOd8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\admin\\assets\\vendors\\datatables.net\\jquery.dataTables.js"
+    },
+    {
       "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\vendors\\datatables.net-bs4\\dataTables.bootstrap4.css",
       "SourceId": "CarAuction.MVC",
       "SourceType": "Discovered",
@@ -1968,27 +1989,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\admin\\assets\\vendors\\datatables.net-bs4\\dataTables.bootstrap4.js"
-    },
-    {
-      "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\vendors\\datatables.net\\jquery.dataTables.js",
-      "SourceId": "CarAuction.MVC",
-      "SourceType": "Discovered",
-      "ContentRoot": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\",
-      "BasePath": "_content/CarAuction.MVC",
-      "RelativePath": "admin/assets/vendors/datatables.net/jquery.dataTables.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "Fingerprint": "v359hfdmgn",
-      "Integrity": "Gx+Dn9lWiRNMl8pgN8PCqa+8G5sXGY1cin0dzvUzOd8=",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\admin\\assets\\vendors\\datatables.net\\jquery.dataTables.js"
     },
     {
       "Identity": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\vendors\\mdi\\css\\materialdesignicons.min.css",
@@ -3100,7 +3100,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 05 Aug 2024 10:42:17 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
@@ -3128,7 +3128,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 05 Aug 2024 10:42:17 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
@@ -3800,7 +3800,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 05 Aug 2024 10:37:33 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
@@ -4590,34 +4590,6 @@
       "EndpointProperties": []
     },
     {
-      "Route": "admin/assets/images/logo-mini.svg",
-      "AssetFile": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\images\\logo-mini.svg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2247"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/svg+xml"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"869D9s53r9RL/pYUi0RjC9uCEVFzUHNNJjHMYTuojZA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 03 Jul 2023 14:39:49 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
       "Route": "admin/assets/images/logo.jpeg",
       "AssetFile": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\images\\logo.jpeg",
       "Selectors": [],
@@ -4674,6 +4646,34 @@
       "EndpointProperties": []
     },
     {
+      "Route": "admin/assets/images/logo-mini.svg",
+      "AssetFile": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\images\\logo-mini.svg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2247"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/svg+xml"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"869D9s53r9RL/pYUi0RjC9uCEVFzUHNNJjHMYTuojZA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Jul 2023 14:39:49 GMT"
+        }
+      ],
+      "EndpointProperties": []
+    },
+    {
       "Route": "admin/assets/js/car-update.js",
       "AssetFile": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\js\\car-update.js",
       "Selectors": [],
@@ -4696,7 +4696,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 Aug 2024 19:53:46 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
@@ -5088,7 +5088,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 01 Aug 2024 11:27:47 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
@@ -5206,34 +5206,6 @@
       "EndpointProperties": []
     },
     {
-      "Route": "admin/assets/pages/samples/login-2.html",
-      "AssetFile": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\pages\\samples\\login-2.html",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "4698"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/html"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Sa1L6vGslf4h0p8bkGv15UohgdSCShGpF0/d0qCY08E=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 03 Jul 2023 14:39:49 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
       "Route": "admin/assets/pages/samples/login.html",
       "AssetFile": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\pages\\samples\\login.html",
       "Selectors": [],
@@ -5262,8 +5234,8 @@
       "EndpointProperties": []
     },
     {
-      "Route": "admin/assets/pages/samples/register-2.html",
-      "AssetFile": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\pages\\samples\\register-2.html",
+      "Route": "admin/assets/pages/samples/login-2.html",
+      "AssetFile": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\pages\\samples\\login-2.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -5272,7 +5244,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5189"
+          "Value": "4698"
         },
         {
           "Name": "Content-Type",
@@ -5280,7 +5252,7 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"UyAKu0KnR1eJoz5vtk9Tx2bmKlXvp01sJpO+bMupdWo=\""
+          "Value": "\"Sa1L6vGslf4h0p8bkGv15UohgdSCShGpF0/d0qCY08E=\""
         },
         {
           "Name": "Last-Modified",
@@ -5309,6 +5281,34 @@
         {
           "Name": "ETag",
           "Value": "\"C7hla6aBEnkjKOwKMOGnmgcJR4tydiVocPU4oh+MItM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Jul 2023 14:39:49 GMT"
+        }
+      ],
+      "EndpointProperties": []
+    },
+    {
+      "Route": "admin/assets/pages/samples/register-2.html",
+      "AssetFile": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\pages\\samples\\register-2.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5189"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"UyAKu0KnR1eJoz5vtk9Tx2bmKlXvp01sJpO+bMupdWo=\""
         },
         {
           "Name": "Last-Modified",
@@ -5514,6 +5514,34 @@
       "EndpointProperties": []
     },
     {
+      "Route": "admin/assets/vendors/datatables.net/jquery.dataTables.js",
+      "AssetFile": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\vendors\\datatables.net\\jquery.dataTables.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "463261"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Gx+Dn9lWiRNMl8pgN8PCqa+8G5sXGY1cin0dzvUzOd8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 03 Jul 2023 14:39:49 GMT"
+        }
+      ],
+      "EndpointProperties": []
+    },
+    {
       "Route": "admin/assets/vendors/datatables.net-bs4/dataTables.bootstrap4.css",
       "AssetFile": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\vendors\\datatables.net-bs4\\dataTables.bootstrap4.css",
       "Selectors": [],
@@ -5561,34 +5589,6 @@
         {
           "Name": "ETag",
           "Value": "\"fVutitT58TQZNcyQs9HNRNOPJKpukpopXQWbftfolFk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 03 Jul 2023 14:39:49 GMT"
-        }
-      ],
-      "EndpointProperties": []
-    },
-    {
-      "Route": "admin/assets/vendors/datatables.net/jquery.dataTables.js",
-      "AssetFile": "D:\\Codes\\CarAuction\\CarAuction.MVC\\wwwroot\\admin\\assets\\vendors\\datatables.net\\jquery.dataTables.js",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "463261"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/javascript"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"Gx+Dn9lWiRNMl8pgN8PCqa+8G5sXGY1cin0dzvUzOd8=\""
         },
         {
           "Name": "Last-Modified",
@@ -5844,7 +5844,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 31 Jul 2024 19:56:30 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
@@ -5900,7 +5900,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 31 Jul 2024 20:22:40 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
@@ -5984,7 +5984,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 31 Jul 2024 20:22:40 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
@@ -6012,7 +6012,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 Aug 2024 22:21:51 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
@@ -6040,7 +6040,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 03 Aug 2024 22:21:51 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
@@ -6180,7 +6180,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 31 Jul 2024 20:11:06 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
@@ -6544,7 +6544,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 31 Jul 2024 20:11:06 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
@@ -6572,7 +6572,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 31 Jul 2024 20:11:06 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
@@ -6880,7 +6880,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 31 Jul 2024 20:13:57 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
@@ -6936,7 +6936,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 02 Aug 2024 19:55:43 GMT"
+          "Value": "Tue, 06 Aug 2024 08:19:10 GMT"
         }
       ],
       "EndpointProperties": []
