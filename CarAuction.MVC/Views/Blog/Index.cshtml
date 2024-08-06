@@ -8,6 +8,7 @@
                 <th scope="col">Author:</th>
                 <th scope="col">Blog Photo:</th>
                 <th scope="col">Section Photo:</th>
+                <th scope="col">Comments</th>
                 <th scope="col">Update</th>
                 <th scope="col">Delete</th>
             </tr>
@@ -21,12 +22,17 @@
                     <th>@item.Author</th>
                     <th><img style="width:100px;height:100px" src="@item.BaseImageUrl" /></th>
                     <th><img style="width:100px;height:100px" src="@item.SectionImageUrl" /></th>
-                    <td>
+                    <td class="text-center">
+                        <a asp-controller="comment" asp-action="index" asp-route-blogId="@item.Id">
+                            <i class="fas fa-comments text text-warning"></i>
+                        </a>
+                    </td>
+                    <td class="text-center">
                         <a asp-controller="blog" asp-action="update" asp-route-id="@item.Id">
                             <i class="fas fa-edit text text-primary"></i>
                         </a>
                     </td>
-                    <td>
+                    <td class="text-center">
                         <a onclick="if(!confirm('Are you sure?')){return false;}"
                            asp-controller="blog" asp-action="remove" asp-route-id="@item.Id"
                            class=" delete-item"><i class="fas fa-trash text text-danger"></i></a>

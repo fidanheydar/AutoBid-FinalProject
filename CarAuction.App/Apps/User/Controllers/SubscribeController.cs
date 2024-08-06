@@ -1,24 +1,20 @@
 ﻿using CarAuction.Service.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CarAuction.App.Apps.Users.Controllers
+namespace CarAuction.App.Apps.User.Controllers
 {
     [ApiExplorerSettings(GroupName = "user_v1")]
     [Route("api/v1/[controller]/[action]")]
     [ApiController]
-    public class SubscribeController : ControllerBase
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "User")]
+    public class SubscribeController(ISubscribeService subscribeService) : ControllerBase
     {
-        private readonly ISubscribeService _subcribeService;
-
-        public SubscribeController(ISubscribeService subscribeService)
-        {
-            _subcribeService = subscribeService;
-        }
         [HttpPost]
         public async Task<IActionResult> Subscribe(string email)
         {
-            var response = await _subcribeService.CreateAsync(email);
+            var response = await subscribeService.CreateAsync(email);
             return StatusCode(response.StatusCode, response);
         }
     }

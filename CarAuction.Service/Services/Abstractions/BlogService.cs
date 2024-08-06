@@ -20,6 +20,7 @@ using CarAuction.Service.Extensions;
 using CarAuction.Core.Repositories.BlogTags;
 using CarAuction.Core.Repositories.Tags;
 using CarAuction.Service.Services.Abstractions;
+using System.Reflection.Metadata;
 
 namespace Miles.Service.Services.Implementations
 {
@@ -47,15 +48,15 @@ namespace Miles.Service.Services.Implementations
 
         public async Task<ApiResponse> CreateAsync(BlogPostDto dto)
         {
-           string userName =  _http.HttpContext?.User.Identity.Name;
-           var user = await _identityService.GetUserByName(userName);
-            if (user == null) 
+            string userName = _http.HttpContext?.User.Identity.Name;
+            var user = await _identityService.GetUserByName(userName);
+            if (user == null)
                 throw new Exception("User not found");
-
-            dto.AdminId = user.Id;
 
 
             Blog Blog = _mapper.Map<Blog>(dto);
+
+            Blog.AdminId = user.Id;
 
             string url = dto.BaseImage.CreateImage(_evn.WebRootPath, "Images/Blogs");
             Blog.BaseImageUrl = _http.HttpContext?.Request.Scheme + "://" + _http.HttpContext?.Request.Host
@@ -86,13 +87,13 @@ namespace Miles.Service.Services.Implementations
 
         public async Task<ApiResponse> GetAllAsync(int count, int page)
         {
-            IEnumerable<Blog> Blogs = await _readRepository.GetAll(x => !x.IsDeleted, count, page).Include(x => x.Category).Include(x=>x.Admin).Include(x => x.BlogTags).ThenInclude(x => x.Tag).ToListAsync();
+            IEnumerable<Blog> Blogs = await _readRepository.GetAll(x => !x.IsDeleted, count, page).Include(x => x.Category).Include(x => x.Admin).Include(x => x.Comments).ThenInclude(x => x.User).Include(x => x.BlogTags).ThenInclude(x => x.Tag).ToListAsync();
 
             List<BlogGetDto> dtos = _mapper.Map<List<BlogGetDto>>(Blogs);
 
             foreach (BlogGetDto dto in dtos)
             {
-                dto.Tags =  _tagReadRepository.GetAll(x=>!x.IsDeleted && x.BlogId == dto.Id, count, page).Include(x=>x.Tag).ToList().Select(x=>x.Tag).ToList();
+                dto.Tags = _mapper.Map<List<TagGetDto>>(_tagReadRepository.GetAll(x => !x.IsDeleted && x.BlogId == dto.Id, count, page).Include(x => x.Tag).ToList().Select(x => x.Tag).ToList());
 
             }
 
@@ -105,9 +106,7 @@ namespace Miles.Service.Services.Implementations
 
         public async Task<ApiResponse> GetAsync(string id)
         {
-            Blog Blog = await _readRepository.GetByIdAsync(id, x => !x.IsDeleted, true, "Category","Admin","BlogTags");
-
-            Blog.BlogTags = await( _tagReadRepository.GetAll(x=>x.BlogId == Blog.Id,0,0)).Include(x=>x.Tag).ToListAsync();
+            Blog? Blog = await _readRepository.GetAll(x => !x.IsDeleted && x.Id.ToString() == id, 0, 0).Include(x => x.Category).Include(x => x.Admin).Include(x => x.BlogTags).Include(x => x.Comments).ThenInclude(x => x.User).FirstOrDefaultAsync();
 
             if (Blog is null)
             {
@@ -117,6 +116,9 @@ namespace Miles.Service.Services.Implementations
                     Description = "Not found"
                 };
             }
+
+            Blog.BlogTags = await (_tagReadRepository.GetAll(x => x.BlogId == Blog.Id, 0, 0)).Include(x => x.Tag).ToListAsync();
+
             BlogGetDto dto = _mapper.Map<BlogGetDto>(Blog);
 
             return new ApiResponse
@@ -148,7 +150,7 @@ namespace Miles.Service.Services.Implementations
 
         public async Task<ApiResponse> UpdateAsync(string id, BlogUpdateDto dto)
         {
-            Blog Blog = await _readRepository.GetByIdAsync(id, x => !x.IsDeleted);
+            Blog Blog = await _readRepository.GetByIdAsync(id, x => !x.IsDeleted, true, "BlogTags");
             if (Blog is null)
             {
                 return new ApiResponse
@@ -174,27 +176,23 @@ namespace Miles.Service.Services.Implementations
             Blog.Title = dto.Title;
             Blog.Fact = dto.Fact;
 
-            List<BlogTag> RemoveableTags = await _tagReadRepository.GetAll(x => !dto.TagIds.Contains(x.TagId) && x.BlogId == Blog.Id,0,0).ToListAsync();
+            var existingTags = Blog.BlogTags.Select(bt => bt.TagId).ToList();
 
+            // Remove tags that are no longer in the dto.TagIds
+            var removableTags = Blog.BlogTags.Where(bt => !dto.TagIds.Contains(bt.TagId)).ToList();
+            _tagWriteRepository.RemoveRange(removableTags);
 
-            _tagWriteRepository.RemoveRange(RemoveableTags);
-            await _tagWriteRepository.SaveAsync();
-
-            foreach (var item in dto.TagIds)
+            // Add new tags that are in dto.TagIds but not in the existing tags
+            var newTags = dto.TagIds.Where(tagId => !existingTags.Contains(tagId)).Select(tagId => new BlogTag
             {
-                if (_tagReadRepository.GetAll(x => x.BlogId.ToString() == id && x.TagId == item,0,0).Count() > 0)
-                    continue;
-
-                Blog.BlogTags.Add(new()
-                {
-                    BlogId = Blog.Id,
-                    TagId = item,
-                    Id = Guid.NewGuid(),
-                });
-            }
-
+                BlogId = Blog.Id,
+                TagId = tagId,
+                Id = Guid.NewGuid()
+            }).ToList();
+            await _tagWriteRepository.AddRangeAsync(newTags);
 
             await _writerepository.SaveAsync();
+
             return new ApiResponse
             {
                 StatusCode = 200,

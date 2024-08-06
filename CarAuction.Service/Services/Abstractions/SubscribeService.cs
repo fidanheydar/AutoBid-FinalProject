@@ -25,7 +25,14 @@ namespace CarAuction.Service.Services.Abstractions
 
         public async Task<ApiResponse> CreateAsync(string email)
         {
-
+            if (await _readRepository.isExsist(x => x.Email.Trim().ToLower() == email.Trim().ToLower()))
+            {
+                return new ApiResponse
+                {
+                    StatusCode = 400,
+                    Description = $"{email} Already exists"
+                };
+            }
             Regex re = new Regex("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
             if (!re.IsMatch(email))
             {

@@ -22,12 +22,14 @@ using CarAuction.Data.Repositories.CarImages;
 using CarAuction.Data.Repositories.BlogTags;
 using CarAuction.Core.Repositories.Statuss;
 using CarAuction.Core.Repositories.Bids;
+using CarAuction.Data.Repositories.Comments;
+using CarAuction.Core.Repositories.Comments;
 
 namespace CarAuction.Data
 {
     public static class ServiceRegistration
     {
-        public static void DataServiceRegistration(this IServiceCollection service)
+        public static void AddDataRegistration(this IServiceCollection service)
         {
             service.AddScoped<ICategoryWriteRepository, CategoryWriteRepository>();
             service.AddScoped<ICategoryReadRepository, CategoryReadRepository>();
@@ -71,8 +73,12 @@ namespace CarAuction.Data
             service.AddScoped<IColorWriteRepository, ColorWriteRepository>();
             service.AddScoped<IColorReadRepository, ColorReadRepository>();
 
+            service.AddScoped<ICommentWriteRepository, CommentWriteRepository>();
+            service.AddScoped<ICommentReadRepository, CommentReadRepository>();
+
             service.AddScoped<IStatusReadRepository, StatusReadRepository>();
             service.AddScoped<IStatusWriteRepository, StatusWriteRepository>();
+
         }
     }
 }

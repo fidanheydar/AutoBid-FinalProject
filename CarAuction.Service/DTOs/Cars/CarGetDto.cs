@@ -1,8 +1,13 @@
 ﻿using CarAuction.Core.Models;
+using CarAuction.Service.DTOs.Bans;
+using CarAuction.Service.DTOs.Colors;
+using CarAuction.Service.DTOs.Fuels;
+using CarAuction.Service.DTOs.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace CarAuction.Service.DTOs.Cars
@@ -30,10 +35,11 @@ namespace CarAuction.Service.DTOs.Cars
 		public DateTime AuctionDate { get; set; }
 		public DateTime FinishDate { get; set; }
         public string WinnerName { get; set; }
-		public virtual Color Color { get; set; }
-        public virtual Model Model { get; set; }
-        public virtual Fuel Fuel { get; set; }
-        public virtual Ban Ban { get; set; }
+		public virtual ColorGetDto Color { get; set; }
+        public virtual ModelGetDto Model { get; set; }
+        public virtual FuelGetDto Fuel { get; set; }
+        public virtual BanGetDto Ban { get; set; }
+        [JsonIgnore]
         public virtual CarAuctionDetail CarAuctionDetail { get; set; }
         public virtual ICollection<CarImage> CarImages { get; set; }
     }

@@ -25,9 +25,9 @@ namespace CarAuction.MVC.Controllers
         {
             var result = await _service.GetAllAsync(0, 0);
             int TotalCount = ((IEnumerable<BrandGetDto>)result.items).Count();
-            ViewBag.TotalPage = (int)Math.Ceiling((decimal)TotalCount / 4);
+            ViewBag.TotalPage = (int)Math.Ceiling((decimal)TotalCount / 8);
             ViewBag.CurrentPage = page;
-            int count = 4;
+            int count = 8;
              result = await _service.GetAllAsync(count,page);
             return View(result.items);
         }

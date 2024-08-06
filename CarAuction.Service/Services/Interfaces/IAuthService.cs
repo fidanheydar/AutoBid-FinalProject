@@ -16,5 +16,6 @@ namespace CarAuction.Service.Services.Interfaces
         Task<ApiResponse> RefreshTokenLoginAsync(string refreshToken);
         Task<ApiResponse> ResetPassword(string email);
         Task<ApiResponse> VerifyPasswordResetToken(ResetResponseDTO resetResponseDto);
+        Task<ApiResponse> ConfirmEmail(ConfirmEmailDTO confirmEmailDto);
     }
 }

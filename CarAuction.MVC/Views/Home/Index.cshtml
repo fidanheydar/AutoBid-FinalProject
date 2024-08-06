@@ -16,7 +16,7 @@
                 <div class="d-flex justify-content-between flex-wrap">
                     <div class="d-flex align-items-end flex-wrap">
                         <div class="me-md-3 me-xl-5">
-                            <h2>Admin Panel</h2>
+                            <h2>Car Auction Admin Panel</h2>
                             <p class="mb-md-0">Your analytics is here.</p>
                         </div>
                         <div class="d-flex">
@@ -100,7 +100,7 @@
             </div>
         </div>
         <div class="row" style="margin-bottom: 30px;">
-            <div class="col-md-6 stretch-card">
+            <div class="@(User.IsInRole("SuperAdmin") ? "col-md-6" : "col-md-12") stretch-card">
                 <div class="card">
                     <div class="card-body">
                         <p class="card-title">Cars</p>
@@ -127,20 +127,22 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 stretch-card">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-title">Admins</p>
-                        <div class="table-responsive">
-                            <table id="recent-purchases-listing" class="table">
-                                <thead>
+            @if (User.IsInRole("SuperAdmin"))
+            {
+                <div class="col-md-6 stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <p class="card-title">Admins</p>
+                            <div class="table-responsive">
+                                <table id="recent-purchases-listing" class="table">
+                                    <thead>
                                     <tr>
                                         <th>Name</th>
                                         <th>Surname</th>
                                         <th>Email</th>
                                     </tr>
-                                </thead>
-                                <tbody>
+                                    </thead>
+                                    <tbody>
                                     @foreach (var item in Model.Admins)
                                     {
                                         <tr>
@@ -149,18 +151,20 @@
                                             <td>@item.Email</td>
                                         </tr>
                                     }
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
         </div>
         <div class="row" style="margin-bottom: 30px;">
             <canvas id="myChart" style="width:100%;min-width:600px"></canvas>
         </div>
     </div>
 </div>
+<div hidden id="spinner"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
 <script>

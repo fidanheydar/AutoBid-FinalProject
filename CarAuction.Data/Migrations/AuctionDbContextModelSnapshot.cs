@@ -153,7 +153,7 @@ namespace CarAuction.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Bans");
+                    b.ToTable("Bans", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Bid", b =>
@@ -187,7 +187,7 @@ namespace CarAuction.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Bid");
+                    b.ToTable("Bid", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Blog", b =>
@@ -238,7 +238,7 @@ namespace CarAuction.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("Blogs", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.BlogTag", b =>
@@ -265,7 +265,7 @@ namespace CarAuction.Data.Migrations
 
                     b.HasIndex("BlogId");
 
-                    b.ToTable("BlogTags");
+                    b.ToTable("BlogTags", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Brand", b =>
@@ -289,7 +289,7 @@ namespace CarAuction.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Brands");
+                    b.ToTable("Brands", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Car", b =>
@@ -373,7 +373,7 @@ namespace CarAuction.Data.Migrations
 
                     b.HasIndex("StatusId");
 
-                    b.ToTable("Cars");
+                    b.ToTable("Cars", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.CarAuctionDetail", b =>
@@ -409,7 +409,7 @@ namespace CarAuction.Data.Migrations
 
                     b.HasIndex("WinnerId");
 
-                    b.ToTable("CarAuctionDetails");
+                    b.ToTable("CarAuctionDetails", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.CarImage", b =>
@@ -441,7 +441,7 @@ namespace CarAuction.Data.Migrations
 
                     b.HasIndex("CarId");
 
-                    b.ToTable("CarImages");
+                    b.ToTable("CarImages", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Category", b =>
@@ -465,7 +465,7 @@ namespace CarAuction.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Color", b =>
@@ -493,7 +493,42 @@ namespace CarAuction.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Colors");
+                    b.ToTable("Colors", (string)null);
+                });
+
+            modelBuilder.Entity("CarAuction.Core.Models.Comment", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BlogId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Text")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("BlogId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comments", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Fuel", b =>
@@ -517,7 +552,7 @@ namespace CarAuction.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Fuels");
+                    b.ToTable("Fuels", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Model", b =>
@@ -546,7 +581,7 @@ namespace CarAuction.Data.Migrations
 
                     b.HasIndex("BrandId");
 
-                    b.ToTable("Models");
+                    b.ToTable("Models", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Setting", b =>
@@ -594,7 +629,7 @@ namespace CarAuction.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Settings");
+                    b.ToTable("Settings", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Status", b =>
@@ -624,7 +659,7 @@ namespace CarAuction.Data.Migrations
                     b.HasIndex("Level")
                         .IsUnique();
 
-                    b.ToTable("Statuses");
+                    b.ToTable("Statuses", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Subscribe", b =>
@@ -648,7 +683,7 @@ namespace CarAuction.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Subscribes");
+                    b.ToTable("Subscribes", (string)null);
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Tag", b =>
@@ -672,7 +707,7 @@ namespace CarAuction.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tags");
+                    b.ToTable("Tags", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -917,6 +952,25 @@ namespace CarAuction.Data.Migrations
                     b.Navigation("Car");
                 });
 
+            modelBuilder.Entity("CarAuction.Core.Models.Comment", b =>
+                {
+                    b.HasOne("CarAuction.Core.Models.Blog", "Blog")
+                        .WithMany("Comments")
+                        .HasForeignKey("BlogId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("CarAuction.Core.Models.AppUser", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Blog");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("CarAuction.Core.Models.Model", b =>
                 {
                     b.HasOne("CarAuction.Core.Models.Brand", "Brand")
@@ -988,11 +1042,15 @@ namespace CarAuction.Data.Migrations
                     b.Navigation("CarAuctionDetails");
 
                     b.Navigation("Cars");
+
+                    b.Navigation("Comments");
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Blog", b =>
                 {
                     b.Navigation("BlogTags");
+
+                    b.Navigation("Comments");
                 });
 
             modelBuilder.Entity("CarAuction.Core.Models.Brand", b =>

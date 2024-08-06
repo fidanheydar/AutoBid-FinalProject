@@ -103,7 +103,7 @@ namespace CarAuction.Service.Services.Abstractions
 
             return new ApiResponse()
             {
-                items = _mapper.Map<List<BidGetDto>>(await response.ToListAsync()),
+                items = _mapper.Map<List<BidGetDto>>(await response.Include(x => x.User).ToListAsync()),
                 StatusCode = 200
             };
 
@@ -111,7 +111,7 @@ namespace CarAuction.Service.Services.Abstractions
 
         public async Task<ApiResponse> GetAllByCar(string carId)
         {
-            var response = await _readRepository.GetAll(x => !x.IsDeleted && x.CarId.ToString() == carId, 0, 0, false).OrderByDescending(x=>x.Count).ToListAsync();
+            var response = await _readRepository.GetAll(x => !x.IsDeleted && x.CarId.ToString() == carId, 0, 0, false).Include(x=>x.User).OrderByDescending(x=>x.Count).ToListAsync();
 
             var dtos = _mapper.Map<List<BidGetDto>>(response);
 

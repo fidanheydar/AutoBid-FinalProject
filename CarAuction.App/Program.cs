@@ -1,4 +1,3 @@
-
 using CarAuction.App.Extensions;
 using CarAuction.App.Middlewares;
 using CarAuction.Core.Options;
@@ -21,47 +20,14 @@ namespace CarAuction.App
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            builder.Services.AppServiceRegistration(builder.Configuration);
+            builder.Services.AddServiceRegistration();
+            builder.Services.AddDataRegistration();
 
-            builder.Services.AddControllers().AddJsonOptions(options =>
-            {
-                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-                options.JsonSerializerOptions.WriteIndented = true;
-            });
+            builder.Host.UseSerilog((context, configuration) =>
+    configuration.ReadFrom.Configuration(context.Configuration));
 
-            builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
-            {
-                builder.AllowAnyOrigin()
-                       .AllowAnyMethod()
-                       .AllowAnyHeader();
-            }));
-
-            builder.Services.DataServiceRegistration();
-            builder.Services.ServiceServiceRegistration();
-
-            builder.Services.AddSwaggerExtension();
-            builder.Services.AddHttpContextAccessor();
-            builder.Services.Configure<MailSetting>(builder.Configuration.GetSection("MailSetting"));
-
-            builder.Services.AddJWTTokenConfigurations(builder.Configuration["JwtTokenSettings:Audience"],
-                                     builder.Configuration["JwtTokenSettings:Issuer"],
-                                     builder.Configuration["JwtTokenSettings:SignInKey"]);
-
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddEndpointsApiExplorer();
-
-            builder.Services.AddDbContext<AuctionDbContext>(option =>
-                option.UseSqlServer(builder.Configuration.GetConnectionString("Develop")),
-                 ServiceLifetime.Transient
-            );
-
-            builder.Services.AddHangfire((sp, config) =>
-            {
-                var connectionString = sp.GetRequiredService<IConfiguration>().GetConnectionString("Develop");
-                config.UseSqlServerStorage(connectionString);
-            });
-            builder.Services.AddHangfireServer();
-           
+            //builder.Host.AddSerilogExtension(builder.Configuration.GetConnectionString("Develop"));
 
             builder.Services.AddSwaggerGen();
 
@@ -91,6 +57,7 @@ namespace CarAuction.App
             app.UseAuthorization();
             app.UseStaticFiles();
             app.UseHangfireDashboard();
+
             app.MapControllers();
 
             app.Run();

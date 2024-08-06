@@ -30,6 +30,7 @@ namespace CarAuction.Service.Services.Abstractions
             _tokenService = tokenService;
             _mailService = mailService;
         }
+
         public async Task<ApiResponse> ResetPassword(string email)
         {
             var user = await _userManager.FindByEmailAsync(email);
@@ -49,7 +50,8 @@ namespace CarAuction.Service.Services.Abstractions
                     Subject = "ResetPassword",
                     Body = $"Please click on the link below to reset your password: \n {resetLink}",
                     ToEmails = new List<string> { user.Email },
-                }); ;
+                });
+                ;
                 return new()
                 {
                     items = emailResponseDto,
@@ -57,6 +59,7 @@ namespace CarAuction.Service.Services.Abstractions
                     Description = " Reset Token Generated"
                 };
             }
+
             return new()
             {
                 items = null,
@@ -64,6 +67,7 @@ namespace CarAuction.Service.Services.Abstractions
                 Description = " Reset not generated"
             };
         }
+
         public async Task<ApiResponse> VerifyPasswordResetToken(ResetResponseDTO resetResponseDto)
         {
             var user = await _userManager.FindByIdAsync(resetResponseDto.UserId);
@@ -71,13 +75,57 @@ namespace CarAuction.Service.Services.Abstractions
             if (user is not null)
             {
                 var decodedResetToken = resetResponseDto.ResetToken.DecodeToken();
-                isValidToken = await _userManager.VerifyUserTokenAsync(user, _userManager.Options.Tokens.PasswordResetTokenProvider, "ResetPassword", decodedResetToken);
+                isValidToken = await _userManager.VerifyUserTokenAsync(user,
+                    _userManager.Options.Tokens.PasswordResetTokenProvider, "ResetPassword", decodedResetToken);
             }
+
             return new()
             {
                 StatusCode = (int)(isValidToken ? HttpStatusCode.OK : HttpStatusCode.BadRequest),
                 Description = $"{isValidToken}"
             };
+        }
+
+        public async Task<ApiResponse> ConfirmEmail(ConfirmEmailDTO dto)
+        {
+            var user = await _userManager.FindByIdAsync(dto.UserId);
+            if (dto?.UserId == null || dto?.Token == null)
+            {
+                return new ApiResponse()
+                {
+                    StatusCode = 410,
+                    Description = "Link expired"
+                };
+            }
+            else if (user == null)
+            {
+                return new ApiResponse()
+                {
+                    StatusCode = 404,
+                    Description = "User not Found"
+                };
+            }
+            else
+            {
+                dto.Token = dto.Token.Replace(" ", "+");
+                var result = await _userManager.ConfirmEmailAsync(user, dto.Token);
+                if (result.Succeeded)
+                {
+                    return new ApiResponse()
+                    {
+                        StatusCode = 200,
+                        Description = "Thank you for confirming your email"
+                    };
+                }
+                else
+                {
+                    return new ApiResponse()
+                    {
+                        StatusCode = 400,
+                        Description = "Email not confirmed"
+                    };
+                }
+            }
         }
 
         public async Task<ApiResponse> UpdatePasswordAsync(UpdatePasswordDTO updatePasswordDto)
@@ -87,7 +135,8 @@ namespace CarAuction.Service.Services.Abstractions
             if (user is not null)
             {
                 var decodedResetToken = updatePasswordDto.ResetToken.DecodeToken();
-                IdentityResult resetPassword = await _userManager.ResetPasswordAsync(user, decodedResetToken, updatePasswordDto.NewPassword);
+                IdentityResult resetPassword =
+                    await _userManager.ResetPasswordAsync(user, decodedResetToken, updatePasswordDto.NewPassword);
                 if (resetPassword.Succeeded)
                 {
                     IdentityResult result = await _userManager.UpdateSecurityStampAsync(user);
@@ -101,7 +150,8 @@ namespace CarAuction.Service.Services.Abstractions
             };
         }
 
-        public async Task UpdateRefreshToken(AppUser user, string refreshToken, DateTime accessTokenLifeTime, int addMinuteToLifeTime)
+        public async Task UpdateRefreshToken(AppUser user, string refreshToken, DateTime accessTokenLifeTime,
+            int addMinuteToLifeTime)
         {
             user.RefreshToken = refreshToken;
             user.RefreshTokenExpirationDate = accessTokenLifeTime.AddMinutes(addMinuteToLifeTime);
@@ -121,6 +171,7 @@ namespace CarAuction.Service.Services.Abstractions
                     StatusCode = 200
                 };
             }
+
             throw new TokenFailedException();
         }
     }

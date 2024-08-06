@@ -32,8 +32,8 @@ namespace CarAuction.MVC
             //}));
             builder.Services.Configure<MailSetting>(builder.Configuration.GetSection("MailSetting"));
             builder.Services.AddControllersWithViews();
-            builder.Services.ServiceServiceRegistration();
-            builder.Services.DataServiceRegistration();
+            builder.Services.AddServiceRegistration();
+            builder.Services.AddDataRegistration();
 			builder.Services.AddControllers().AddJsonOptions(options =>
 			{
 				options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;

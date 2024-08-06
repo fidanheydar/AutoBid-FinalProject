@@ -1,4 +1,7 @@
 ﻿using CarAuction.Core.Models;
+using CarAuction.Service.DTOs.Categories;
+using CarAuction.Service.DTOs.Comments;
+using CarAuction.Service.DTOs.Tags;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -17,7 +20,8 @@ namespace CarAuction.Service.DTOs.Blogs
         public string SectionImageUrl { get; set; }
         public string Fact { get; set; }
         public string Author  { get; set; }
-        public Category Category { get; set; }
-        public List<Tag> Tags { get; set; }
+        public CategoryGetDto Category { get; set; }
+        public List<TagGetDto> Tags { get; set; }
+        public List<CommentGetDto> Comments { get; set; }
     }
 }

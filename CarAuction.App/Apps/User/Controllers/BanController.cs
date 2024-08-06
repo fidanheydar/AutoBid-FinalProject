@@ -1,32 +1,26 @@
 ﻿using CarAuction.Service.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CarAuction.App.Apps.Users.Controllers
+namespace CarAuction.App.Apps.User.Controllers
 {
     [ApiExplorerSettings(GroupName = "user_v1")]
     [Route("api/v1/[controller]/[action]")]
     [ApiController]
-    public class BanController : ControllerBase
+    public class BanController(IBanService banService) : ControllerBase
     {
-        private readonly IBanService _banService;
-
-        public BanController(IBanService banService)
-        {
-            _banService = banService;
-        }
         [HttpGet]
         [ActionName("GetBans")]
         public async Task<IActionResult> Get([FromQuery] int page, int count)
         {
-            var response = await _banService.GetAllAsync(count, page);
+            var response = await banService.GetAllAsync(count, page);
             return StatusCode(response.StatusCode, response);
         }
+
         [HttpGet("{id}")]
         [ActionName("GetBan")]
         public async Task<IActionResult> Get([FromRoute] string id)
         {
-            var response = await _banService.GetAsync(id);
+            var response = await banService.GetAsync(id);
             return StatusCode(response.StatusCode, response);
         }
     }

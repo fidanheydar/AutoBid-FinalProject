@@ -18,9 +18,9 @@ namespace CarAuction.Core.Models
         public Guid CategoryId { get; set; }
         [ForeignKey(nameof(Admin))]
         public string AdminId { get; set; }
-        public virtual AppUser Admin { get; set; }
-        public virtual Category Category { get; set; }
+        public virtual AppUser? Admin { get; set; }
+        public virtual Category? Category { get; set; }
         public virtual ICollection<BlogTag> BlogTags { get; set; }  = new List<BlogTag>();
-
+        public virtual ICollection<Comment>? Comments { get; set; } = new List<Comment>();
     }
 }

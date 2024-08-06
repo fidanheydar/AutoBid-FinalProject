@@ -8,68 +8,79 @@
 <div class="container">
     <table class="table table-sm text-center">
         <thead>
-            <tr>
-                <th scope="col">Vin:</th>
-                <th scope="col">Admin:</th>
-                <th scope="col">Model:</th>
-                <th scope="col">Auction Date:</th>
-                <th scope="col">Finish Date:</th>
-                <th scope="col">Initial Price:</th>
-                <th scope="col">Image:</th>
-                <th scope="col">Finish Auction</th>
-                <th scope="col">Update</th>
-                <th scope="col">Delete</th>
-            </tr>
+        <tr>
+            <th scope="col">Vin:</th>
+            <th scope="col">Admin:</th>
+            <th scope="col">Model:</th>
+            <th scope="col">Auction Date:</th>
+            <th scope="col">Finish Date:</th>
+            <th scope="col">Initial Price:</th>
+            <th scope="col">Image:</th>
+            <th scope="col">Finish Auction</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <th>@item.Vin</th>
-                    <th>@item.Admin</th>
-                    <th>@item.Model.Name</th>
-                    <th>@item.CarAuctionDetail.AuctionDate</th>
-                    <th>@item.CarAuctionDetail.FinishDate</th>
-                    <th>@item.CarAuctionDetail.InitialPrice</th>
-                    @foreach (var image in item.CarImages.Where(x => x.isMain))
-                    {
-                        <th><img style="width:100px;height:100px" src="@image.ImageUrl" /></th>
-
-                    }
-                    <td>
-                        <a asp-controller="Car" asp-action="finishAuction" asp-route-id="@item.Id">
-                            <i class="fas fa-flag-checkered text-warning"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <a asp-controller="Car" asp-action="update" asp-route-id="@item.Id">
-                            <i class="fas fa-edit text text-primary"></i>
-                        </a>
-                    </td>
-                    <td>
-                        <a onclick="if(!confirm('Are you sure?')){return false;}"
-                           asp-controller="Car" asp-action="remove" asp-route-id="@item.Id"
-                           class=" delete-item"><i class="fas fa-trash text text-danger"></i></a>
-                    </td>
-                </tr>
-            }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th>@item.Vin</th>
+                <th>@item.Admin</th>
+                <th>@item.Model.Name</th>
+                <th>@item.CarAuctionDetail.AuctionDate</th>
+                <th>@item.CarAuctionDetail.FinishDate</th>
+                <th>@item.CarAuctionDetail.InitialPrice</th>
+                @foreach (var image in item.CarImages.Where(x => x.isMain))
+                {
+                    <th>
+                        <img style="width:100px;height:100px" src="@image.ImageUrl"/>
+                    </th>
+                }
+                <td>
+                    <a asp-controller="Car" asp-action="finishAuction" asp-route-id="@item.Id">
+                        <i class="fas fa-flag-checkered text-warning"></i>
+                    </a>
+                </td>
+                <td>
+                    <a asp-controller="Car" asp-action="update" asp-route-id="@item.Id">
+                        <i class="fas fa-edit text text-primary"></i>
+                    </a>
+                </td>
+                <td>
+                    <a onclick="if(!confirm('Are you sure?')){return false;}"
+                       asp-controller="Car" asp-action="remove" asp-route-id="@item.Id"
+                       class=" delete-item">
+                        <i class="fas fa-trash text text-danger"></i>
+                    </a>
+                </td>
+            </tr>
+        }
         </tbody>
     </table>
-    <ul class="pagination">
-        <li><a class=" page-link" asp-controller="Car" asp-action="index" asp-route-page="1">«</a></li>
-        @for (int i = 1; i <= ViewBag.TotalPage; i++)
-        {
-            @if (i == ViewBag.CurrentPage)
+        <ul class="pagination">
+            <li>
+                <a class=" page-link" asp-controller="Car" asp-action="index" asp-route-page="1">«</a>
+            </li>
+            @for (int i = 1; i <= ViewBag.TotalPage; i++)
             {
-                <li class="page-item active"><a class=" page-link" asp-controller="Car" asp-action="index" asp-route-page="@i">@i</a></li>
+                @if (i == ViewBag.CurrentPage)
+                {
+                    <li class="page-item active">
+                        <a class=" page-link" asp-controller="Car" asp-action="index" asp-route-page="@i">@i</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class=" page-link" asp-controller="Car" asp-action="index" asp-route-page="@i">@i</a>
+                    </li>
+                }
             }
-            else
-            {
-                <li class="page-item"><a class=" page-link" asp-controller="Car" asp-action="index" asp-route-page="@i">@i</a></li>
-            }
-        }
-        <li><a class="page-link" asp-controller="Car" asp-action="index" asp-route-page="@ViewBag.TotalPage">»</a></li>
-    </ul>
+            <li>
+                <a class="page-link" asp-controller="Car" asp-action="index" asp-route-page="@ViewBag.TotalPage">»</a>
+            </li>
+        </ul>
     <div>
         <a asp-controller="Car" asp-action="create" style="display: block; text-decoration: none; color: white; width: 100%; height: 100%" a>
             <div style="width:100%; " class="btn btn-outline-success">Create Car </div>
@@ -77,7 +88,7 @@
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-                <script>
+<script>
     const errorM = document.querySelector("#error");
     if (errorM != undefined) {
         const message = errorM.innerHTML;

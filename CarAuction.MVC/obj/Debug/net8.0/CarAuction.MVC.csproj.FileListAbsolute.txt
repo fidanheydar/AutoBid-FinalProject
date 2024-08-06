@@ -184,3 +184,14 @@ D:\Codes\CarAuction\CarAuction.MVC\obj\Debug\net8.0\refint\CarAuction.MVC.dll
 D:\Codes\CarAuction\CarAuction.MVC\obj\Debug\net8.0\CarAuction.MVC.pdb
 D:\Codes\CarAuction\CarAuction.MVC\obj\Debug\net8.0\CarAuction.MVC.genruntimeconfig.cache
 D:\Codes\CarAuction\CarAuction.MVC\obj\Debug\net8.0\ref\CarAuction.MVC.dll
+D:\Codes\CarAuction\CarAuction.MVC\bin\Debug\net8.0\CarAuction.MVC.staticwebassets.endpoints.json
+D:\Codes\CarAuction\CarAuction.MVC\bin\Debug\net8.0\System.Formats.Asn1.dll
+D:\Codes\CarAuction\CarAuction.MVC\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\Codes\CarAuction\CarAuction.MVC\obj\Debug\net8.0\staticwebassets\msbuild.CarAuction.MVC.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+D:\Codes\CarAuction\CarAuction.MVC\bin\Debug\net8.0\ClosedXML.dll
+D:\Codes\CarAuction\CarAuction.MVC\bin\Debug\net8.0\ClosedXML.Parser.dll
+D:\Codes\CarAuction\CarAuction.MVC\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\Codes\CarAuction\CarAuction.MVC\bin\Debug\net8.0\ExcelNumberFormat.dll
+D:\Codes\CarAuction\CarAuction.MVC\bin\Debug\net8.0\RBush.dll
+D:\Codes\CarAuction\CarAuction.MVC\bin\Debug\net8.0\SixLabors.Fonts.dll
+D:\Codes\CarAuction\CarAuction.MVC\bin\Debug\net8.0\System.IO.Packaging.dll

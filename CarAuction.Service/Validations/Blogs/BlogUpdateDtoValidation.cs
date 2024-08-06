@@ -16,7 +16,7 @@ namespace CarAuction.Service.Validations.Blogs
 			  .NotEmpty()
 			  .NotNull().WithMessage("Name can not be null")
 			  .MinimumLength(3)
-			  .MaximumLength(30);
+			  .MaximumLength(80);
 
 			RuleFor(x => x.Description)
 			.NotEmpty()
@@ -28,7 +28,7 @@ namespace CarAuction.Service.Validations.Blogs
 		   .NotEmpty()
 			.NotNull().WithMessage("Fact can not be null")
 			.MinimumLength(3)
-			.MaximumLength(30);
+			.MaximumLength(300);
 
 			RuleFor(x => x.CategoryId)
 		   .NotEmpty()

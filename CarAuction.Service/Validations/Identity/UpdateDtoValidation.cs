@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CarAuction.Service.Validations.Identity
 {
-    public class UpdateDtoValidation : AbstractValidator<RegisterDto>
+    public class UpdateDtoValidation : AbstractValidator<UpdateDto>
     {
         public UpdateDtoValidation()
         {

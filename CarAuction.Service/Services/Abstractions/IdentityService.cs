@@ -14,6 +14,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http.HttpResults;
 using static System.Net.WebRequestMethods;
 
 namespace CarAuction.Service.Services.Abstractions
@@ -25,14 +26,16 @@ namespace CarAuction.Service.Services.Abstractions
         private readonly ITokenService _tokenService;
         private readonly IAuthService _authService;
         private readonly IHttpContextAccessor _contextAccessor;
+        private readonly IMailService _mailService;
 
-        public IdentityService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService, IAuthService authService, IHttpContextAccessor contextAccessor)
+        public IdentityService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService, IAuthService authService, IHttpContextAccessor contextAccessor, IMailService mailService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _tokenService = tokenService;
             _authService = authService;
             _contextAccessor = contextAccessor;
+            _mailService = mailService;
         }
         public async Task<ApiResponse> Register(RegisterDto registerDto, string role = null)
         {
@@ -51,6 +54,11 @@ namespace CarAuction.Service.Services.Abstractions
                 Surname = registerDto.Surname
             };
 
+            if (role is not "User")
+            {
+                user.EmailConfirmed = true;
+            }
+
             IdentityResult result = await _userManager.CreateAsync(user, registerDto.Password);
 
             if (!result.Succeeded)
@@ -62,6 +70,19 @@ namespace CarAuction.Service.Services.Abstractions
                 };
             }
             await _userManager.AddToRoleAsync(user, role);
+            if (role is "User")
+            {
+                var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                var confirmationLink = $"https://localhost:44388/api/v1/Auth/ConfirmEmail?UserId={user.Id}&Token={token}";
+                await _mailService.SendEmailAsync(new()
+                {
+                    ToEmails =  new List<string>(){user.Email},
+                    Attachments = null,
+                    Subject = "Confirm Your Email" ,
+                    Body = $"Please confirm your account by <a href='{confirmationLink}'>clicking here</a>;."
+                });
+            }
+            
             return new()
             {
                 StatusCode = (int)HttpStatusCode.OK,
@@ -78,13 +99,18 @@ namespace CarAuction.Service.Services.Abstractions
                     throw new LoginFailedException();
             }
 
-            if (role != null)
+            //if (role != null)
+            //{
+            //    var roles = await _userManager.GetRolesAsync(user);
+            //    if (!roles.Contains("Admin"))
+            //    {
+            //        throw new LoginFailedException();
+            //    }
+            //}
+
+            if (role != null && !await _userManager.IsInRoleAsync(user, role))
             {
-                var roles = await _userManager.GetRolesAsync(user);
-                if (!roles.Contains("Admin"))
-                {
-                    throw new LoginFailedException();
-                }
+                throw new LoginFailedException();
             }
 
 
@@ -103,7 +129,7 @@ namespace CarAuction.Service.Services.Abstractions
             }
             TokenResponseDTO tokenResponseDto = await _tokenService.CreateAccessTokenAsync(user, accessTokenLifeTime);
             await _authService.UpdateRefreshToken(user, tokenResponseDto.RefreshToken, tokenResponseDto.Expiration, 5);
-            return new()
+            return new ApiResponse
             {
                 items = tokenResponseDto,
                 StatusCode = (int)HttpStatusCode.OK,
@@ -150,10 +176,44 @@ namespace CarAuction.Service.Services.Abstractions
                 userName = _contextAccessor.HttpContext?.User.Identity.Name;
 
 
-            AppUser? appUser = default;
             if (!string.IsNullOrWhiteSpace(userName))
             {
+                AppUser? appUser = default;
+
                 appUser = await _userManager.FindByNameAsync(userName);
+
+                if (appUser == null)
+                {
+                    return new()
+                    {
+                        StatusCode = 404,
+                    };
+                }
+
+
+                if (!string.IsNullOrWhiteSpace(dto.Password))
+                {
+                    var token = await _userManager.GeneratePasswordResetTokenAsync(appUser);
+                    var result = await _userManager.ResetPasswordAsync(appUser, token, dto.Password);
+                    if (result.Succeeded)
+                    {
+                        var loginResult =
+                            await Login(new LoginDto { EmailorUserName = dto.Email, Password = dto.Password }, 100);
+                        return new()
+                        {
+                            items = loginResult,
+                            StatusCode = 200,
+                        };
+                    }
+                    else
+                    {
+                        return new()
+                        {
+                            items = result.Errors,
+                            StatusCode = 400,
+                        };
+                    }
+                }
 
                 appUser.Name = dto.Name;
                 appUser.Surname = dto.Surname;
@@ -161,21 +221,11 @@ namespace CarAuction.Service.Services.Abstractions
                 appUser.UserName = dto.UserName;
 
                 await _userManager.UpdateAsync(appUser);
-                if (!string.IsNullOrWhiteSpace(dto.Password))
-                {
-                    var token = await _userManager.GeneratePasswordResetTokenAsync(appUser);
-                    var result = await _userManager.ResetPasswordAsync(appUser, token, dto.Password);
-                    var loginResult = await Login(new LoginDto { EmailorUserName = dto.Email, Password = dto.Password }, 100);
-                    return new()
-                    {
-                        items = loginResult,
-                        StatusCode = 200,
-                    };
-                }
+              
                 await _signInManager.SignInAsync(appUser, false);
                 return new()
                 {
-                    StatusCode = 200,
+                    StatusCode = 204,
                 };
             }
 

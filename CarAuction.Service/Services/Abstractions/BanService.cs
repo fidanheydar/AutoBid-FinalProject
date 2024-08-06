@@ -117,7 +117,7 @@ namespace Miles.Service.Services.Implementations
 
         public async Task<ApiResponse> UpdateAsync(string id, BanUpdateDto dto)
         {
-            if (await _readRepository.isExsist(x => x.Name.Trim().ToLower() == dto.Name.Trim().ToLower()))
+            if (await _readRepository.isExsist(x => x.Name.Trim().ToLower() == dto.Name.Trim().ToLower()&& x.Id.ToString()!=id))
             {
                 return new ApiResponse
                 {
@@ -141,6 +141,7 @@ namespace Miles.Service.Services.Implementations
                     + $"/Images/Bans/{url}";
             }
             ban.Name = dto.Name;
+            _writerepository.Update(ban);
             await _writerepository.SaveAsync();
             return new ApiResponse
             {

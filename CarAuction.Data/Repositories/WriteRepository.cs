@@ -36,7 +36,7 @@ namespace CarAuction.Data.Repositories
 
         public async Task<bool> Remove(string id)
         {
-            var data = await Table.FirstOrDefaultAsync(e => e.Id == Guid.Parse(id));
+            var data = await Table.FirstOrDefaultAsync(e => e.Id.ToString() == id);
             return Remove(data);
 
         }
@@ -58,6 +58,7 @@ namespace CarAuction.Data.Repositories
 
         public bool Update(T entity)
         {
+            _context.Entry(entity).State = EntityState.Modified;
             EntityEntry entityEntry = _context.Update(entity);
             return entityEntry.State == EntityState.Modified;
         }

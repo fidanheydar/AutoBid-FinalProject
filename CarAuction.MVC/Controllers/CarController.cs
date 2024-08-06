@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using System.Text.Json;
+using CarAuction.Service.Helpers;
 
 namespace CarAuction.MVC.Controllers
 {
@@ -203,6 +204,14 @@ namespace CarAuction.MVC.Controllers
             await _service.SaveImage();
             //_logger.LogInformation("Car Image Removed by " + User.FindFirstValue(ClaimTypes.NameIdentifier));
             return Json(new { status = 200 });
+        }
+
+        public async Task<IActionResult> ExcelReport()
+        {
+            var result = await _service.GetAllAsync(0, 0, x => x.Status.Level != 3);
+            var cars = (ICollection<CarGetDto>)result.items;
+            var excelFile = cars.ToList().GenerateReportAsExcel();
+            return File(excelFile.OpenReadStream(), excelFile.ContentType, excelFile.FileName);
         }
     }
 }

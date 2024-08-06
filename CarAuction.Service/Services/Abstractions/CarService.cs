@@ -126,7 +126,8 @@ namespace CarAuction.Service.Services.Abstractions
         {
             var cars = _carReadRepository.GetAll(x => !x.IsDeleted, 0, 0).Include(x => x.Color).Include(x => x.Ban).Include(x => x.Fuel).Include(x => x.CarAuctionDetail)
                 .ThenInclude(x => x.Winner)
-                .Include(x => x.CarImages).Include(x => x.Status).Include(x => x.Model).ThenInclude(x => x.Brand).Include(x => x.Admin).Where(expression);
+                .Include(x => x.CarImages)
+                .Include(x=>x.Color).Include(x=>x.Ban).Include(x=>x.Model).Include(x=>x.Fuel).Include(x => x.Status).Include(x => x.Model).ThenInclude(x => x.Brand).Include(x => x.Admin).Where(expression);
 
             if (count != 0 && page != 0)
             {
@@ -239,7 +240,7 @@ namespace CarAuction.Service.Services.Abstractions
             {
                 foreach (var item in dto.Images)
                 {
-                    var url = item.CreateImage(_evn.WebRootPath, "/Images/Cars");
+                    var url = item.CreateImage(_evn.WebRootPath, "Images/Cars");
                     CarImage carImage = new CarImage
                     {
                         Car = Car,
@@ -268,7 +269,7 @@ namespace CarAuction.Service.Services.Abstractions
         }
         public async Task<ApiResponse> AdvancedSearch(AdvancedSearch search)
         {
-            var cars = _carReadRepository.GetAll(x => !x.IsDeleted, 0, 0);
+            var cars = _carReadRepository.GetAll(x => !x.IsDeleted && x.Status.Level != 3, 0, 0);
 
             if (search.brand is not null)
             {
@@ -306,6 +307,10 @@ namespace CarAuction.Service.Services.Abstractions
             {
                 cars = cars.Where(x => x.FuelId == search.fuel);
             }
+            cars = cars.Include(x => x.Color).Include(x => x.Ban).Include(x => x.Fuel).Include(x => x.CarAuctionDetail)
+                .ThenInclude(x => x.Winner)
+                .Include(x => x.CarImages).Include(x => x.Status).Include(x => x.Model).ThenInclude(x => x.Brand);
+
             return new()
             {
                 StatusCode = 200,

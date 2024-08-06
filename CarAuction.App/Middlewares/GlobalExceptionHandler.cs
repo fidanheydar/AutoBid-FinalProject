@@ -1,4 +1,4 @@
-﻿using CarAuction.Service.Exceptions;
+using CarAuction.Service.Exceptions;
 using Microsoft.AspNetCore.Diagnostics;
 using Newtonsoft.Json;
 using System.Net;
@@ -37,7 +37,7 @@ namespace CarAuction.App.Middlewares
                         await context.Response.WriteAsync(JsonConvert.SerializeObject(
 
                             new { statuscode = statuscode, Message = contextFeature.Error.Message }
-                            ));
+                        ));
                     }
                 });
             });

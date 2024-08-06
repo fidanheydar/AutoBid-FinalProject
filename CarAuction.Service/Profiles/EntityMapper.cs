@@ -13,6 +13,7 @@ using CarAuction.Service.DTOs.Identity;
 using CarAuction.Service.DTOs.Bans;
 using CarAuction.Service.DTOs.Statuses;
 using CarAuction.Service.DTOs.Bids;
+using CarAuction.Service.DTOs.Comments;
 
 namespace CarAuction.Service.Profiles
 {
@@ -88,11 +89,16 @@ namespace CarAuction.Service.Profiles
 
 
             CreateMap<CarGetDto, Car>().ReverseMap().ForMember(dto => dto.Admin, opt => opt.MapFrom(src =>
-               src.Admin.Name + " " + src.Admin.Surname)).ForMember(dto => dto.AuctionDate, opt => opt.MapFrom(src => src.CarAuctionDetail.AuctionDate)).ForMember(dto => dto.InitialPrice, opt => opt.MapFrom(src => src.CarAuctionDetail.InitialPrice)).ForMember(dto => dto.FinishDate, opt => opt.MapFrom(src => src.CarAuctionDetail.FinishDate)).ForMember(dto => dto.WinnerName, opt => opt.MapFrom(src => src.CarAuctionDetail.Winner.Name + " " + src.CarAuctionDetail.Winner.Surname));
+               src.Admin.Name + " " + src.Admin.Surname)).ForMember(dto => dto.AuctionDate, opt => opt.MapFrom(src => src.CarAuctionDetail.AuctionDate)).ForMember(dto => dto.InitialPrice, opt => opt.MapFrom(src => src.CarAuctionDetail.InitialPrice)).ForMember(dto => dto.FinishDate, opt => opt.MapFrom(src => src.CarAuctionDetail.FinishDate)).ForMember(dto => dto.WinnerName, opt => opt.MapFrom(src => src.CarAuctionDetail.Winner.Name + " " + src.CarAuctionDetail.Winner.Surname)).ForMember(dto => dto.AuctionWinPrice, opt => opt.MapFrom(src => src.CarAuctionDetail.AuctionWinPrice));
 
             CreateMap<AppUser, UserGetDto>().ReverseMap();
             CreateMap<BidPostDto, Bid>().ReverseMap();
-            CreateMap<Bid, BidGetDto>().ReverseMap();
+            CreateMap<BidGetDto, Bid>().ReverseMap().ForMember(dto => dto.UserName, opt => opt.MapFrom(src =>
+               src.User.Name + " " + src.User.Surname));
+
+            CreateMap<CommentPostDto, Comment>().ReverseMap();
+            CreateMap<CommentGetDto, Comment>().ReverseMap().ForMember(dto => dto.UserName, opt => opt.MapFrom(src =>
+               src.User.Name + " " + src.User.Surname));
 
         }
     }

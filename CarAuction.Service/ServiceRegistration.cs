@@ -1,5 +1,4 @@
 ﻿using CarAuction.Core.Models;
-using CarAuction.Core.Options;
 using CarAuction.Data.Context;
 using CarAuction.Service.DTOs.Categories;
 using CarAuction.Service.Services.Abstractions;
@@ -13,30 +12,31 @@ namespace CarAuction.Service
 {
     public static class ServiceRegistration
     {
-        public static void ServiceServiceRegistration(this IServiceCollection service)
+        public static void AddServiceRegistration(this IServiceCollection service)
         {
             service.AddControllers()?.AddFluentValidation(fvc => fvc.RegisterValidatorsFromAssemblyContaining<CategoryPostDto>());
 
             service.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            service.AddTransient<ICategoryService, CategoryService>();
-            service.AddTransient<IBanService, BanService>();
-            service.AddTransient<IBrandService, BrandService>();
-            service.AddTransient<IModelService, ModelService>();
-            service.AddTransient<ITagService, TagService>();
-            service.AddTransient<IBlogService, BlogService>();
-            service.AddTransient<IFuelService, FuelService>();
-            service.AddTransient<ISubscribeService, SubscribeService>();
-            service.AddTransient<ICarService, CarService>();
-            service.AddTransient<IColorService, ColorService>();
-            service.AddTransient<IMailService, MailService>();
-            service.AddTransient<ITokenService, TokenService>();
-            service.AddTransient<IAuthService, AuthService>();
-            service.AddTransient<IIdentityService, IdentityService>();
-            service.AddTransient<ISettingService, SettingService>();
-            service.AddTransient<IStatusService, StatusService>();
-            service.AddTransient<IBidService, BidService>();
-            service.AddTransient<IAuctionService, AuctionService>();
+            service.AddScoped<ICategoryService, CategoryService>();
+            service.AddScoped<IBanService, BanService>();
+            service.AddScoped<IBrandService, BrandService>();
+            service.AddScoped<IModelService, ModelService>();
+            service.AddScoped<ITagService, TagService>();
+            service.AddScoped<IBlogService, BlogService>();
+            service.AddScoped<IFuelService, FuelService>();
+            service.AddScoped<ISubscribeService, SubscribeService>();
+            service.AddScoped<ICarService, CarService>();
+            service.AddScoped<IColorService, ColorService>();
+            service.AddScoped<IMailService, MailService>();
+            service.AddScoped<ITokenService, TokenService>();
+            service.AddScoped<IAuthService, AuthService>();
+            service.AddScoped<IIdentityService, IdentityService>();
+            service.AddScoped<ISettingService, SettingService>();
+            service.AddScoped<IStatusService, StatusService>();
+            service.AddScoped<IBidService, BidService>();
+            service.AddScoped<IAuctionService, AuctionService>();
+            service.AddScoped<ICommentService, CommentService>();
 
             service.AddIdentity<AppUser, AppRole>(
            options =>
@@ -48,6 +48,7 @@ namespace CarAuction.Service
                options.Password.RequireUppercase = true;
                options.Lockout.AllowedForNewUsers = false;
                options.User.RequireUniqueEmail = true;
+               options.SignIn.RequireConfirmedEmail = true;
            }).AddEntityFrameworkStores<AuctionDbContext>().AddDefaultTokenProviders();
 
         }

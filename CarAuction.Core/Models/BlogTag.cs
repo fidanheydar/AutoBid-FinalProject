@@ -14,11 +14,11 @@ namespace CarAuction.Core.Models
         [Key]
         [ForeignKey(nameof(Blog))]
         public Guid BlogId { get; set; }
-        public virtual Blog Blog { get; set; }
+        public  Blog? Blog { get; set; }
 
         [Key]
         [ForeignKey(nameof(Tag))]
         public Guid TagId { get; set; }
-        public virtual Tag Tag { get; set; }
+        public  Tag? Tag { get; set; }
     }
 }

@@ -1,39 +1,42 @@
 ﻿using CarAuction.Service.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CarAuction.App.Apps.Users.Controllers
+namespace CarAuction.App.Apps.User.Controllers
 {
     [ApiExplorerSettings(GroupName = "user_v1")]
     [Route("api/v1/[controller]/[action]")]
     [ApiController]
-    public class CarController : ControllerBase
+    public class CarController(ICarService carService) : ControllerBase
     {
-        private readonly ICarService _CarService;
-
-        public CarController(ICarService CarService)
-        {
-            _CarService = CarService;
-        }
         [HttpGet]
-        [ActionName("GetCars")]
-        public async Task<IActionResult> Get([FromQuery] int page, int count)
+        [ActionName("GetShopCars")]
+        public async Task<IActionResult> GetShopCars([FromQuery] int page, int count)
         {
-            var response = await _CarService.GetAllAsync(count, page);
+            var response = await carService.GetAllAsync(count, page,x=>x.Status.Level!=3);
             return StatusCode(response.StatusCode, response);
         }
+
+        [HttpGet]
+        [ActionName("GetArchiveCars")]
+        public async Task<IActionResult> GetArchiveCars([FromQuery] int page, int count)
+        {
+            var response = await carService.GetAllAsync(count, page, x => x.Status.Level == 3);
+            return StatusCode(response.StatusCode, response);
+        }
+
         [HttpGet("{id}")]
         [ActionName("GetCar")]
         public async Task<IActionResult> Get([FromRoute] string id)
         {
-            var response = await _CarService.GetAsync(id);
+            var response = await carService.GetAsync(id);
             return StatusCode(response.StatusCode, response);
         }
+
         [HttpGet]
-        [ActionName("AdvancedSearch")]
-        public async Task<IActionResult> AdvancedSearch([FromQuery] string? brand, Guid? model, double? minprice, double? maxprice, int? minyear, int? maxyear, Guid? color, Guid? ban, Guid? fuel, int page = 1)
+        [ActionName("AdvancedFilter")]
+        public async Task<IActionResult> AdvancedFilter([FromQuery] string? brand, Guid? model, double? minprice, double? maxprice, int? minyear, int? maxyear, Guid? color, Guid? ban, Guid? fuel, int page = 1)
         {
-            var response = await _CarService.AdvancedSearch(new()
+            var response = await carService.AdvancedSearch(new()
             {
                 ban = ban,
                 brand = brand,

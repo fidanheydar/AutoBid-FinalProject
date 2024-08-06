@@ -103,7 +103,7 @@ namespace Miles.Service.Services.Implementations
 
         public async Task<ApiResponse> UpdateAsync(string id, TagUpdateDto dto)
         {
-            if (await _readRepository.isExsist(x => x.Name.Trim().ToLower() == dto.Name.Trim().ToLower()))
+            if (await _readRepository.isExsist(x => x.Name.Trim().ToLower() == dto.Name.Trim().ToLower() && x.Id.ToString() != id))
             {
                 return new ApiResponse
                 {
