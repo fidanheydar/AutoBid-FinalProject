@@ -1895,19 +1895,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Nijat\\.nuget\\packages\\": {}
+    "C:\\Users\\HP\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Codes\\CarAuction\\CarAuction.Core\\CarAuction.Core.csproj",
+      "projectUniqueName": "C:\\Users\\HP\\Desktop\\AutoBid-FinalProject\\CarAuction.Core\\CarAuction.Core.csproj",
       "projectName": "CarAuction.Core",
-      "projectPath": "D:\\Codes\\CarAuction\\CarAuction.Core\\CarAuction.Core.csproj",
-      "packagesPath": "C:\\Users\\Nijat\\.nuget\\packages\\",
-      "outputPath": "D:\\Codes\\CarAuction\\CarAuction.Core\\obj\\",
+      "projectPath": "C:\\Users\\HP\\Desktop\\AutoBid-FinalProject\\CarAuction.Core\\CarAuction.Core.csproj",
+      "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HP\\Desktop\\AutoBid-FinalProject\\CarAuction.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Nijat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1959,26 +1959,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.4, 8.0.4]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.4, 8.0.4]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[8.0.4, 8.0.4]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.4.24267.66/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

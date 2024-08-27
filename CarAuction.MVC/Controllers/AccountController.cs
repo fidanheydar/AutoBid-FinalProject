@@ -89,7 +89,7 @@ namespace CarAuction.Service.Controllers
             try
             {
                 var result = await _identityService.UpdateUser(dto);
-                if (result.StatusCode != 200)
+                if (result.StatusCode != 204)
                 {
                     if (result.StatusCode == 404)
                     {

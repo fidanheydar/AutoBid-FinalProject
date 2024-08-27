@@ -16,6 +16,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http.HttpResults;
 using static System.Net.WebRequestMethods;
+using Google.Apis.Auth;
+using Microsoft.Extensions.Configuration;
 
 namespace CarAuction.Service.Services.Abstractions
 {
@@ -27,8 +29,9 @@ namespace CarAuction.Service.Services.Abstractions
         private readonly IAuthService _authService;
         private readonly IHttpContextAccessor _contextAccessor;
         private readonly IMailService _mailService;
+        private readonly IConfiguration _configuration;
 
-        public IdentityService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService, IAuthService authService, IHttpContextAccessor contextAccessor, IMailService mailService)
+        public IdentityService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, ITokenService tokenService, IAuthService authService, IHttpContextAccessor contextAccessor, IMailService mailService, IConfiguration configuration)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -36,6 +39,7 @@ namespace CarAuction.Service.Services.Abstractions
             _authService = authService;
             _contextAccessor = contextAccessor;
             _mailService = mailService;
+            _configuration = configuration;
         }
         public async Task<ApiResponse> Register(RegisterDto registerDto, string role = null)
         {
@@ -73,13 +77,13 @@ namespace CarAuction.Service.Services.Abstractions
             if (role is "User")
             {
                 var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                var confirmationLink = $"https://localhost:44388/api/v1/Auth/ConfirmEmail?UserId={user.Id}&Token={token}";
+                var confirmationLink = $"https://localhost:7105/api/v1/Auth/ConfirmEmail?UserId={user.Id}&Token={token}";
                 await _mailService.SendEmailAsync(new()
                 {
                     ToEmails =  new List<string>(){user.Email},
                     Attachments = null,
                     Subject = "Confirm Your Email" ,
-                    Body = $"Please confirm your account by <a href='{confirmationLink}'>clicking here</a>;."
+                    Body = $"Please confirm your account by <a href='{confirmationLink}'>clicking here</a>:."
                 });
             }
             
@@ -133,6 +137,50 @@ namespace CarAuction.Service.Services.Abstractions
             {
                 items = tokenResponseDto,
                 StatusCode = (int)HttpStatusCode.OK,
+            };
+        }
+        public async Task<ApiResponse> GoogleLogin(string idToken,int accessTokenLifeTime)
+        {
+            var settings = new GoogleJsonWebSignature.ValidationSettings()
+            {
+                Audience = new List<string> { _configuration["ExternalLoginSettings:Google:Client_ID"] }
+            };
+            var payload = await GoogleJsonWebSignature.ValidateAsync(idToken, settings);
+
+            UserLoginInfo info = new UserLoginInfo("GOOGLE", payload.Subject, "GOOGLE");
+
+            AppUser? user = await _userManager.FindByLoginAsync(info.LoginProvider, info.ProviderKey);
+
+            bool result = user != null;
+
+            if (user == null)
+            {
+                user = await _userManager.FindByEmailAsync(payload.Email);
+                if (user == null)
+                {
+                    user = new AppUser()
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        Email = payload.Email,
+                        UserName = payload.Email,
+                    };
+                    var identityResult = await _userManager.CreateAsync(user);
+                    result = identityResult.Succeeded;
+                }
+
+            }
+            if (result)
+                await _userManager.AddLoginAsync(user, info);
+            else
+                throw new Exception("Invalid external authentication");
+
+            var token = await _tokenService.CreateAccessTokenAsync(user,accessTokenLifeTime);
+            await _authService.UpdateRefreshToken(user,token.RefreshToken, token.Expiration, 300);
+
+            return new ApiResponse()
+            {
+                StatusCode=200,
+                items=token
             };
         }
         public async Task<ApiResponse> GetAllUsers(int count, int page, string role)
@@ -197,8 +245,7 @@ namespace CarAuction.Service.Services.Abstractions
                     var result = await _userManager.ResetPasswordAsync(appUser, token, dto.Password);
                     if (result.Succeeded)
                     {
-                        var loginResult =
-                            await Login(new LoginDto { EmailorUserName = dto.Email, Password = dto.Password }, 100);
+                        var loginResult = await Login(new LoginDto { EmailorUserName = dto.Email, Password = dto.Password }, 200);
                         return new()
                         {
                             items = loginResult,

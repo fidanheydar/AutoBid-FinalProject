@@ -1,20 +1,11 @@
 {
   "Version": 1,
-  "Hash": "uirJgnBTWRXLZ4oKZurRKwQASGGDoTSDiVH6mp4hc6g=",
+  "Hash": "HXBzcAaLQzImXzw+9BDlqnSkm/zJgEsKjUBCcH4wrKI=",
   "Source": "CarAuction.App",
   "BasePath": "_content/CarAuction.App",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [
-    {
-      "Name": "CarAuction.App\\wwwroot",
-      "Source": "CarAuction.App",
-      "ContentRoot": "D:\\Codes\\CarAuction\\CarAuction.App\\wwwroot\\",
-      "BasePath": "_content/CarAuction.App",
-      "Pattern": "**"
-    }
-  ],
-  "Assets": [],
-  "Endpoints": []
+  "DiscoveryPatterns": [],
+  "Assets": []
 }

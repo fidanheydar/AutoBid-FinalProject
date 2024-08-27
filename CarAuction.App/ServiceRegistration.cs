@@ -43,8 +43,7 @@ namespace CarAuction.App
             service.AddEndpointsApiExplorer();
 
             service.AddDbContext<AuctionDbContext>(option =>
-                    option.UseSqlServer(configuration.GetConnectionString("Develop")),
-                ServiceLifetime.Scoped
+                    option.UseSqlServer(configuration.GetConnectionString("Develop"))
             );
 
             service.AddHangfire((sp, config) =>

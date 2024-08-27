@@ -13,6 +13,7 @@ namespace CarAuction.Service.Services.Interfaces
     {
         public Task<ApiResponse> Register(RegisterDto registerDto, string role = null);
         public Task<ApiResponse> Login(LoginDto loginDto, int accessTokenLifeTime, string role = null);
+        public Task<ApiResponse> GoogleLogin(string idToken, int accessTokenLifeTime);
         public  Task<ApiResponse> GetAllUsers(int count, int page, string role);
         public Task<ApiResponse> UpdateUser(UpdateDto dto, string id = null);
         public Task<AppUser> GetUserByName(string userName);

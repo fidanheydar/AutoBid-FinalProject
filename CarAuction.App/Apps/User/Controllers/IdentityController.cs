@@ -41,5 +41,14 @@ namespace CarAuction.App.Apps.User.Controllers
             return StatusCode(response.StatusCode, response);
 
         }
+
+        [HttpPost]
+        [ActionName("Google-Login")]
+        public async Task<IActionResult> Google_Login(string IdToken)
+        {
+            var response = await identityService.GoogleLogin(IdToken, 900);
+            return StatusCode(response.StatusCode, response);
+
+        }
     }
 }

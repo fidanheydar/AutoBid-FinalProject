@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Codes\\CarAuction\\CarAuction.Data\\CarAuction.Data.csproj": {}
+    "C:\\Users\\HP\\Desktop\\AutoBid-FinalProject\\CarAuction.Data\\CarAuction.Data.csproj": {}
   },
   "projects": {
-    "D:\\Codes\\CarAuction\\CarAuction.Core\\CarAuction.Core.csproj": {
+    "C:\\Users\\HP\\Desktop\\AutoBid-FinalProject\\CarAuction.Core\\CarAuction.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Codes\\CarAuction\\CarAuction.Core\\CarAuction.Core.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\AutoBid-FinalProject\\CarAuction.Core\\CarAuction.Core.csproj",
         "projectName": "CarAuction.Core",
-        "projectPath": "D:\\Codes\\CarAuction\\CarAuction.Core\\CarAuction.Core.csproj",
-        "packagesPath": "C:\\Users\\Nijat\\.nuget\\packages\\",
-        "outputPath": "D:\\Codes\\CarAuction\\CarAuction.Core\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\AutoBid-FinalProject\\CarAuction.Core\\CarAuction.Core.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\AutoBid-FinalProject\\CarAuction.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nijat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -66,40 +66,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.4, 8.0.4]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.4, 8.0.4]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.4, 8.0.4]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.4.24267.66/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Codes\\CarAuction\\CarAuction.Data\\CarAuction.Data.csproj": {
+    "C:\\Users\\HP\\Desktop\\AutoBid-FinalProject\\CarAuction.Data\\CarAuction.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Codes\\CarAuction\\CarAuction.Data\\CarAuction.Data.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\AutoBid-FinalProject\\CarAuction.Data\\CarAuction.Data.csproj",
         "projectName": "CarAuction.Data",
-        "projectPath": "D:\\Codes\\CarAuction\\CarAuction.Data\\CarAuction.Data.csproj",
-        "packagesPath": "C:\\Users\\Nijat\\.nuget\\packages\\",
-        "outputPath": "D:\\Codes\\CarAuction\\CarAuction.Data\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\AutoBid-FinalProject\\CarAuction.Data\\CarAuction.Data.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\AutoBid-FinalProject\\CarAuction.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Nijat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -114,8 +100,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Codes\\CarAuction\\CarAuction.Core\\CarAuction.Core.csproj": {
-                "projectPath": "D:\\Codes\\CarAuction\\CarAuction.Core\\CarAuction.Core.csproj"
+              "C:\\Users\\HP\\Desktop\\AutoBid-FinalProject\\CarAuction.Core\\CarAuction.Core.csproj": {
+                "projectPath": "C:\\Users\\HP\\Desktop\\AutoBid-FinalProject\\CarAuction.Core\\CarAuction.Core.csproj"
               }
             }
           }
@@ -161,26 +147,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.4, 8.0.4]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.4, 8.0.4]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[8.0.4, 8.0.4]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100-preview.4.24267.66/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
